@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering Curiosity: Merchant Conversations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            padding: 2rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .gravity-theme {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 900px;
+            width: 90%;
+            padding: 3rem;
+        }
+        .notes-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 1px solid #e2e8f0;
+            padding: 1rem 2rem;
+            max-height: 120px;
+            overflow-y: auto;
+            font-size: 0.95rem;
+            color: #475569;
+            z-index: 40;
+        }
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e2e8f0;
+            z-index: 50;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-container">
+        <div id="progressBar" class="progress-bar" style="width: 10%"></div>
+    </div>
+
+    <div id="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide active gravity-theme text-white">
+            <h1 class="text-6xl font-extrabold mb-4 text-center tracking-tight">Beyond the Transaction</h1>
+            <h2 class="text-3xl font-light text-slate-400 mb-12">The Art of Improving Situations</h2>
+            <div class="h-1.5 w-32 bg-blue-500 rounded-full"></div>
+            <p class="mt-12 text-slate-500 italic">45-Minute Cohort Session</p>
+            
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> Start by lowering the pressure. We aren't here to learn how to sell; we are here to learn how to identify where we can help. Curiosity is our primary tool.
+            </div>
+        </div>
+
+        <!-- Slide 2: Icebreaker -->
+        <div class="slide">
+            <div class="card">
+                <h2 class="text-4xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-6">The "Natural Sharing" Icebreaker</h2>
+                <div class="space-y-6 text-xl text-slate-600">
+                    <p>Think of a product, service, or local spot you genuinely love because it makes your life better.</p>
+                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                        <p class="font-semibold text-slate-800 italic">"If you saw a friend struggling with the problem this thing solves, would you tell them about it?"</p>
+                    </div>
+                    <p class="text-blue-600 font-medium">Why? Because you want to improve their situation.</p>
+                </div>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> We share things we believe in because we want to help. That is the "Gravity Heart." This isn't sales; it's being a helpful human.
+            </div>
+        </div>
+
+        <!-- Slide 3: Philosophy -->
+        <div class="slide">
+            <div class="card text-center">
+                <h2 class="text-4xl font-bold text-slate-800 mb-12">Improving > Saving</h2>
+                <div class="flex flex-col md:flex-row justify-around items-center gap-8">
+                    <div class="p-8 bg-slate-100 rounded-2xl w-full md:w-1/3">
+                        <span class="text-4xl block mb-4">💵</span>
+                        <h3 class="font-bold text-slate-800">Price</h3>
+                        <p class="text-slate-500">A metric we track.</p>
+                    </div>
+                    <div class="text-4xl text-slate-300">vs</div>
+                    <div class="p-8 bg-blue-600 text-white rounded-2xl w-full md:w-1/3 shadow-xl transform scale-105">
+                        <span class="text-4xl block mb-4">🛡️</span>
+                        <h3 class="font-bold">Situation</h3>
+                        <p class="text-blue-100">The goal we achieve.</p>
+                    </div>
+                </div>
+                <p class="mt-12 text-slate-600 text-lg">
+                    We can't always save everyone money, but we can almost always <strong>improve their situation</strong> through support, honesty, and right-sized tech.
+                </p>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> Discuss: Sometimes the "cheapest" option is a nightmare for support. A better situation might mean more expensive software that actually works.
+            </div>
+        </div>
+
+        <!-- Slide 4: Board Game Shop -->
+        <div class="slide">
+            <div class="card">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Case Study: The Board Game Shop</h2>
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="md:w-1/2">
+                        <p class="text-slate-600 mb-4">Dan visits a small board game shop with a fancy, high-tech POS system.</p>
+                        <div class="bg-amber-50 p-4 rounded border-l-4 border-amber-400 mb-4">
+                            <p class="italic text-slate-700">"How does a shop like yours typically handle payments?"</p>
+                        </div>
+                        <p class="text-slate-600">The owner was proud of the tech, but his <strong>tone shifted</strong> when discussing cost vs. actual usage.</p>
+                    </div>
+                    <div class="md:w-1/2 bg-slate-900 text-white p-6 rounded-xl">
+                        <h3 class="text-blue-400 font-bold mb-4">The Lesson:</h3>
+                        <p class="text-lg">You don't need to be a technical expert to hear a "Tone Shift."</p>
+                        <hr class="my-4 border-slate-700">
+                        <p class="text-slate-400 text-sm">Root Problem: Over-Selled.<br>Solution: Right-Sizing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> He was proud of the Ferrari, but he only needed to drive to the grocery store. You identified the problem just by listening to his feelings about the price.
+            </div>
+        </div>
+
+        <!-- Slide 5: Coffee Shop -->
+        <div class="slide">
+            <div class="card">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Case Study: The Coffee Shop</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <h3 class="font-bold text-blue-800 mb-2">The Observation</h3>
+                        <p class="text-slate-700 italic text-lg">"12 cars in line. High-tech iPad on the counter. The worker is manually typing in 16-digit card numbers."</p>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h3 class="font-bold text-slate-800 mb-4 text-xl">The "Human" Question:</h3>
+                        <p class="text-2xl text-blue-600 font-semibold mb-6">"Does that normally happen? That looks like a pain in the neck."</p>
+                        <p class="text-slate-500 italic">You don't need to know interchange rates to see a bottleneck.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> Tell the story. Empathy for the worker's stress is your lead-in. We aren't technical inspectors; we are "Pain in the Neck" detectors.
+            </div>
+        </div>
+
+        <!-- Slide 6: Notice List -->
+        <div class="slide">
+            <div class="max-w-5xl w-full">
+                <h2 class="text-4xl font-bold text-slate-800 mb-10 text-center">Training Your Eyes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card !p-6 border-b-4 border-blue-500">
+                        <h3 class="font-bold mb-2">Manual Entry</h3>
+                        <p class="text-sm text-slate-500">Hand-typing card numbers into a terminal or tablet.</p>
+                    </div>
+                    <div class="card !p-6 border-b-4 border-red-500">
+                        <h3 class="font-bold mb-2">The Graveyard</h3>
+                        <p class="text-sm text-slate-500">Multiple tablets or terminals cluttering the counter.</p>
+                    </div>
+                    <div class="card !p-6 border-b-4 border-amber-500">
+                        <h3 class="font-bold mb-2">Dusty Tech</h3>
+                        <p class="text-sm text-slate-500">Expensive POS systems used only as simple calculators.</p>
+                    </div>
+                    <div class="card !p-6 border-b-4 border-purple-500">
+                        <h3 class="font-bold mb-2">Warning Signs</h3>
+                        <p class="text-sm text-slate-500">Taped-up notes about "Credit Card Fees" or "Minimums."</p>
+                    </div>
+                    <div class="card !p-6 border-b-4 border-green-500">
+                        <h3 class="font-bold mb-2">Bottlenecks</h3>
+                        <p class="text-sm text-slate-500">Owners stuck behind the counter doing tech troubleshooting.</p>
+                    </div>
+                    <div class="card !p-6 border-b-4 border-slate-400">
+                        <h3 class="font-bold mb-2">The Hidden Gem</h3>
+                        <p class="text-sm text-slate-500">Seeing a product you don't recognize. Curiosity opportunity!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> These are visual cues. Train your brain to notice these before you ever say a word.
+            </div>
+        </div>
+
+        <!-- Slide 7: Ask List -->
+        <div class="slide">
+            <div class="card">
+                <h2 class="text-4xl font-bold text-slate-800 mb-10">Training Your Voice</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Low-Stakes Opener</p>
+                        <p class="text-lg text-slate-800">"How does a shop like yours typically handle payments?"</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Observation</p>
+                        <p class="text-lg text-slate-800">"I noticed you're keying that in—does that normally happen?"</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Pain Probe</p>
+                        <p class="text-lg text-slate-800">"If you could change one thing about your checkout, what would it be?"</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Direct Curiosity</p>
+                        <p class="text-lg text-slate-800">"Who do you use for processing? I'm curious what shops here prefer."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> There are no wrong answers here. If they say it's great, we're happy for them!
+            </div>
+        </div>
+
+        <!-- Slide 8: The Bridge -->
+        <div class="slide">
+            <div class="card !bg-blue-600 text-white text-center">
+                <h2 class="text-3xl font-bold mb-8">Building the Bridge</h2>
+                <p class="text-sm uppercase font-bold text-blue-200 mb-6">The Script (Natural & Sincere):</p>
+                <div class="bg-white/10 p-10 rounded-2xl border border-white/20">
+                    <p class="text-2xl font-light italic leading-relaxed">
+                        "The reason I ask is I work for <strong>Gravity</strong>. We focus on making sure shops like yours aren't paying for tech they don't use. I'd love to see if we can make your situation a bit better."
+                    </p>
+                </div>
+                <p class="mt-8 text-blue-100 italic">"If they say no, the relationship is still intact. You offered help, and they are okay."</p>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> Remind them that the "Bridge" is an invitation, not a trap. We are here to help, not to push.
+            </div>
+        </div>
+
+        <!-- Slide 9: Digital Toolkit -->
+        <div class="slide">
+            <div class="card text-center">
+                <h2 class="text-3xl font-bold text-slate-800 mb-10">Your Digital Toolkit</h2>
+                <div class="border-2 border-dashed border-slate-200 p-8 rounded-2xl mb-8">
+                    <p class="text-slate-400 mb-2">Referral Link Generator</p>
+                    <p class="text-blue-600 font-mono text-xl">gravitypayments.com/referral-link-generator/</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-slate-700">
+                    <p><strong>Coming Soon:</strong> We're adding our "Notice & Ask" guide directly to this page for quick mobile access while you're out in the community.</p>
+                </div>
+            </div>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> Talk about the collaboration with Marketing. We want this link to be a tool that helps them have better conversations.
+            </div>
+        </div>
+
+        <!-- Slide 10: Challenge -->
+        <div class="slide active gravity-theme text-white text-center">
+            <h2 class="text-4xl font-bold mb-10">The "Sight-Only" Challenge</h2>
+            <div class="bg-white/10 p-12 rounded-3xl backdrop-blur-sm border border-white/10 max-w-xl mx-auto">
+                <ol class="text-left space-y-6 text-xl">
+                    <li class="flex items-center"><span class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">1</span> Visit 2 local shops this week.</li>
+                    <li class="flex items-center"><span class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">2</span> Identify ONE "Pain in the Neck."</li>
+                    <li class="flex items-center"><span class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">3</span> Share it in our Slack channel!</li>
+                </ol>
+            </div>
+            <p class="mt-12 text-slate-400 italic">"We don't need experts; we need observers who care."</p>
+            <div class="notes-panel">
+                <strong>Facilitator Notes:</strong> Final wrap-up. Give them permission to fail or to just be curious. Next session, we'll talk about what they saw.
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav Controls -->
+    <div class="fixed bottom-10 right-10 flex space-x-3 z-50">
+        <button id="prevBtn" class="bg-white border border-slate-200 text-slate-800 px-6 py-3 rounded-full shadow-lg font-semibold hover:bg-slate-50 transition">Previous</button>
+        <button id="nextBtn" class="bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg font-semibold hover:bg-blue-700 transition">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        let currentSlide = 0;
+
+        function updateSlide() {
+            slides.forEach((s, i) => {
+                s.classList.toggle('active', i === currentSlide);
+            });
+            
+            // Progress
+            const prog = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = prog + '%';
+
+            // Buttons
+            prevBtn.style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
+            nextBtn.innerText = currentSlide === slides.length - 1 ? 'Finish' : 'Next';
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            } else {
+                alert("Session Complete! Good luck with your first run, Dan!");
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        // Key support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextBtn.click();
+            if (e.key === 'ArrowLeft') prevBtn.click();
+        });
+
+        updateSlide();
+    </script>
+</body>
+</html>
