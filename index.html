@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Art of Noticing</title>
+    <title>The Art of Noticing: Merchant Conversations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 /* 1. BRAND PALETTE & SETUP */
@@ -65,14 +65,14 @@ body {
   top: 0;
   width: 100%;
   z-index: 0;
-  background-image: radial-gradient(circle at 100% 0%, rgba(145, 199, 61, 0.08) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 100% 0%, rgba(145, 199, 61, 0.1) 0%, transparent 40%);
 }
 
 .logo-watermark {
     position: absolute;
     top: 40px;
     right: 60px;
-    width: 120px;
+    width: 220px;
     z-index: 10;
 }
 
@@ -104,7 +104,7 @@ body {
   text-align: left;
   width: 100%;
   color: var(--gravity-navy);
-  border-left: 8px solid var(--gravity-lime);
+  border-left: 10px solid var(--gravity-lime);
   padding-left: 25px;
 }
 
@@ -145,7 +145,7 @@ body {
 }
 
 .image-wrapper {
-  border: 2px solid var(--gravity-navy);
+  border: 1px solid var(--gravity-navy);
   border-radius: 12px;
   height: 450px;
   overflow: hidden;
@@ -175,12 +175,11 @@ body {
 .tile {
   background-color: var(--bg-light);
   border-radius: 12px;
-  padding: 40px;
+  padding: 35px;
   flex: 1;
   display: flex;
   flex-direction: column;
   border-bottom: 6px solid var(--gravity-lime);
-  transition: transform 0.2s ease;
 }
 
 .tile .icon {
@@ -190,8 +189,9 @@ body {
 }
 
 .tile h3 {
-  font-size: 26px;
-  margin-bottom: 15px;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .highlight-numbers-layout .number {
@@ -259,34 +259,31 @@ body {
   width: 100%;
   object-fit: cover;
 }
-
-/* LOGO SVG COMPONENT */
-.gravity-logo-svg {
-    width: 100%;
-    height: auto;
-}
     </style>
 </head>
 <body>
 
+<!-- SVG Logo Definition to reuse -->
+<svg style="display: none;">
+  <symbol id="gravity-logo" viewBox="0 0 240 60">
+    <!-- Icon part: Stylized G -->
+    <path d="M40 10 C 23.4 10, 10 23.4, 10 40 C 10 56.6, 23.4 70, 40 70 L 55 70 L 55 60 L 40 60 C 28.9 60, 20 51.1, 20 40 C 20 28.9, 28.9 20, 40 20 L 55 20 L 55 10 Z" fill="#253750" transform="scale(0.6) translate(0, 10)"/>
+    <rect x="36" y="16" width="6" height="36" fill="#91C73D"/>
+    <!-- Wordmark -->
+    <text x="55" y="42" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#253750" style="letter-spacing: 1px;">GRAVITY</text>
+  </symbol>
+</svg>
+
 <!-- Logo Watermark for all slides -->
 <div class="logo-watermark">
-    <svg class="gravity-logo-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 10 C 10 10, 5 20, 5 30 C 5 40, 10 50, 20 50 L 35 50 L 35 40 L 20 40 C 15 40, 15 30, 15 30 C 15 30, 15 20, 20 20 L 35 20 L 35 10 Z" fill="#253750"/>
-        <path d="M40 10 L 40 50 L 50 50 L 50 10 Z" fill="#91C73D"/>
-        <text x="60" y="42" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#253750">GRAVITY</text>
-    </svg>
+    <svg width="220" height="60"><use xlink:href="#gravity-logo"/></svg>
 </div>
 
 <!-- Slide 1: Title Slide -->
 <div class="slide-container" id="slide1">
     <div class="title-layout">
-        <div style="width: 300px; margin: 0 auto 40px;">
-            <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 10 C 10 10, 5 20, 5 30 C 5 40, 10 50, 20 50 L 35 50 L 35 40 L 20 40 C 15 40, 15 30, 15 30 C 15 30, 15 20, 20 20 L 35 20 L 35 10 Z" fill="#253750"/>
-                <path d="M40 10 L 40 50 L 50 50 L 50 10 Z" fill="#91C73D"/>
-                <text x="60" y="42" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#253750">GRAVITY</text>
-            </svg>
+        <div style="width: 400px; margin: 0 auto 40px;">
+            <svg width="400" height="100" viewBox="0 0 240 60"><use xlink:href="#gravity-logo"/></svg>
         </div>
         <h1 style="color: var(--gravity-navy);">The Art of Noticing</h1>
         <p class="subtitle">Empowering curiosity and understanding in merchant environments</p>
@@ -341,12 +338,12 @@ body {
         <div class="two-column highlight-numbers-layout">
             <div style="text-align: center;">
                 <div class="number">?</div>
-                <div class="number-label" style="color: var(--gravity-navy);">Knowledge Gap</div>
+                <div class="number-label" style="color: var(--gravity-navy);">Industry Knowledge</div>
             </div>
             <div>
                 <h3>Chat Activity</h3>
                 <p>In the chat, please list the things you feel you <strong>must know</strong> about the payments industry in order to help a customer.</p>
-                <p>Consider the technical details, pricing structures, or specific hardware you currently worry about before starting a conversation.</p>
+                <p>Think about the technical details, pricing models, or hardware specs you currently feel are necessary before starting a conversation.</p>
             </div>
         </div>
     </div>
@@ -359,8 +356,8 @@ body {
         <div class="two-column">
             <div>
                 <p>Think of something you love that genuinely helps others. If you saw someone struggling, sharing it would be natural—not a pitch.</p>
-                <div style="background-color: var(--bg-light); padding: 30px; border-radius: 12px; margin-top: 20px; border-left: 6px solid var(--gravity-teal);">
-                    <p style="font-size: 26px; color: var(--gravity-teal); font-weight: 700; margin: 0;">An Act of Service</p>
+                <div style="background-color: var(--bg-light); padding: 30px; border-radius: 12px; margin-top: 20px; border-left: 6px solid var(--gravity-lime);">
+                    <p style="font-size: 26px; color: var(--gravity-navy); font-weight: 700; margin: 0;">An Act of Service</p>
                     <p style="margin-top: 10px;">This is the root of the "Improvement Mindset." We share Gravity's solutions because they better a situation.</p>
                 </div>
             </div>
@@ -400,7 +397,7 @@ body {
         <p style="font-weight: 700; color: var(--gravity-blue);">Right-sizing begins with hearing the mismatch.</p>
     </div>
     <div class="image-container">
-        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800" alt="POS terminal close up">
+        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800" alt="POS terminal">
     </div>
 </div>
 
@@ -413,7 +410,7 @@ body {
         <p style="font-weight: 700; color: var(--gravity-teal);">Empathy for the worker's reality is your bridge to a conversation.</p>
     </div>
     <div class="image-container">
-        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Busy coffee shop counter">
+        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Busy coffee shop queue">
     </div>
 </div>
 
@@ -426,7 +423,7 @@ body {
         <p style="font-weight: 700; color: var(--gravity-purple);">Discovery starts by acknowledging the frustration.</p>
     </div>
     <div class="image-container">
-        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="Municipal office building">
+        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="City office environment">
     </div>
 </div>
 
@@ -496,6 +493,7 @@ body {
             </div>
             <div style="text-align: center;">
                 <div style="background: white; padding: 20px; border: 2px solid var(--gravity-navy); border-radius: 12px; display: inline-block;">
+                    <!-- SVG QR Code -->
                     <svg width="200" height="200" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="160" height="160" fill="white"/>
                         <path d="M20 20H50V50H20V20ZM25 25V45H45V25H25Z" fill="#253750"/>
