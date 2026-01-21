@@ -4,414 +4,391 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empowering Curiosity: Merchant Conversations</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* 1. THE SETUP */
+        * { box-sizing: border-box; }
+        p { margin: 0; margin-bottom: 15px; }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
+            background-color: #f8fafc;
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr;
             margin: 0;
-            overflow: hidden;
+            min-height: 100vh;
+            padding: 40px 0;
+            place-items: center;
         }
-        .slide {
-            display: none;
-            height: 100vh;
-            width: 100vw;
-            padding: 2rem;
-            flex-direction: column;
-            justify-content: center;
+
+        .slide-container {
             align-items: center;
-            transition: opacity 0.4s ease-in-out;
-        }
-        .slide.active {
+            background-color: #fff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
             display: flex;
-            opacity: 1;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            height: 720px;
+            justify-content: center;
+            overflow: hidden;
+            padding: 80px;
+            position: relative;
+            width: 1280px;
+            border: 1px solid #e2e8f0;
         }
-        .gravity-theme {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+        /* ABSTRACT BACKGROUND DESIGN */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(29, 78, 216, 0.05) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+            border-radius: 50%;
         }
-        .card {
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            max-width: 900px;
-            width: 90%;
-            padding: 3rem;
+
+        .slide-container::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(30, 41, 59, 0.03) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+            border-radius: 50%;
         }
-        .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
+
+        .slide-container>* { position: relative; z-index: 1; }
+
+        /* 2. TYPOGRAPHY */
+        .slide-container h1, .slide-container h2, .slide-container h3 {
+            color: #0f172a;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .slide-container .slide-title {
+            font-size: 44px;
+            margin-bottom: 50px;
+            text-align: left;
             width: 100%;
-            height: 4px;
-            background: #e2e8f0;
-            z-index: 50;
+            border-left: 6px solid #1d4ed8;
+            padding-left: 25px;
+            letter-spacing: -0.02em;
         }
-        .progress-bar {
-            height: 100%;
-            background: #3b82f6;
-            transition: width 0.3s ease;
+
+        .slide-container p, .slide-container li, .slide-container .subtitle {
+            color: #475569;
+            font-size: 20px;
+            line-height: 1.6;
         }
-        .scenario-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.8;
+
+        /* 3. LAYOUTS */
+        .title-layout { text-align: center; max-width: 900px; }
+        .title-layout h1 { font-size: 84px; margin-bottom: 30px; letter-spacing: -0.04em; }
+        .title-layout .subtitle { font-size: 28px; color: #64748b; }
+
+        .content-area {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            width: 100%;
         }
+
+        .tiled-content { display: flex; gap: 30px; width: 100%; align-items: stretch; }
+        .tile {
+            background-color: #fbfcfe;
+            border: 1px solid #f1f5f9;
+            border-radius: 16px;
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .tile .icon { color: #1d4ed8; font-size: 48px; margin-bottom: 25px; }
+        .tile h3 { font-size: 26px; margin-bottom: 15px; color: #1e293b; }
+
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; align-items: center; }
+        .image-wrapper { border-radius: 20px; overflow: hidden; height: 400px; border: 1px solid #e2e8f0; }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        .highlight-numbers-layout .number {
+            font-size: 140px;
+            color: #1d4ed8;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .highlight-numbers-layout .number-label { font-size: 24px; font-weight: 700; color: #1e293b; }
+
+        .bullet-list { width: 100%; }
+        .bullet-list ul { list-style: none; padding: 0; }
+        .bullet-list li { position: relative; padding-left: 50px; margin-bottom: 30px; font-size: 22px; }
+        .bullet-list i { position: absolute; left: 0; top: 5px; color: #1d4ed8; font-size: 24px; }
+
+        .quote-layout blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #1e293b;
+            line-height: 1.4;
+            border: none;
+            padding: 0;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .quote-layout blockquote::before { content: '“'; font-size: 120px; color: #cbd5e1; position: absolute; left: -60px; top: -40px; }
+
+        .bleed-image-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 0;
+        }
+        .bleed-image-layout .content-container { padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+        .bleed-image-layout .image-container { height: 720px; }
+        .bleed-image-layout .image-container img { height: 100%; width: 100%; object-fit: cover; }
+
     </style>
 </head>
 <body>
 
-    <div class="progress-container">
-        <div id="progressBar" class="progress-bar" style="width: 8%"></div>
+<!-- Slide 1: Title Slide -->
+<div class="slide-container" id="slide1">
+    <div class="title-layout">
+        <h1>Beyond the Transaction</h1>
+        <p class="subtitle">Empowering curiosity and understanding in merchant environments</p>
     </div>
+</div>
 
-    <div id="presentation">
-        <!-- Slide 1: Title -->
-        <div class="slide active gravity-theme text-white">
-            <h1 class="text-6xl font-extrabold mb-4 text-center tracking-tight">Beyond the Transaction</h1>
-            <h2 class="text-3xl font-light text-slate-400 mb-12 text-center">Empowering curiosity and understanding in merchant environments</h2>
-            <div class="h-1.5 w-32 bg-blue-500 rounded-full"></div>
-            <p class="mt-12 text-slate-500 italic text-lg text-center">Developing the Confidence to Observe and Listen</p>
-        </div>
-
-        <!-- Slide 2: Session Goals -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-4xl font-bold text-slate-800 mb-12 border-l-4 border-blue-500 pl-6">Session Goals</h2>
-                <div class="space-y-8">
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 text-blue-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-6 shrink-0">1</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-800">Identify Environmental Friction</h3>
-                            <p class="text-slate-500 text-lg">Acquire the tools to recognize where a merchant's setup might be hindering their success.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 text-blue-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-6 shrink-0">2</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-800">Framework for Engagement</h3>
-                            <p class="text-slate-500 text-lg">Introduce low-stakes questions designed to open honest dialogue with business owners.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 text-blue-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-6 shrink-0">3</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-800">Empowerment through Observation</h3>
-                            <p class="text-slate-500 text-lg">Demonstrate how observation and curiosity serve as a foundation for support, regardless of technical expertise.</p>
-                        </div>
-                    </div>
-                </div>
+<!-- Slide 2: Session Objectives -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Session Objectives</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Identify Friction</h3>
+                <p>Equip participants with tools to recognize environmental hurdles in a merchant's setup.</p>
             </div>
-        </div>
-
-        <!-- Slide 3: Initial Reflection Activity -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-4xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-6">The Expertise Barrier</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="space-y-6">
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            Before we dive in, let's address the elephant in the room. Many of us hesitate to speak because we feel we don't know "enough."
-                        </p>
-                        <div class="bg-blue-600 text-white p-6 rounded-lg shadow-lg">
-                            <h3 class="font-bold text-white mb-2 uppercase text-xs tracking-widest">Chat Activity</h3>
-                            <p class="text-lg font-medium">Type in the chat: What industry knowledge do you feel you MUST have in order to help a customer?</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-100 p-8 rounded-xl flex flex-col justify-center">
-                        <p class="text-slate-600 italic mb-4 leading-relaxed">"For a long time, I questioned what I could even say to a merchant. It was only through training that I realized I don't need to be an expert to have a conversation."</p>
-                        <p class="text-slate-400 text-sm">— Developing the Merchant Mindset</p>
-                    </div>
-                </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-comments"></i></div>
+                <h3>Start Conversations</h3>
+                <p>Introduce a framework for low-stakes, curiosity-driven dialogue with business owners.</p>
             </div>
-        </div>
-
-        <!-- Slide 4: Natural Sharing -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-4xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-6">The Concept of Natural Sharing</h2>
-                <div class="space-y-8">
-                    <p class="text-xl text-slate-600">Consider a tool or service you genuinely believe in because it solves a problem or improves a situation.</p>
-                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 text-center">
-                        <p class="text-2xl font-semibold text-slate-800 italic mb-4">"If you saw someone struggling with the exact problem this thing solves, would you share it?"</p>
-                        <p class="text-blue-600 font-bold">Sharing the potential to make a situation better isn't a "pitch"—it's an act of service.</p>
-                    </div>
-                </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>Bridge to Help</h3>
+                <p>Foster empowerment to offer genuine support without the weight of industry expertise.</p>
             </div>
-        </div>
-
-        <!-- Slide 5: The Core Mission -->
-        <div class="slide">
-            <div class="card text-center">
-                <h2 class="text-4xl font-bold text-slate-800 mb-8 text-center">Understanding & Striving</h2>
-                <p class="text-2xl text-slate-600 mb-12 leading-relaxed max-w-2xl mx-auto">
-                    Our mission is to <strong>understand</strong> a merchant's environment and <strong>strive</strong> to see if there is a way to improve it.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-colors">
-                        <div class="text-4xl mb-4">❓</div>
-                        <h3 class="font-bold text-slate-800 mb-3 text-xl">Curiosity First</h3>
-                        <p class="text-slate-500">Seeking to learn the daily reality before suggesting change.</p>
-                    </div>
-                    <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-colors">
-                        <div class="text-4xl mb-4">📍</div>
-                        <h3 class="font-bold text-slate-800 mb-3 text-xl">Situational Awareness</h3>
-                        <p class="text-slate-500">Identifying the actual friction points where value can be added.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 6: Lesson 1 Challenge -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">Challenge: The Mismatched Solution</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="bg-amber-50 p-8 rounded-xl border border-amber-100">
-                        <h3 class="text-amber-800 font-bold mb-4">Scenario</h3>
-                        <p class="text-lg text-slate-700">A small shop uses a massive, complex POS system. The owner is proud but stressed about the price and only uses the basic functions.</p>
-                        <p class="mt-6 font-bold text-slate-800">What does the tone reveal?</p>
-                    </div>
-                    <div class="flex flex-col justify-center space-y-6">
-                        <div class="p-6 bg-slate-900 text-white rounded-xl">
-                            <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">Key Point</h3>
-                            <p class="text-xl font-light">Tone reveals the problem long before data does. Mismatched solutions create a visible weight.</p>
-                        </div>
-                        <p class="text-slate-400 text-sm">Did you need to know the price or the software specs to see the stress?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 7: Lesson 2 Challenge -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">Challenge: Visible Friction</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="bg-blue-50 p-8 rounded-xl border border-blue-100">
-                        <h3 class="text-blue-800 font-bold mb-4">Scenario</h3>
-                        <p class="text-lg text-slate-700">A busy coffee shop with a massive line. The worker is manually typing in 16-digit card numbers for every customer while cars wait.</p>
-                        <p class="mt-6 font-bold text-slate-800">Where is the friction here?</p>
-                    </div>
-                    <div class="flex flex-col justify-center space-y-6">
-                        <div class="p-6 bg-slate-900 text-white rounded-xl">
-                            <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">Key Point</h3>
-                            <p class="text-xl font-light leading-relaxed">If a process looks like a "pain in the neck," it probably is. Expertise isn't required to spot a bottleneck.</p>
-                        </div>
-                        <p class="text-slate-400 text-sm">Did you need to know interchange rates to see a frustrated employee?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 8: Lesson 3 Challenge -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">Challenge: The Feedback Loop</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="bg-green-50 p-8 rounded-xl border border-green-100">
-                        <h3 class="text-green-800 font-bold mb-4">Scenario</h3>
-                        <p class="text-lg text-slate-700">A customer complains about a processing fee on their city utility bill. You don't know the exact rates or what is considered "high."</p>
-                        <p class="mt-6 font-bold text-slate-800">What is the indicator here?</p>
-                    </div>
-                    <div class="flex flex-col justify-center space-y-6">
-                        <div class="p-6 bg-slate-900 text-white rounded-xl">
-                            <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">Key Point</h3>
-                            <p class="text-xl font-light leading-relaxed">A complaint is a symptom. You don't need to do the math to know there is a problem to solve.</p>
-                        </div>
-                        <p class="text-slate-400 text-sm">Did you need to know the utility budget to recognize a dissatisfied citizen?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 9: Expertise vs. Listening -->
-        <div class="slide bg-slate-900 text-white">
-            <h2 class="text-4xl font-bold mb-8 text-center">Listening > Industry Knowledge</h2>
-            <div class="card text-slate-800 !max-w-3xl">
-                <p class="text-xl leading-relaxed mb-6">
-                    Look back at the list of things you felt you "needed" to know at the start of this session.
-                </p>
-                <div class="bg-blue-50 p-6 rounded-lg mb-6">
-                    <p class="text-blue-900 font-semibold italic text-lg">In every scenario we just covered, not a single one required technical industry knowledge.</p>
-                </div>
-                <p class="text-slate-600 text-lg">
-                    They required:
-                </p>
-                <ul class="mt-4 space-y-2 text-slate-800 font-bold">
-                    <li>• Recognizing a need or a pain point.</li>
-                    <li>• Listening to the merchant's perspective.</li>
-                    <li>• Having the curiosity to ask, "Does it always work this way?"</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 10: Understanding what to look for -->
-        <div class="slide">
-            <div class="max-w-5xl w-full">
-                <h2 class="text-4xl font-bold text-slate-800 mb-10 text-center">Understanding what to look for</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="card !p-6 border-b-4 border-blue-500">
-                        <h3 class="font-bold mb-2 text-slate-800">Manual Processes</h3>
-                        <p class="text-sm text-slate-500">Hand-typing card numbers into systems.</p>
-                    </div>
-                    <div class="card !p-6 border-b-4 border-red-500">
-                        <h3 class="font-bold mb-2 text-slate-800">Cluttered Environments</h3>
-                        <p class="text-sm text-slate-500">Multiple screens that don't communicate.</p>
-                    </div>
-                    <div class="card !p-6 border-b-4 border-amber-500">
-                        <h3 class="font-bold mb-2 text-slate-800">Underused Solutions</h3>
-                        <p class="text-sm text-slate-500">High-cost systems used for only basic functions (Oversold).</p>
-                    </div>
-                    <div class="card !p-6 border-b-4 border-purple-500">
-                        <h3 class="font-bold mb-2 text-slate-800">Customer Feedback</h3>
-                        <p class="text-sm text-slate-500">Hearing complaints about fees or checkout difficulty.</p>
-                    </div>
-                    <div class="card !p-6 border-b-4 border-green-500">
-                        <h3 class="font-bold mb-2 text-slate-800">Operational Friction</h3>
-                        <p class="text-sm text-slate-500">Troubleshooting tech instead of leading.</p>
-                    </div>
-                    <div class="card !p-6 border-b-4 border-slate-400">
-                        <h3 class="font-bold mb-2 text-slate-800">Unique Setups</h3>
-                        <p class="text-sm text-slate-500">An opportunity to learn from the merchant.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 11: Questions -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-4xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-6">Conversational Foundations</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Curiosity</p>
-                        <p class="text-lg text-slate-800">"How does a shop like yours typically handle payments?"</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Empathy</p>
-                        <p class="text-lg text-slate-800">"I noticed you're keying that in—does that normally happen?"</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Impact</p>
-                        <p class="text-lg text-slate-800">"If you could change one thing about your checkout, what would it be?"</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Context</p>
-                        <p class="text-lg text-slate-800">"Who do you use for processing? I'm curious what shops here prefer."</p>
-                    </div>
-                </div>
-                <div class="mt-8 p-4 bg-blue-600 text-white rounded-lg text-center font-bold">
-                    Activity: Pick one question and share it with a partner. Why does this approach resonate?
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 12: Making the Connection -->
-        <div class="slide">
-            <div class="card !bg-blue-600 text-white text-center">
-                <h2 class="text-3xl font-bold mb-8 text-center w-full">Building the Bridge</h2>
-                <div class="bg-white/10 p-10 rounded-2xl border border-white/20 mb-10">
-                    <p class="text-3xl font-light italic leading-relaxed">
-                        "I work for Gravity. We focus on <strong>improving payment environments.</strong> If you're open to it, I'd love to see if we can help improve your situation."
-                    </p>
-                </div>
-                <p class="text-xl text-blue-100">
-                    If they say no, the relationship is still intact. You offered help, and they are okay.
-                </p>
-            </div>
-        </div>
-
-        <!-- Slide 13: Toolkit -->
-        <div class="slide">
-            <div class="card">
-                <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">Referral Toolkit</h2>
-                <div class="flex flex-col md:flex-row gap-12 items-center justify-center">
-                    <div class="text-center">
-                        <div class="bg-white p-4 rounded-xl shadow-lg inline-block border border-slate-200">
-                            <!-- QR Code SVG -->
-                            <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="160" height="160" fill="white"/>
-                                <path d="M20 20H50V50H20V20ZM25 25V45H45V25H25Z" fill="#1E293B"/>
-                                <path d="M110 20H140V50H110V20ZM115 25V45H135V25H115Z" fill="#1E293B"/>
-                                <path d="M20 110H50V140H20V110ZM25 115V135H45V115H25Z" fill="#1E293B"/>
-                                <rect x="30" y="30" width="10" height="10" fill="#1E293B"/>
-                                <rect x="120" y="30" width="10" height="10" fill="#1E293B"/>
-                                <rect x="30" y="120" width="10" height="10" fill="#1E293B"/>
-                                <path d="M60 20H70V30H60V20ZM80 20H100V30H80V20ZM60 40H80V50H60V40ZM90 40H100V60H90V40ZM60 60H70V90H60V60ZM80 70H100V80H80V70ZM110 60H140V70H110V60ZM110 80H120V100H110V80ZM130 80H140V140H130V80ZM60 100H80V110H60V100ZM90 100H110V110H90V100ZM60 120H70V140H60V120ZM80 120H120V130H80V120ZM80 130H90V140H80V130ZM100 130H110V140H100V130Z" fill="#1E293B"/>
-                            </svg>
-                        </div>
-                        <p class="mt-4 text-xs font-bold text-slate-400 tracking-widest uppercase">Referral Link Tool</p>
-                    </div>
-                    <div class="max-w-md space-y-6">
-                        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                            <h3 class="font-bold text-blue-900 mb-2">Observations Guide Included</h3>
-                            <p class="text-sm text-slate-600">The <strong>Understanding & Observations guide</strong> is available on the referral landing page. This serves as a mobile reference for identifying friction during merchant visits.</p>
-                        </div>
-                        <p class="text-slate-500 text-sm italic text-center">Scan the QR code to bookmark the tool.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 14: Conclusion -->
-        <div class="slide gravity-theme text-white text-center">
-            <h1 class="text-5xl font-extrabold mb-8 tracking-tight">Support through Understanding</h1>
-            <div class="h-1 w-24 bg-blue-500 rounded-full mx-auto mb-10"></div>
-            <p class="text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                Our objective is curiosity: observing environments and offering support where friction exists.
-            </p>
-            <p class="mt-16 text-slate-500 italic text-xl">"We don't need experts; we need observers who care."</p>
         </div>
     </div>
+</div>
 
-    <!-- Nav Controls -->
-    <div class="fixed bottom-10 right-10 flex space-x-3 z-50">
-        <button id="prevBtn" class="bg-white border border-slate-200 text-slate-800 px-6 py-3 rounded-full shadow-lg font-semibold hover:bg-slate-50 transition">Previous</button>
-        <button id="nextBtn" class="bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg font-semibold hover:bg-blue-700 transition">Next</button>
+<!-- Slide 3: The "Why" -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">The "Why" Behind the Training</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-wrapper" style="border-radius: 50%; width: 400px; height: 400px; margin: 0 auto;">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800" alt="Small business owner">
+            </div>
+            <div>
+                <p style="font-size: 24px; font-weight: 500; color: #1e293b;">Empowerment over Expertise</p>
+                <p>Gravity’s mission is to support the small business community. This stems from a personal realization: questioning what to say for years, then feeling empowered once the focus shifted to simple conversations.</p>
+                <p>We are here to help, and that starts with the permission to be curious.</p>
+            </div>
+        </div>
     </div>
+</div>
 
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        const progressBar = document.getElementById('progressBar');
-        const nextBtn = document.getElementById('nextBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        let currentSlide = 0;
+<!-- Slide 4: Initial Activity -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Initial Activity</h2>
+    <div class="content-area">
+        <div class="two-column highlight-numbers-layout">
+            <div style="text-align: center;">
+                <div class="number">100%</div>
+                <div class="number-label">Curiosity Based</div>
+            </div>
+            <div>
+                <h3>The Expertise Barrier</h3>
+                <p><strong>Chat Activity:</strong> In the chat, please list the things you feel you <i>need</i> to know about the industry in order to help a customer.</p>
+                <p>We will explore how none of these are actually required to recognize a need or start an impactful conversation.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-        function updateSlide() {
-            slides.forEach((s, i) => {
-                s.classList.toggle('active', i === currentSlide);
-            });
-            
-            const prog = ((currentSlide + 1) / slides.length) * 100;
-            progressBar.style.width = prog + '%';
+<!-- Slide 5: Natural Sharing -->
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">The Concept of Natural Sharing</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p style="font-size: 24px; color: #1e293b; font-weight: 700;">An Act of Service</p>
+                <p>Think of something you love that genuinely helps others. If you saw someone struggling, sharing it would be natural—not a pitch.</p>
+                <p>This is the root of the "Improvement Mindset." We share Gravity's solutions because they better a situation.</p>
+            </div>
+            <div class="image-wrapper" style="height: 450px;">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" alt="Coffee shop atmosphere">
+            </div>
+        </div>
+    </div>
+</div>
 
-            prevBtn.style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
-            nextBtn.innerText = currentSlide === slides.length - 1 ? 'Finish' : 'Next';
-        }
+<!-- Slide 6: Core Skills Needed to Help -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Core Skills to Help Merchants</h2>
+    <div class="content-area">
+        <div class="tiled-content" style="gap: 50px;">
+            <div class="tile" style="background-color: #f8fafc; border: 2px solid #e2e8f0; text-align: center;">
+                <h3 style="font-size: 32px; color: #1d4ed8;">Observation</h3>
+                <p style="font-size: 22px;">Identify visual and verbal cues of friction or dissatisfaction in the environment.</p>
+            </div>
+            <div class="tile" style="background-color: #f8fafc; border: 2px solid #e2e8f0; text-align: center;">
+                <h3 style="font-size: 32px; color: #1d4ed8;">Listening</h3>
+                <p style="font-size: 22px;">Understand the merchant’s perspective and emotional tone regarding their setup.</p>
+            </div>
+        </div>
+        <div class="quote-layout" style="margin-top: 60px; text-align: center;">
+            <blockquote>It’s not about what you know, it’s about what you notice.</blockquote>
+        </div>
+    </div>
+</div>
 
-        nextBtn.addEventListener('click', () => {
-            if (currentSlide < slides.length - 1) {
-                currentSlide++;
-                updateSlide();
-            } else {
-                alert("Session Complete.");
-            }
-        });
+<!-- Slide 7: Lesson 1 -->
+<div class="slide-container bleed-image-layout" id="slide7">
+    <div class="content-container">
+        <h2 class="slide-title">Lesson 1: Tone Reveals the Problem</h2>
+        <div class="content-area" style="align-items: flex-start; text-align: left;">
+            <p><strong>The Insight:</strong> Listen for the "Stress Shift."</p>
+            <p>A merchant may take pride in their hardware but feel the weight of its cost or complexity. Their tone will tell you they are <i>oversold</i> long before you see data sheets or price points.</p>
+            <p style="color: #1d4ed8; font-weight: 700;">Right-sizing begins with hearing the mismatch.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800" alt="POS terminal">
+    </div>
+</div>
 
-        prevBtn.addEventListener('click', () => {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlide();
-            }
-        });
+<!-- Slide 8: Lesson 2 -->
+<div class="slide-container bleed-image-layout" id="slide8">
+    <div class="content-container">
+        <h2 class="slide-title">Lesson 2: Empathy for Friction</h2>
+        <div class="content-area" style="align-items: flex-start; text-align: left;">
+            <p><strong>The Insight:</strong> Expertise is not required to see a bottleneck.</p>
+            <p>When a process slows down business and stresses staff, it creates visible friction. If it looks like a struggle, it probably is.</p>
+            <p style="color: #1d4ed8; font-weight: 700;">Empathy for the worker's reality is your bridge to a conversation.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Busy coffee shop">
+    </div>
+</div>
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') nextBtn.click();
-            if (e.key === 'ArrowLeft') prevBtn.click();
-        });
+<!-- Slide 9: Lesson 3 -->
+<div class="slide-container bleed-image-layout" id="slide9">
+    <div class="content-container">
+        <h2 class="slide-title">Lesson 3: Feedback as a Symptom</h2>
+        <div class="content-area" style="align-items: flex-start; text-align: left;">
+            <p><strong>The Insight:</strong> Complaints indicate a desire for change.</p>
+            <p>Hearing a third-party complaint (like a citizen talking about utility fees) is a clear indicator that something is wrong. You don't need to do the math to recognize a service gap.</p>
+            <p style="color: #1d4ed8; font-weight: 700;">Discovery starts by acknowledging the frustration.</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="Customer feedback">
+    </div>
+</div>
 
-        updateSlide();
-    </script>
+<!-- Slide 10: Observations Checklist -->
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">Understanding What to Look For</h2>
+    <div class="content-area">
+        <div class="tiled-content" style="flex-wrap: wrap; justify-content: center;">
+            <div class="tile" style="flex: 0 0 30%;">
+                <div class="icon" style="font-size: 32px;"><i class="fa-solid fa-keyboard"></i></div>
+                <h3 style="font-size: 20px;">Manual Entry</h3>
+                <p style="font-size: 16px;">Hand-typing card numbers into systems.</p>
+            </div>
+            <div class="tile" style="flex: 0 0 30%;">
+                <div class="icon" style="font-size: 32px;"><i class="fa-solid fa-layer-group"></i></div>
+                <h3 style="font-size: 20px;">The Graveyard</h3>
+                <p style="font-size: 16px;">Multiple disconnected screens on the counter.</p>
+            </div>
+            <div class="tile" style="flex: 0 0 30%;">
+                <div class="icon" style="font-size: 32px;"><i class="fa-solid fa-box-open"></i></div>
+                <h3 style="font-size: 20px;">Dusty Tech</h3>
+                <p style="font-size: 16px;">Expensive POS systems used for basic functions.</p>
+            </div>
+            <div class="tile" style="flex: 0 0 30%;">
+                <div class="icon" style="font-size: 32px;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3 style="font-size: 20px;">Fee Signage</h3>
+                <p style="font-size: 16px;">Taped-up signs about card minimums or fees.</p>
+            </div>
+            <div class="tile" style="flex: 0 0 30%;">
+                <div class="icon" style="font-size: 32px;"><i class="fa-solid fa-wrench"></i></div>
+                <h3 style="font-size: 20px;">Operational Friction</h3>
+                <p style="font-size: 16px;">Owners troubleshooting tech instead of leading.</p>
+            </div>
+            <div class="tile" style="flex: 0 0 30%;">
+                <div class="icon" style="font-size: 32px;"><i class="fa-solid fa-comment-dots"></i></div>
+                <h3 style="font-size: 20px;">Unique Setups</h3>
+                <p style="font-size: 16px;">Setups you haven't seen before—chance to learn.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Conversational Tools -->
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">Questions to Start Conversations</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Curiosity:</strong> "How does a shop like yours typically handle payments?"</li>
+                <li><i class="fa-solid fa-heart-pulse"></i> <strong>Empathy:</strong> "I noticed you're keying those in manually—does that normally happen?"</li>
+                <li><i class="fa-solid fa-arrow-trend-up"></i> <strong>Impact:</strong> "If you could change one thing about your checkout, what would it be?"</li>
+                <li><i class="fa-solid fa-earth-americas"></i> <strong>Context:</strong> "Who do you use for processing? I'm curious what shops here prefer."</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: Toolkit & Bridge -->
+<div class="slide-container" id="slide12">
+    <h2 class="slide-title">Bridge to Help & Toolkit</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p style="font-size: 24px; color: #1e293b; font-weight: 700;">Building the Bridge</p>
+                <p style="font-style: italic; font-size: 22px; margin-bottom: 30px;">"I work for Gravity. We focus on improving payment environments. If you're open to it, I'd love to see if we can help improve your situation."</p>
+                <p><strong>Mobile Cheat Sheet:</strong> Scan to bookmark the Referral Tool (now includes the Observations Guide).</p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; background: #f8fafc; padding: 20px; border-radius: 20px;">
+                <!-- SVG QR Code -->
+                <svg width="200" height="200" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="160" height="160" fill="white"/>
+                    <path d="M20 20H50V50H20V20ZM25 25V45H45V25H25Z" fill="#1E293B"/>
+                    <path d="M110 20H140V50H110V20ZM115 25V45H135V25H115Z" fill="#1E293B"/>
+                    <path d="M20 110H50V140H20V110ZM25 115V135H45V115H25Z" fill="#1E293B"/>
+                    <rect x="30" y="30" width="10" height="10" fill="#1E293B"/>
+                    <rect x="120" y="30" width="10" height="10" fill="#1E293B"/>
+                    <rect x="30" y="120" width="10" height="10" fill="#1E293B"/>
+                    <path d="M60 20H70V30H60V20ZM80 20H100V30H80V20ZM60 40H80V50H60V40ZM90 40H100V60H90V40ZM60 60H70V90H60V60ZM80 70H100V80H80V70ZM110 60H140V70H110V60ZM110 80H120V100H110V80ZM130 80H140V140H130V80ZM60 100H80V110H60V100ZM90 100H110V110H90V100ZM60 120H70V140H60V120ZM80 120H120V130H80V120ZM80 130H90V140H80V130ZM100 130H110V140H100V130Z" fill="#1E293B"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
