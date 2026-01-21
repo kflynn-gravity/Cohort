@@ -38,20 +38,6 @@
             width: 90%;
             padding: 3rem;
         }
-        .notes-panel {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border-top: 1px solid #e2e8f0;
-            padding: 1rem 2rem;
-            max-height: 120px;
-            overflow-y: auto;
-            font-size: 0.95rem;
-            color: #475569;
-            z-index: 40;
-        }
         .progress-container {
             position: fixed;
             top: 0;
@@ -66,6 +52,11 @@
             background: #3b82f6;
             transition: width 0.3s ease;
         }
+        .scenario-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -78,216 +69,182 @@
         <!-- Slide 1: Title -->
         <div class="slide active gravity-theme text-white">
             <h1 class="text-6xl font-extrabold mb-4 text-center tracking-tight">Beyond the Transaction</h1>
-            <h2 class="text-3xl font-light text-slate-400 mb-12">The Art of Improving Situations</h2>
+            <h2 class="text-3xl font-light text-slate-400 mb-12 text-center">Empowering curiosity and understanding in merchant environments</h2>
             <div class="h-1.5 w-32 bg-blue-500 rounded-full"></div>
             <p class="mt-12 text-slate-500 italic">45-Minute Cohort Session</p>
-            
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> Start by lowering the pressure. We aren't here to learn how to sell; we are here to learn how to identify where we can help. Curiosity is our primary tool.
-            </div>
         </div>
 
         <!-- Slide 2: Icebreaker -->
         <div class="slide">
             <div class="card">
-                <h2 class="text-4xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-6">The "Natural Sharing" Icebreaker</h2>
+                <h2 class="text-4xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-6">The "Natural Sharing" Concept</h2>
                 <div class="space-y-6 text-xl text-slate-600">
-                    <p>Think of a product, service, or local spot you genuinely love because it makes your life better.</p>
+                    <p>Think of a service, tool, or local business you genuinely believe in because it solves a problem or improves a situation.</p>
                     <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
-                        <p class="font-semibold text-slate-800 italic">"If you saw a friend struggling with the problem this thing solves, would you tell them about it?"</p>
+                        <p class="font-semibold text-slate-800 italic">"If you saw someone struggling with the exact problem this thing solves, would you share it with them?"</p>
                     </div>
-                    <p class="text-blue-600 font-medium">Why? Because you want to improve their situation.</p>
+                    <p class="text-blue-600 font-medium">This instinct is at the heart of our work. It isn't about selling; it's about the potential to make a situation better.</p>
                 </div>
-            </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> We share things we believe in because we want to help. That is the "Gravity Heart." This isn't sales; it's being a helpful human.
             </div>
         </div>
 
-        <!-- Slide 3: Philosophy -->
+        <!-- Slide 3: The Core Mission -->
         <div class="slide">
             <div class="card text-center">
-                <h2 class="text-4xl font-bold text-slate-800 mb-12">Improving > Saving</h2>
-                <div class="flex flex-col md:flex-row justify-around items-center gap-8">
-                    <div class="p-8 bg-slate-100 rounded-2xl w-full md:w-1/3">
-                        <span class="text-4xl block mb-4">💵</span>
-                        <h3 class="font-bold text-slate-800">Price</h3>
-                        <p class="text-slate-500">A metric we track.</p>
+                <h2 class="text-4xl font-bold text-slate-800 mb-8">The Goal: Understanding & Improving</h2>
+                <p class="text-2xl text-slate-600 mb-10 leading-relaxed">
+                    We aren't here to make assumptions or guaranteed claims. Our mission is to <strong>understand</strong> a merchant's environment and see if there is a way to <strong>improve it</strong>.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                    <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                        <h3 class="font-bold text-slate-800 mb-3">Curiosity First</h3>
+                        <p class="text-slate-500">Asking questions to learn what their day-to-day looks like.</p>
                     </div>
-                    <div class="text-4xl text-slate-300">vs</div>
-                    <div class="p-8 bg-blue-600 text-white rounded-2xl w-full md:w-1/3 shadow-xl transform scale-105">
-                        <span class="text-4xl block mb-4">🛡️</span>
-                        <h3 class="font-bold">Situation</h3>
-                        <p class="text-blue-100">The goal we achieve.</p>
+                    <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                        <h3 class="font-bold text-slate-800 mb-3">Situational Awareness</h3>
+                        <p class="text-slate-500">Identifying friction points that might be holding them back.</p>
                     </div>
                 </div>
-                <p class="mt-12 text-slate-600 text-lg">
-                    We can't always save everyone money, but we can almost always <strong>improve their situation</strong> through support, honesty, and right-sized tech.
-                </p>
-            </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> Discuss: Sometimes the "cheapest" option is a nightmare for support. A better situation might mean more expensive software that actually works.
             </div>
         </div>
 
-        <!-- Slide 4: Board Game Shop -->
+        <!-- Slide 4: Case Study - The Specialized Shop -->
         <div class="slide">
             <div class="card">
-                <h2 class="text-3xl font-bold text-slate-800 mb-6">Case Study: The Board Game Shop</h2>
+                <div class="scenario-icon">🎲</div>
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Scenario: The Complex Point of Sale</h2>
                 <div class="flex flex-col md:flex-row gap-10">
                     <div class="md:w-1/2">
-                        <p class="text-slate-600 mb-4">Dan visits a small board game shop with a fancy, high-tech POS system.</p>
-                        <div class="bg-amber-50 p-4 rounded border-l-4 border-amber-400 mb-4">
+                        <p class="text-slate-600 mb-6 text-lg">A small shop uses an incredibly advanced, high-tech payment system. The owner is proud of its capabilities but visibly stressed about the cost and underutilization.</p>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
+                            <p class="font-semibold text-blue-800">The Discovery Question:</p>
                             <p class="italic text-slate-700">"How does a shop like yours typically handle payments?"</p>
                         </div>
-                        <p class="text-slate-600">The owner was proud of the tech, but his <strong>tone shifted</strong> when discussing cost vs. actual usage.</p>
                     </div>
-                    <div class="md:w-1/2 bg-slate-900 text-white p-6 rounded-xl">
-                        <h3 class="text-blue-400 font-bold mb-4">The Lesson:</h3>
-                        <p class="text-lg">You don't need to be a technical expert to hear a "Tone Shift."</p>
-                        <hr class="my-4 border-slate-700">
-                        <p class="text-slate-400 text-sm">Root Problem: Over-Selled.<br>Solution: Right-Sizing.</p>
+                    <div class="md:w-1/2 bg-slate-900 text-white p-6 rounded-xl flex flex-col justify-center">
+                        <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">The Lesson</h3>
+                        <p class="text-xl font-light">The merchant's tone reveals the problem long before the data does. You don't need to be an expert to recognize a mismatched solution.</p>
                     </div>
                 </div>
             </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> He was proud of the Ferrari, but he only needed to drive to the grocery store. You identified the problem just by listening to his feelings about the price.
-            </div>
         </div>
 
-        <!-- Slide 5: Coffee Shop -->
+        <!-- Slide 5: Case Study - The Bottleneck -->
         <div class="slide">
             <div class="card">
-                <h2 class="text-3xl font-bold text-slate-800 mb-6">Case Study: The Coffee Shop</h2>
+                <div class="scenario-icon">☕</div>
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Scenario: The Manual Entry Bottleneck</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-blue-50 p-6 rounded-xl">
-                        <h3 class="font-bold text-blue-800 mb-2">The Observation</h3>
-                        <p class="text-slate-700 italic text-lg">"12 cars in line. High-tech iPad on the counter. The worker is manually typing in 16-digit card numbers."</p>
+                    <div class="bg-slate-50 p-8 rounded-xl">
+                        <p class="text-slate-700 text-lg mb-4 leading-relaxed">A coffee shop with a massive line of cars. The employee has modern hardware but is manually typing in every 16-digit card number.</p>
+                        <p class="text-blue-600 font-bold">The Reality:</p>
+                        <p class="text-slate-500">This is a friction point for the employee, the business, and the customer.</p>
                     </div>
                     <div class="flex flex-col justify-center">
-                        <h3 class="font-bold text-slate-800 mb-4 text-xl">The "Human" Question:</h3>
-                        <p class="text-2xl text-blue-600 font-semibold mb-6">"Does that normally happen? That looks like a pain in the neck."</p>
-                        <p class="text-slate-500 italic">You don't need to know interchange rates to see a bottleneck.</p>
+                        <h3 class="font-bold text-slate-800 mb-4 text-xl">The Observation:</h3>
+                        <p class="text-2xl text-blue-600 font-semibold mb-6 italic leading-snug">"I noticed you're keying those in manually—does that normally happen?"</p>
+                        <p class="text-slate-600">Empathy for a difficult situation is often the most effective bridge to a meaningful conversation.</p>
                     </div>
                 </div>
             </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> Tell the story. Empathy for the worker's stress is your lead-in. We aren't technical inspectors; we are "Pain in the Neck" detectors.
-            </div>
         </div>
 
-        <!-- Slide 6: Notice List -->
+        <!-- Slide 6: Understanding what to look for -->
         <div class="slide">
             <div class="max-w-5xl w-full">
-                <h2 class="text-4xl font-bold text-slate-800 mb-10 text-center">Training Your Eyes</h2>
+                <h2 class="text-4xl font-bold text-slate-800 mb-10 text-center">Understanding what to look for</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="card !p-6 border-b-4 border-blue-500">
-                        <h3 class="font-bold mb-2">Manual Entry</h3>
-                        <p class="text-sm text-slate-500">Hand-typing card numbers into a terminal or tablet.</p>
+                        <h3 class="font-bold mb-2">Manual Processes</h3>
+                        <p class="text-sm text-slate-500">Hand-typing card numbers into systems. It slows down business and creates errors.</p>
                     </div>
                     <div class="card !p-6 border-b-4 border-red-500">
-                        <h3 class="font-bold mb-2">The Graveyard</h3>
-                        <p class="text-sm text-slate-500">Multiple tablets or terminals cluttering the counter.</p>
+                        <h3 class="font-bold mb-2">Cluttered Environments</h3>
+                        <p class="text-sm text-slate-500">Multiple tablets or screens on the counter that don't talk to each other.</p>
                     </div>
                     <div class="card !p-6 border-b-4 border-amber-500">
-                        <h3 class="font-bold mb-2">Dusty Tech</h3>
-                        <p class="text-sm text-slate-500">Expensive POS systems used only as simple calculators.</p>
+                        <h3 class="font-bold mb-2">Underused Solutions</h3>
+                        <p class="text-sm text-slate-500">High-cost systems being used for only basic functions. A sign of being over-sold.</p>
                     </div>
                     <div class="card !p-6 border-b-4 border-purple-500">
-                        <h3 class="font-bold mb-2">Warning Signs</h3>
-                        <p class="text-sm text-slate-500">Taped-up notes about "Credit Card Fees" or "Minimums."</p>
+                        <h3 class="font-bold mb-2">Direct Pain Points</h3>
+                        <p class="text-sm text-slate-500">Taped-up signs about card minimums or extra fees to cover processing costs.</p>
                     </div>
                     <div class="card !p-6 border-b-4 border-green-500">
-                        <h3 class="font-bold mb-2">Bottlenecks</h3>
-                        <p class="text-sm text-slate-500">Owners stuck behind the counter doing tech troubleshooting.</p>
+                        <h3 class="font-bold mb-2">Operational Friction</h3>
+                        <p class="text-sm text-slate-500">Business owners stuck troubleshooting technology instead of running their shop.</p>
                     </div>
                     <div class="card !p-6 border-b-4 border-slate-400">
-                        <h3 class="font-bold mb-2">The Hidden Gem</h3>
-                        <p class="text-sm text-slate-500">Seeing a product you don't recognize. Curiosity opportunity!</p>
+                        <h3 class="font-bold mb-2">Unique Setups</h3>
+                        <p class="text-sm text-slate-500">Recognizing a setup you haven't seen before is a chance to learn from the merchant.</p>
                     </div>
                 </div>
             </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> These are visual cues. Train your brain to notice these before you ever say a word.
-            </div>
         </div>
 
-        <!-- Slide 7: Ask List -->
+        <!-- Slide 7: Questions to ask -->
         <div class="slide">
             <div class="card">
-                <h2 class="text-4xl font-bold text-slate-800 mb-10">Training Your Voice</h2>
+                <h2 class="text-4xl font-bold text-slate-800 mb-10">Questions to ask</h2>
                 <div class="space-y-4">
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Low-Stakes Opener</p>
-                        <p class="text-lg text-slate-800">"How does a shop like yours typically handle payments?"</p>
+                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Open Curiosity</p>
+                        <p class="text-xl text-slate-800">"How does a shop like yours typically handle payments?"</p>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Observation</p>
-                        <p class="text-lg text-slate-800">"I noticed you're keying that in—does that normally happen?"</p>
+                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Specific Observation</p>
+                        <p class="text-xl text-slate-800">"I noticed you're keying that in—does that normally happen?"</p>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Pain Probe</p>
-                        <p class="text-lg text-slate-800">"If you could change one thing about your checkout, what would it be?"</p>
+                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Impact Check</p>
+                        <p class="text-xl text-slate-800">"If you could change one thing about your checkout, what would it be?"</p>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
-                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Direct Curiosity</p>
-                        <p class="text-lg text-slate-800">"Who do you use for processing? I'm curious what shops here prefer."</p>
+                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:bg-blue-50 transition">
+                        <p class="text-blue-600 font-bold text-xs uppercase mb-1">Market Context</p>
+                        <p class="text-xl text-slate-800">"Who do you use for processing? I'm curious what shops here prefer."</p>
                     </div>
                 </div>
-            </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> There are no wrong answers here. If they say it's great, we're happy for them!
             </div>
         </div>
 
-        <!-- Slide 8: The Bridge -->
+        <!-- Slide 8: Making the Connection -->
         <div class="slide">
             <div class="card !bg-blue-600 text-white text-center">
-                <h2 class="text-3xl font-bold mb-8">Building the Bridge</h2>
-                <p class="text-sm uppercase font-bold text-blue-200 mb-6">The Script (Natural & Sincere):</p>
+                <h2 class="text-3xl font-bold mb-8">Making the Connection</h2>
+                <p class="text-sm uppercase font-bold text-blue-200 mb-6">A Sincere Approach:</p>
                 <div class="bg-white/10 p-10 rounded-2xl border border-white/20">
-                    <p class="text-2xl font-light italic leading-relaxed">
-                        "The reason I ask is I work for <strong>Gravity</strong>. We focus on making sure shops like yours aren't paying for tech they don't use. I'd love to see if we can make your situation a bit better."
+                    <p class="text-3xl font-light italic leading-relaxed">
+                        "I work for Gravity. We focus on <strong>improving payment environments</strong>. If you're open to it, I'd love to see if we can help improve your situation."
                     </p>
                 </div>
-                <p class="mt-8 text-blue-100 italic">"If they say no, the relationship is still intact. You offered help, and they are okay."</p>
-            </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> Remind them that the "Bridge" is an invitation, not a trap. We are here to help, not to push.
+                <p class="mt-10 text-blue-100 text-xl">
+                    If they say no, the relationship is still intact. You offered help, and they are okay.
+                </p>
             </div>
         </div>
 
         <!-- Slide 9: Digital Toolkit -->
         <div class="slide">
             <div class="card text-center">
-                <h2 class="text-3xl font-bold text-slate-800 mb-10">Your Digital Toolkit</h2>
-                <div class="border-2 border-dashed border-slate-200 p-8 rounded-2xl mb-8">
+                <h2 class="text-3xl font-bold text-slate-800 mb-10 text-center">Your Referral Toolkit</h2>
+                <div class="border-2 border-dashed border-slate-200 p-8 rounded-2xl mb-8 inline-block px-12">
                     <p class="text-slate-400 mb-2">Referral Link Generator</p>
-                    <p class="text-blue-600 font-mono text-xl">gravitypayments.com/referral-link-generator/</p>
+                    <p class="text-blue-600 font-mono text-2xl">gravitypayments.com/referral-link-generator/</p>
                 </div>
-                <div class="bg-blue-50 p-6 rounded-xl text-slate-700">
-                    <p><strong>Coming Soon:</strong> We're adding our "Notice & Ask" guide directly to this page for quick mobile access while you're out in the community.</p>
+                <div class="bg-blue-50 p-8 rounded-xl text-slate-700 max-w-2xl mx-auto">
+                    <p class="text-lg">We are working on adding the <strong>Understanding & Observations</strong> guide directly to this page for quick mobile reference.</p>
                 </div>
-            </div>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> Talk about the collaboration with Marketing. We want this link to be a tool that helps them have better conversations.
             </div>
         </div>
 
-        <!-- Slide 10: Challenge -->
-        <div class="slide active gravity-theme text-white text-center">
-            <h2 class="text-4xl font-bold mb-10">The "Sight-Only" Challenge</h2>
-            <div class="bg-white/10 p-12 rounded-3xl backdrop-blur-sm border border-white/10 max-w-xl mx-auto">
-                <ol class="text-left space-y-6 text-xl">
-                    <li class="flex items-center"><span class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">1</span> Visit 2 local shops this week.</li>
-                    <li class="flex items-center"><span class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">2</span> Identify ONE "Pain in the Neck."</li>
-                    <li class="flex items-center"><span class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">3</span> Share it in our Slack channel!</li>
-                </ol>
-            </div>
-            <p class="mt-12 text-slate-400 italic">"We don't need experts; we need observers who care."</p>
-            <div class="notes-panel">
-                <strong>Facilitator Notes:</strong> Final wrap-up. Give them permission to fail or to just be curious. Next session, we'll talk about what they saw.
-            </div>
+        <!-- Slide 10: Conclusion -->
+        <div class="slide gravity-theme text-white text-center">
+            <h1 class="text-5xl font-extrabold mb-8 tracking-tight">Focus on Understanding</h1>
+            <div class="h-1 w-24 bg-blue-500 rounded-full mx-auto mb-10"></div>
+            <p class="text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                Take the pressure off yourself. Your only job is to be curious, observe the environment, and offer help where it's needed.
+            </p>
+            <p class="mt-16 text-slate-500 italic text-xl">"We don't need experts; we need observers who care."</p>
         </div>
     </div>
 
@@ -309,11 +266,9 @@
                 s.classList.toggle('active', i === currentSlide);
             });
             
-            // Progress
             const prog = ((currentSlide + 1) / slides.length) * 100;
             progressBar.style.width = prog + '%';
 
-            // Buttons
             prevBtn.style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
             nextBtn.innerText = currentSlide === slides.length - 1 ? 'Finish' : 'Next';
         }
@@ -323,7 +278,7 @@
                 currentSlide++;
                 updateSlide();
             } else {
-                alert("Session Complete! Good luck with your first run, Dan!");
+                alert("Session Complete.");
             }
         });
 
@@ -334,7 +289,6 @@
             }
         });
 
-        // Key support
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') nextBtn.click();
             if (e.key === 'ArrowLeft') prevBtn.click();
