@@ -9,482 +9,502 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-/* 1. BRAND PALETTE & SETUP */
-:root {
-    --gravity-lime: #91C73D;
-    --gravity-navy: #253750;
-    --gravity-green: #519D18;
-    --gravity-teal: #29A59C;
-    --gravity-blue: #107AB0;
-    --gravity-purple: #545DA9;
-    --bg-light: #f4f7f9;
-}
+        :root {
+            --gravity-lime: #91C73D;
+            --gravity-navy: #253750;
+            --gravity-green: #519D18;
+            --gravity-teal: #29A59C;
+            --gravity-blue: #107AB0;
+            --gravity-purple: #545DA9;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+        }
 
-* {
-  box-sizing: border-box;
-}
+        * { box-sizing: border-box; }
+        body {
+            background-color: #D1D5DB;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'DM Sans', sans-serif;
+            overflow: hidden;
+        }
 
-p {
-  margin: 0;
-  margin-bottom: 15px;
-}
+        /* Presentation Container */
+        #presentation-wrapper {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            background-color: #fff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+        }
 
-body {
-  background-color: #d1d5db;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-  margin: 0;
-  min-height: 100vh;
-  padding: 20px 0;
-  place-items: center;
-}
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 80px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            animation: fadeIn 0.4s ease-out;
+        }
 
-.slide-container {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  font-family: 'DM Sans', sans-serif;
-  height: 720px;
-  justify-content: center;
-  overflow: hidden;
-  padding: 60px;
-  position: relative;
-  width: 1280px;
-}
+        .slide.active { display: flex; }
 
-/* BACKGROUND STYLING */
-.slide-container::before {
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-  background-image: radial-gradient(circle at 100% 0%, rgba(145, 199, 61, 0.1) 0%, transparent 50%);
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.slide-container>* {
-  position: relative;
-  z-index: 1;
-}
+        /* Background Decorations */
+        .slide::before {
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            background-image: radial-gradient(circle at 100% 0%, rgba(145, 199, 61, 0.07) 0%, transparent 40%);
+            pointer-events: none;
+        }
 
-/* 2. CONSISTENT TYPOGRAPHY */
-.slide-container h1,
-.slide-container h2,
-.slide-container h3 {
-  color: var(--gravity-navy);
-  font-weight: 700;
-  font-family: 'Merriweather', serif;
-  margin: 0;
-}
+        .slide > * { position: relative; z-index: 1; }
 
-.slide-container h1 {
-  font-size: 80px;
-  line-height: 1.1;
-  letter-spacing: -2px;
-}
+        /* Typography & Objective Elements */
+        .context-tag {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gravity-blue);
+            margin-bottom: 12px;
+            display: inline-block;
+            border-bottom: 2px solid var(--gravity-lime);
+        }
 
-.slide-container .slide-title {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  text-align: left;
-  width: 100%;
-  color: var(--gravity-navy);
-  border-left: 10px solid var(--gravity-lime);
-  padding-left: 25px;
-}
+        h1 {
+            font-size: 84px;
+            line-height: 1;
+            letter-spacing: -3px;
+            color: var(--gravity-navy);
+            margin: 0;
+        }
 
-.slide-container p,
-.slide-container li,
-.slide-container .subtitle {
-  color: #334155;
-  font-size: 22px;
-  line-height: 1.6;
-}
+        .slide-title {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: left;
+            width: 100%;
+            color: var(--gravity-navy);
+            margin-bottom: 40px;
+        }
 
-.slide-container .subtitle {
-  font-size: 32px;
-  margin: 20px auto;
-  color: #475569;
-}
+        p, li, .subtitle {
+            color: #475569;
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-.slide-container .content-area {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
-  width: 100%;
-}
+        .subtitle { font-size: 32px; color: #475569; text-align: center; }
 
-/* 3. LAYOUT DEFINITIONS */
-.title-layout {
-  text-align: center;
-  max-width: 1000px;
-}
+        /* Layout Utilities */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            width: 100%;
+        }
 
-.two-column {
-  align-items: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  width: 100%;
-}
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            width: 100%;
+            align-items: center;
+        }
 
-.image-wrapper {
-  border: 1px solid var(--gravity-navy);
-  border-radius: 12px;
-  height: 450px;
-  overflow: hidden;
-  width: 100%;
-}
+        .tiled-content {
+            display: flex;
+            gap: 24px;
+            width: 100%;
+            align-items: stretch;
+        }
 
-.image-wrapper img {
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
+        .tile {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
 
-.rounded-image-layout .image-wrapper {
-  border-radius: 50%;
-  height: 400px;
-  width: 400px;
-  margin: 0 auto;
-}
+        .tile::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--gravity-lime);
+        }
 
-.tiled-content {
-  display: flex;
-  gap: 30px;
-  width: 100%;
-  align-items: stretch;
-}
+        .tile .icon { color: var(--gravity-navy); font-size: 32px; margin-bottom: 24px; }
+        .tile h3 { font-size: 24px; margin: 0 0 16px 0; }
 
-.tile {
-  background-color: var(--bg-light);
-  border-radius: 12px;
-  padding: 35px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 6px solid var(--gravity-lime);
-}
+        .image-wrapper {
+            border-radius: 4px;
+            height: 480px;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
 
-.tile .icon {
-  color: var(--gravity-blue);
-  font-size: 40px;
-  margin-bottom: 20px;
-}
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
-.tile h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-  font-family: 'DM Sans', sans-serif;
-}
+        blockquote {
+            font-family: 'Merriweather', serif;
+            font-size: 44px;
+            font-style: italic;
+            color: var(--gravity-navy);
+            line-height: 1.4;
+            text-align: center;
+            margin: 0;
+            padding: 0 40px;
+        }
 
-.highlight-numbers-layout .number {
-  color: var(--gravity-lime);
-  font-size: 140px;
-  font-weight: 700;
-  font-family: 'Merriweather', serif;
-  line-height: 1;
-}
+        .bleed-image-layout {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            padding: 0;
+        }
 
-.bullet-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+        .bleed-image-layout .content-container {
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.bullet-list li {
-  position: relative;
-  padding-left: 50px;
-  margin-bottom: 25px;
-  font-size: 24px;
-}
+        .bleed-image-layout .image-container { height: 720px; }
+        .bleed-image-layout .image-container img { height: 100%; width: 100%; object-fit: cover; }
 
-.bullet-list i {
-  color: var(--gravity-teal);
-  font-size: 28px;
-  left: 0;
-  position: absolute;
-  top: 5px;
-}
+        .highlight-box {
+            background: var(--gravity-navy);
+            color: white;
+            padding: 40px;
+            border-radius: 4px;
+        }
+        .highlight-box h3 { color: var(--gravity-lime); margin: 0 0 10px 0; text-transform: uppercase; font-size: 14px; letter-spacing: 0.1em; }
+        .highlight-box p { color: #CBD5E1; margin: 0; font-size: 20px; }
 
-.quote-layout blockquote {
-  font-family: 'Merriweather', serif;
-  font-size: 46px;
-  font-style: italic;
-  color: var(--gravity-navy);
-  line-height: 1.3;
-  text-align: center;
-  margin: 0;
-  position: relative;
-}
+        .indicator-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
 
-.bleed-image-layout {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  padding: 0;
-  align-items: start;
-}
+        .indicator-item {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+        }
+        .indicator-item i { color: var(--gravity-lime); margin-bottom: 12px; font-size: 20px; }
+        .indicator-item h3 { font-size: 18px; margin: 0 0 8px 0; color: var(--gravity-navy); }
+        .indicator-item p { font-size: 16px; margin: 0; color: #475569; }
 
-.bleed-image-layout .content-container {
-  padding: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
+        .bullet-list ul { list-style: none; padding: 0; margin: 0; }
+        .bullet-list li { position: relative; padding-left: 50px; margin-bottom: 25px; font-size: 24px; }
+        .bullet-list i { position: absolute; left: 0; top: 6px; color: var(--gravity-blue); font-size: 28px; }
 
-.bleed-image-layout .image-container {
-  height: 720px;
-  width: 100%;
-}
+        /* Navigation Controls */
+        .nav-controls {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
 
-.bleed-image-layout img.bleed-image-side {
-  height: 720px;
-  width: 100%;
-  object-fit: cover;
-}
+        .nav-btn {
+            background: var(--gravity-navy);
+            color: white;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.2s;
+            opacity: 0.8;
+        }
+
+        .nav-btn:hover { background: var(--gravity-blue); opacity: 1; }
+        .progress-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: var(--gravity-lime);
+            transition: width 0.3s ease;
+            z-index: 101;
+        }
     </style>
 </head>
 <body>
 
-<!-- Slide 1: Title Slide -->
-<div class="slide-container" id="slide1">
-    <div class="title-layout">
-        <!-- Space reserved for logo -->
-        <div style="height: 100px; margin-bottom: 40px;"></div>
-        <h1 style="color: var(--gravity-navy);">The Art of Noticing</h1>
-        <p class="subtitle">Empowering curiosity and understanding in merchant environments</p>
-    </div>
-</div>
-
-<!-- Slide 2: Session Objectives -->
-<div class="slide-container" id="slide2">
-    <h2 class="slide-title">Session Objectives</h2>
-    <div class="content-area">
-        <div class="tiled-content">
-            <div class="tile">
-                <div class="icon"><i class="fa-solid fa-eye"></i></div>
-                <h3>Identify Friction</h3>
-                <p>Equip participants with tools to recognize environmental hurdles in a merchant's setup.</p>
-            </div>
-            <div class="tile">
-                <div class="icon" style="color: var(--gravity-teal);"><i class="fa-solid fa-comments"></i></div>
-                <h3>Engage with Ease</h3>
-                <p>Introduce a framework for low-stakes, curiosity-driven dialogue with business owners.</p>
-            </div>
-            <div class="tile">
-                <div class="icon" style="color: var(--gravity-purple);"><i class="fa-solid fa-handshake"></i></div>
-                <h3>Bridge to Support</h3>
-                <p>Foster empowerment to offer genuine help without the weight of industry expertise.</p>
-            </div>
+<div id="presentation-wrapper">
+    <div class="progress-indicator" id="progress"></div>
+    
+    <!-- Slide 1: Title -->
+    <div class="slide active">
+        <div class="title-layout">
+            <span class="context-tag">COHORT SESSION</span>
+            <h1>The Art of Noticing</h1>
+            <p class="subtitle" style="max-width: 800px; margin: 30px auto;">Empowering curiosity and understanding in merchant environments.</p>
         </div>
     </div>
-</div>
 
-<!-- Slide 3: The Why -->
-<div class="slide-container" id="slide3">
-    <h2 class="slide-title">The "Why" Behind the Training</h2>
-    <div class="content-area">
-        <div class="two-column rounded-image-layout">
-            <div class="image-wrapper" style="border-color: var(--gravity-lime);">
-                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800" alt="Small business owner smiling">
-            </div>
-            <div>
-                <h3 style="color: var(--gravity-blue);">Empowerment over Expertise</h3>
-                <p>Gravity’s mission is to support the small business community. This stems from a personal journey: questioning what to say for years, then feeling empowered once the focus shifted to simple conversations.</p>
-                <p>We are here to help, and that starts with the permission to be curious.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 4: Initial Activity -->
-<div class="slide-container" id="slide4">
-    <h2 class="slide-title">Initial Reflections</h2>
-    <div class="content-area">
-        <div class="two-column highlight-numbers-layout">
-            <div style="text-align: center;">
-                <div class="number">?</div>
-                <div class="number-label" style="color: var(--gravity-navy);">Industry Knowledge</div>
-            </div>
-            <div>
-                <h3>Chat Activity</h3>
-                <p>In the chat, please list the things you feel you <strong>must know</strong> about the payments industry in order to help a customer.</p>
-                <p>Think about the technical details, pricing models, or hardware specs you currently feel are necessary before starting a conversation.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 5: Natural Sharing -->
-<div class="slide-container" id="slide5">
-    <h2 class="slide-title">The Concept of Natural Sharing</h2>
-    <div class="content-area">
-        <div class="two-column">
-            <div>
-                <p>Think of something you love that genuinely helps others. If you saw someone struggling, sharing it would be natural—not a pitch.</p>
-                <div style="background-color: var(--bg-light); padding: 30px; border-radius: 12px; margin-top: 20px; border-left: 6px solid var(--gravity-lime);">
-                    <p style="font-size: 26px; color: var(--gravity-navy); font-weight: 700; margin: 0;">An Act of Service</p>
-                    <p style="margin-top: 10px;">This is the root of the "Improvement Mindset." We share Gravity's solutions because they better a situation.</p>
+    <!-- Slide 2: Objectives -->
+    <div class="slide">
+        <h2 class="slide-title"><span class="context-tag">GOALS</span><br>Session Objectives</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Identify Friction</h3>
+                    <p>Equip participants with tools to recognize environmental hurdles in a merchant's setup.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon" style="color: var(--gravity-teal);"><i class="fa-solid fa-comments"></i></div>
+                    <h3>Engage with Ease</h3>
+                    <p>Introduce a framework for low-stakes, curiosity-driven dialogue with business owners.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon" style="color: var(--gravity-blue);"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>Bridge to Support</h3>
+                    <p>Foster empowerment to offer genuine help without the weight of industry expertise.</p>
                 </div>
             </div>
-            <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" alt="Coffee shop atmosphere">
-            </div>
         </div>
     </div>
-</div>
 
-<!-- Slide 6: Core Skills -->
-<div class="slide-container" id="slide6">
-    <h2 class="slide-title">Skills Needed to Help</h2>
-    <div class="content-area">
-        <div class="tiled-content" style="gap: 50px;">
-            <div class="tile" style="text-align: center; border-color: var(--gravity-navy);">
-                <h3 style="color: var(--gravity-navy);">Observation</h3>
-                <p>Identify visual and verbal cues of friction or dissatisfaction in the environment.</p>
-            </div>
-            <div class="tile" style="text-align: center; border-color: var(--gravity-navy);">
-                <h3 style="color: var(--gravity-navy);">Listening</h3>
-                <p>Understand the merchant’s perspective and emotional tone regarding their setup.</p>
-            </div>
-        </div>
-        <div class="quote-layout" style="margin-top: 60px;">
-            <blockquote style="color: var(--gravity-blue);">"It’s not about what you know, it’s about what you notice."</blockquote>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 7: Lesson 1 -->
-<div class="slide-container bleed-image-layout" id="slide7">
-    <div class="content-container">
-        <h2 class="slide-title">Lesson 1: Tone Reveals</h2>
-        <p><strong>Insight: Listen for the "Stress Shift."</strong></p>
-        <p>A merchant may take pride in their hardware but feel the weight of its cost or complexity. Their tone will tell you they are <strong>oversold</strong> long before you see a single data sheet.</p>
-        <p style="font-weight: 700; color: var(--gravity-blue);">Right-sizing begins with hearing the mismatch.</p>
-    </div>
-    <div class="image-container">
-        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800" alt="POS terminal">
-    </div>
-</div>
-
-<!-- Slide 8: Lesson 2 -->
-<div class="slide-container bleed-image-layout" id="slide8">
-    <div class="content-container">
-        <h2 class="slide-title" style="border-color: var(--gravity-teal);">Lesson 2: Friction Empathy</h2>
-        <p><strong>Insight: Expertise is not required to see a bottleneck.</strong></p>
-        <p>When a process slows down business and stresses staff, it creates visible friction. If it looks like a pain in the neck, it <strong>probably is.</strong></p>
-        <p style="font-weight: 700; color: var(--gravity-teal);">Empathy for the worker's reality is your bridge to a conversation.</p>
-    </div>
-    <div class="image-container">
-        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Busy coffee shop queue">
-    </div>
-</div>
-
-<!-- Slide 9: Lesson 3 -->
-<div class="slide-container bleed-image-layout" id="slide9">
-    <div class="content-container">
-        <h2 class="slide-title" style="border-color: var(--gravity-purple);">Lesson 3: Symptoms</h2>
-        <p><strong>Insight: Complaints indicate a desire for change.</strong></p>
-        <p>Hearing a third-party complaint (like a citizen talking about utility fees) is a clear indicator that something is wrong. You don't need to do the math to recognize a service gap.</p>
-        <p style="font-weight: 700; color: var(--gravity-purple);">Discovery starts by acknowledging the frustration.</p>
-    </div>
-    <div class="image-container">
-        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="City office environment">
-    </div>
-</div>
-
-<!-- Slide 10: Environmental Indicators -->
-<div class="slide-container" id="slide10">
-    <h2 class="slide-title">Environmental Indicators</h2>
-    <div class="content-area">
-        <div class="tiled-content" style="flex-wrap: wrap; justify-content: center;">
-            <div class="tile" style="flex: 0 0 30%; padding: 30px;">
-                <div class="icon" style="color: var(--gravity-blue);"><i class="fa-solid fa-keyboard"></i></div>
-                <h3 style="font-size: 20px;">Manual Entry</h3>
-                <p style="font-size: 16px;">Hand-typing card numbers into systems.</p>
-            </div>
-            <div class="tile" style="flex: 0 0 30%; padding: 30px;">
-                <div class="icon" style="color: var(--gravity-teal);"><i class="fa-solid fa-layer-group"></i></div>
-                <h3 style="font-size: 20px;">Disjointed Systems</h3>
-                <p style="font-size: 16px;">Multiple disconnected screens on the counter.</p>
-            </div>
-            <div class="tile" style="flex: 0 0 30%; padding: 30px;">
-                <div class="icon" style="color: var(--gravity-lime);"><i class="fa-solid fa-box-open"></i></div>
-                <h3 style="font-size: 20px;">Underutilized Tech</h3>
-                <p style="font-size: 16px;">High-cost systems used for basic functions.</p>
-            </div>
-            <div class="tile" style="flex: 0 0 30%; padding: 30px;">
-                <div class="icon" style="color: var(--gravity-purple);"><i class="fa-solid fa-circle-exclamation"></i></div>
-                <h3 style="font-size: 20px;">Fee Signage</h3>
-                <p style="font-size: 16px;">Handwritten notes about fees or minimums.</p>
-            </div>
-            <div class="tile" style="flex: 0 0 30%; padding: 30px;">
-                <div class="icon" style="color: var(--gravity-green);"><i class="fa-solid fa-users"></i></div>
-                <h3 style="font-size: 20px;">Customer Feedback</h3>
-                <p style="font-size: 16px;">Direct complaints heard in the environment.</p>
-            </div>
-            <div class="tile" style="flex: 0 0 30%; padding: 30px;">
-                <div class="icon" style="color: var(--gravity-blue);"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                <h3 style="font-size: 20px;">Unique Setups</h3>
-                <p style="font-size: 16px;">Setups you haven't seen—a chance to learn.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 11: Conversational Tools -->
-<div class="slide-container" id="slide11">
-    <h2 class="slide-title">Questions to Start Conversations</h2>
-    <div class="content-area">
-        <div class="bullet-list">
-            <ul>
-                <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Curiosity:</strong> "How does a shop like yours typically handle payments?"</li>
-                <li><i class="fa-solid fa-heart-pulse" style="color: var(--gravity-lime);"></i> <strong>Empathy:</strong> "I noticed you're keying those in manually—does that normally happen?"</li>
-                <li><i class="fa-solid fa-arrow-trend-up" style="color: var(--gravity-blue);"></i> <strong>Impact:</strong> "If you could change one thing about your checkout, what would it be?"</li>
-                <li><i class="fa-solid fa-earth-americas" style="color: var(--gravity-purple);"></i> <strong>Context:</strong> "Who do you use for processing? I'm curious what shops here prefer."</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 12: Bridge to Support -->
-<div class="slide-container" id="slide12">
-    <h2 class="slide-title">Bridge to Support</h2>
-    <div class="content-area">
-        <div class="two-column">
-            <div>
-                <p style="font-style: italic; font-size: 28px; color: var(--gravity-navy); margin-bottom: 30px; font-family: 'Merriweather', serif; border-left: 6px solid var(--gravity-lime); padding-left: 20px;">"I work for Gravity. We focus on improving payment environments. If you're open to it, I'd love to see if we can help improve your situation."</p>
-                <p>If they say no, the relationship is still intact. You offered help, and they are okay.</p>
-                <p style="font-weight: 700; margin-top: 30px; color: var(--gravity-blue);">Scan to bookmark the Toolkit:</p>
-            </div>
-            <div style="text-align: center;">
-                <div style="background: white; padding: 20px; border: 2px solid var(--gravity-navy); border-radius: 12px; display: inline-block;">
-                    <!-- SVG QR Code -->
-                    <svg width="200" height="200" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="160" height="160" fill="white"/>
-                        <path d="M20 20H50V50H20V20ZM25 25V45H45V25H25Z" fill="#253750"/>
-                        <path d="M110 20H140V50H110V20ZM115 25V45H135V25H115Z" fill="#253750"/>
-                        <path d="M20 110H50V140H20V110ZM25 115V135H45V115H25Z" fill="#253750"/>
-                        <rect x="30" y="30" width="10" height="10" fill="#91C73D"/>
-                        <rect x="120" y="30" width="10" height="10" fill="#91C73D"/>
-                        <rect x="30" y="120" width="10" height="10" fill="#91C73D"/>
-                        <path d="M60 20H70V30H60V20ZM80 20H100V30H80V20ZM60 40H80V50H60V40ZM90 40H100V60H90V40ZM60 60H70V90H60V60ZM80 70H100V80H80V70ZM110 60H140V70H110V60ZM110 80H120V100H110V80ZM130 80H140V140H130V80ZM60 100H80V110H60V100ZM90 100H110V110H90V100ZM60 120H70V140H60V120ZM80 120H120V130H80V120ZM80 130H90V140H80V130ZM100 130H110V140H100V130Z" fill="#253750"/>
-                    </svg>
+    <!-- Slide 3: Mission Driven -->
+    <div class="slide">
+        <h2 class="slide-title"><span class="context-tag">MISSION</span><br>Purpose of the Support</h2>
+        <div class="content-area">
+            <div class="two-column">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800" alt="Merchant in shop">
                 </div>
-                <p style="margin-top: 15px; font-weight: 700; color: var(--gravity-navy); text-transform: uppercase; letter-spacing: 1px;">Referral Toolkit Access</p>
+                <div>
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="font-size: 32px; margin-bottom: 10px;">The Mission</h3>
+                        <p style="font-size: 24px; color: var(--gravity-blue);">Supporting the small business community.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 32px; margin-bottom: 10px;">The Support</h3>
+                        <p style="font-size: 24px; color: var(--gravity-green);">Turning curiosity into conversations that improve situations.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Slide 4: Activity -->
+    <div class="slide">
+        <h2 class="slide-title"><span class="context-tag">ACTIVITY</span><br>The Expertise Barrier</h2>
+        <div class="content-area">
+            <div class="two-column">
+                <div style="text-align: left;">
+                    <p style="font-size: 32px; color: var(--gravity-navy); font-weight: 500; line-height: 1.2; margin-bottom: 40px;">What technical or industry knowledge do you feel you must have before helping a customer?</p>
+                    <div class="highlight-box">
+                        <h3>Action</h3>
+                        <p>List the specific details (pricing, hardware, rates) you feel stop you from speaking up.</p>
+                    </div>
+                </div>
+                <div style="font-size: 180px; text-align: center; color: var(--gravity-lime); opacity: 0.3; font-weight: 700;">?</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Concept -->
+    <div class="slide">
+        <h2 class="slide-title"><span class="context-tag">MINDSET</span><br>The Concept of Natural Sharing</h2>
+        <div class="content-area">
+            <div class="two-column">
+                <div>
+                    <p style="font-size: 28px; margin-bottom: 30px; font-weight: 500; color: var(--gravity-navy);">Sharing a solution that works is not a pitch—it is an act of service.</p>
+                    <p>When you see someone struggling with a problem that you know how to solve, the instinct to help is natural.</p>
+                    <p style="color: var(--gravity-blue); font-weight: 700;">This is the root of the "Improvement Mindset."</p>
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" alt="Coffee shop atmosphere">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Skills -->
+    <div class="slide">
+        <div class="content-area">
+            <span class="context-tag" style="margin: 0 auto 30px;">THE FOUNDATION</span>
+            <blockquote>"It’s not about what you know, <br>it’s about what you notice."</blockquote>
+            <div class="tiled-content" style="margin-top: 60px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <div class="tile">
+                    <h3 style="color: var(--gravity-blue);">Observation</h3>
+                    <p style="font-size: 18px;">Identifying visual friction in the merchant's environment.</p>
+                </div>
+                <div class="tile">
+                    <h3 style="color: var(--gravity-teal);">Listening</h3>
+                    <p style="font-size: 18px;">Understanding the emotional tone of the setup.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Lesson 1 -->
+    <div class="slide bleed-image-layout">
+        <div class="content-container">
+            <span class="context-tag">LESSON 1</span>
+            <h2 style="font-size: 42px; margin-bottom: 30px; font-family: 'DM Sans', sans-serif;">Tone Reveals the Problem</h2>
+            <p><strong>Insight: Listen for the "Stress Shift."</strong></p>
+            <p>Hardware pride often hides cost anxiety. Their tone will tell you they are <strong>oversold</strong> long before you see a data sheet.</p>
+            <p style="font-weight: 700; color: var(--gravity-blue); margin-top: 20px;">Right-sizing begins with hearing the mismatch.</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800" alt="POS system">
+        </div>
+    </div>
+
+    <!-- Slide 8: Lesson 2 -->
+    <div class="slide bleed-image-layout">
+        <div class="content-container">
+            <span class="context-tag">LESSON 2</span>
+            <h2 style="font-size: 42px; margin-bottom: 30px; font-family: 'DM Sans', sans-serif;">Empathy for Friction</h2>
+            <p><strong>Insight: Expertise is not required to see a bottleneck.</strong></p>
+            <p>When a process stresses staff, it creates visible friction. If it looks like a pain in the neck, it <strong>probably is.</strong></p>
+            <p style="font-weight: 700; color: var(--gravity-teal); margin-top: 20px;">Empathy for their reality is the bridge.</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Busy counter">
+        </div>
+    </div>
+
+    <!-- Slide 9: Lesson 3 -->
+    <div class="slide bleed-image-layout">
+        <div class="content-container">
+            <span class="context-tag">LESSON 3</span>
+            <h2 style="font-size: 42px; margin-bottom: 30px; font-family: 'DM Sans', sans-serif;">Feedback as a Symptom</h2>
+            <p><strong>Insight: Complaints indicate a desire for change.</strong></p>
+            <p>Hearing a third-party complaint is a clear indicator that something is wrong. You don't need to do the math to recognize a service gap.</p>
+            <p style="font-weight: 700; color: var(--gravity-purple); margin-top: 20px;">Discovery starts with frustration.</p>
+        </div>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" alt="Feedback session">
+        </div>
+    </div>
+
+    <!-- Slide 10: Indicators -->
+    <div class="slide">
+        <h2 class="slide-title"><span class="context-tag">OBSERVATION</span><br>Environmental Indicators</h2>
+        <div class="content-area">
+            <div class="indicator-grid">
+                <div class="indicator-item"><i class="fa-solid fa-keyboard"></i><h3>Manual Entry</h3><p>Hand-typing card numbers during checkout.</p></div>
+                <div class="indicator-item"><i class="fa-solid fa-layer-group"></i><h3>Disjointed Systems</h3><p>Multiple disconnected screens or tablets.</p></div>
+                <div class="indicator-item"><i class="fa-solid fa-box-open"></i><h3>Underutilized Tech</h3><p>High-cost systems used for basic functions.</p></div>
+                <div class="indicator-item"><i class="fa-solid fa-triangle-exclamation"></i><h3>Fee Signage</h3><p>Handwritten notes about fees or minimums.</p></div>
+                <div class="indicator-item"><i class="fa-solid fa-users-viewfinder"></i><h3>Customer Feedback</h3><p>Active complaints heard in the environment.</p></div>
+                <div class="indicator-item"><i class="fa-solid fa-magnifying-glass-plus"></i><h3>Unique Setups</h3><p>Niche setups that provide an opportunity to learn.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Questions -->
+    <div class="slide">
+        <h2 class="slide-title"><span class="context-tag">DIALOGUE</span><br>Questions to Start Conversations</h2>
+        <div class="content-area">
+            <div class="bullet-list">
+                <ul>
+                    <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Curiosity:</strong> "How does a shop like yours typically handle payments?"</li>
+                    <li><i class="fa-solid fa-heart-pulse"></i> <strong>Empathy:</strong> "I noticed you're keying those in manually—does that normally happen?"</li>
+                    <li><i class="fa-solid fa-arrow-trend-up"></i> <strong>Impact:</strong> "If you could change one thing about your checkout, what would it be?"</li>
+                    <li><i class="fa-solid fa-earth-americas"></i> <strong>Context:</strong> "Who do you use for processing? I'm curious what shops here prefer."</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Connection -->
+    <div class="slide">
+        <div class="content-area" style="text-align: center; max-width: 960px; align-items: center;">
+            <span class="context-tag" style="margin-bottom: 40px;">THE CONNECTION</span>
+            <p style="font-family: 'Merriweather', serif; font-style: italic; font-size: 36px; color: var(--gravity-navy); line-height: 1.4; margin-bottom: 60px;">
+                "I work for Gravity. We focus on improving payment environments. If you're open to it, I'd love to see if we can help improve your situation."
+            </p>
+            <div style="display: flex; justify-content: center; gap: 40px; border-top: 1px solid var(--border-color); padding-top: 40px; width: 100%;">
+                <p style="font-size: 20px; color: #64748B;">If they say no, the relationship is still intact.</p>
+                <div style="width: 1px; height: 30px; background: var(--border-color);"></div>
+                <p style="font-size: 20px; color: #64748B;">You offered help, and they are okay.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="nav-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
 </div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const progressBar = document.getElementById('progress');
+
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[index].classList.add('active');
+        const progress = ((index + 1) / slides.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Initial state
+    showSlide(0);
+</script>
 
 </body>
 </html>
