@@ -45,185 +45,172 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 40px;
+            padding: 0 60px;
             z-index: 1000;
         }
 
-        .logo-placeholder {
+        .brand-mark {
             font-weight: 800;
             letter-spacing: -1px;
-            font-size: 20px;
+            font-size: 18px;
             color: var(--gravity-navy);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-transform: uppercase;
         }
 
-        nav {
-            display: flex;
-            gap: 24px;
-        }
+        .dot { width: 10px; height: 10px; background: var(--gravity-lime); border-radius: 50%; }
 
+        nav { display: flex; gap: 32px; }
         nav a {
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             transition: color 0.2s;
         }
-
         nav a:hover { color: var(--gravity-blue); }
 
-        /* Section Layouts */
+        /* General Section Styling */
         section {
-            padding: 120px 40px;
-            min-height: 80vh;
+            padding: 140px 60px;
+            max-width: 1300px;
+            margin: 0 auto;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .hero {
             min-height: 100vh;
             text-align: center;
-            background-image: radial-gradient(circle at 100% 0%, rgba(145, 199, 61, 0.08) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 100% 0%, rgba(145, 199, 61, 0.1) 0%, transparent 40%);
         }
 
-        /* Context Tags */
+        /* Context Tags - The Objective Look */
         .context-tag {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 800;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--gravity-blue);
             margin-bottom: 24px;
             display: inline-block;
+            border-bottom: 2px solid var(--gravity-lime);
+            padding-bottom: 4px;
         }
 
         h1 {
-            font-size: 96px;
+            font-size: 100px;
             font-weight: 800;
             line-height: 0.9;
             letter-spacing: -4px;
             color: var(--gravity-navy);
-            margin: 0 0 24px 0;
+            margin: 0 0 32px 0;
         }
 
         h2 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 700;
             line-height: 1.1;
             letter-spacing: -0.03em;
             color: var(--gravity-navy);
-            margin: 0 0 40px 0;
+            margin: 0 0 48px 0;
         }
 
-        .intro-text {
-            font-size: 26px;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        h3 { font-size: 32px; color: var(--gravity-navy); margin-bottom: 20px; }
 
-        /* Split Sections */
+        .intro-text { font-size: 28px; color: var(--text-muted); max-width: 800px; margin: 0 auto; }
+
+        /* Grid Layouts */
         .split-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 100px;
             align-items: center;
         }
 
         .image-card {
             border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
             line-height: 0;
         }
+        .image-card img { width: 100%; height: auto; display: block; object-fit: cover; }
 
-        .image-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Tiles */
         .tile-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 32px;
             margin-top: 40px;
         }
 
         .tile {
-            padding: 40px;
+            padding: 48px;
             background: var(--bg-light);
             border: 1px solid var(--border);
-            border-bottom: 4px solid var(--gravity-lime);
+            border-top: 4px solid var(--gravity-lime);
         }
-
         .tile i { font-size: 28px; color: var(--gravity-navy); margin-bottom: 24px; }
-        .tile h3 { font-size: 22px; margin: 0 0 16px 0; color: var(--gravity-navy); }
+        .tile h4 { font-size: 22px; margin: 0 0 16px 0; color: var(--gravity-navy); }
         .tile p { font-size: 16px; color: var(--text-muted); margin: 0; }
 
-        /* Workshop/Activity Box */
-        .workshop-container {
+        /* Mindset/Workshop Container */
+        .box-container {
             background: var(--gravity-navy);
-            padding: 80px;
-            border-radius: 8px;
+            padding: 100px;
+            border-radius: 4px;
             color: #fff;
-            margin: 40px 0;
+            margin: 60px 0;
         }
 
-        .workshop-tag {
+        .box-tag {
             background: var(--gravity-lime);
             color: var(--gravity-navy);
-            padding: 4px 12px;
-            font-size: 12px;
+            padding: 5px 15px;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
             display: inline-block;
+            letter-spacing: 0.1em;
         }
 
-        /* Quote Styling */
-        .quote-section {
-            background: var(--bg-light);
-            padding: 160px 40px;
+        /* Quote Section */
+        .quote-wrap {
+            padding: 180px 60px;
             text-align: center;
+            background-color: var(--bg-light);
         }
 
         blockquote {
             font-family: 'Merriweather', serif;
-            font-size: 52px;
+            font-size: 56px;
             font-style: italic;
             color: var(--gravity-navy);
             line-height: 1.3;
             margin: 0 auto;
-            max-width: 1000px;
+            max-width: 1100px;
         }
 
         /* Indicator Items */
         .indicator-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 60px;
+            gap: 48px;
+            margin-top: 80px;
         }
 
-        .indicator-item {
-            display: flex;
-            gap: 24px;
-            align-items: flex-start;
-        }
-
+        .indicator-item { display: flex; gap: 24px; align-items: flex-start; }
         .indicator-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--bg-light);
+            width: 64px;
+            height: 64px;
+            background: #fff;
+            border: 1px solid var(--border);
             color: var(--gravity-lime);
             display: flex;
             align-items: center;
@@ -233,297 +220,311 @@
             flex-shrink: 0;
         }
 
-        .indicator-content h4 {
-            margin: 0 0 8px 0;
-            font-size: 20px;
-            color: var(--gravity-navy);
-        }
+        .indicator-content h4 { margin: 0 0 10px 0; font-size: 20px; color: var(--gravity-navy); }
+        .indicator-content p { margin: 0; color: var(--text-muted); font-size: 16px; }
 
-        .indicator-content p {
-            margin: 0;
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-
-        /* Question Cards */
-        .question-list {
-            display: grid;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
+        /* Dialogue Card Styling */
+        .question-grid { display: grid; gap: 24px; margin-top: 60px; }
         .question-card {
-            padding: 30px;
+            padding: 40px;
             background: var(--bg-light);
-            border-left: 6px solid var(--gravity-blue);
+            border-left: 8px solid var(--gravity-blue);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        .question-card h5 {
-            font-size: 14px;
+        .question-label {
+            font-size: 13px;
             color: var(--gravity-blue);
+            font-weight: 800;
             text-transform: uppercase;
-            margin: 0 0 8px 0;
+            margin-bottom: 10px;
+            display: block;
         }
+        .question-text { font-size: 26px; font-weight: 500; color: var(--gravity-navy); margin: 0; }
 
-        .question-card p {
-            font-size: 22px;
-            font-weight: 500;
-            margin: 0;
-            color: var(--gravity-navy);
-        }
-
-        .footer {
-            padding: 120px 40px;
-            background: var(--bg-light);
+        /* Connection Footer */
+        .connection-footer {
+            padding: 160px 60px;
             text-align: center;
             border-top: 1px solid var(--border);
         }
-
-        .connection-quote {
+        .bridge-statement {
             font-family: 'Merriweather', serif;
             font-style: italic;
-            font-size: 38px;
+            font-size: 42px;
             color: var(--gravity-navy);
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto 60px;
+            line-height: 1.4;
         }
+        .bridge-divider { height: 3px; width: 100px; background: var(--gravity-lime); margin: 0 auto 40px; }
+        .bridge-outcome { display: flex; justify-content: center; gap: 60px; color: var(--text-muted); font-size: 20px; font-weight: 500; }
 
-        .divider {
-            height: 2px;
-            width: 80px;
-            background: var(--gravity-lime);
-            margin: 0 auto 40px;
-        }
-
-        @media (max-width: 900px) {
-            .split-grid, .tile-grid, .indicator-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 64px; }
-            section { padding: 80px 20px; }
+        @media (max-width: 1000px) {
+            .split-grid, .tile-grid, .indicator-grid { grid-template-columns: 1fr; gap: 40px; }
+            h1 { font-size: 60px; }
+            blockquote { font-size: 36px; }
+            section { padding: 100px 30px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-placeholder">
-            <i class="fa-solid fa-circle" style="color: var(--gravity-lime); font-size: 12px;"></i>
-            GRAVITY PAYMENTS
+        <div class="brand-mark">
+            <div class="dot"></div>
+            Gravity Payments
         </div>
         <nav>
             <a href="#objectives">Objectives</a>
-            <a href="#mission">Mission</a>
-            <a href="#barrier">Barrier</a>
+            <a href="#activity">Barrier</a>
             <a href="#lessons">Lessons</a>
             <a href="#indicators">Indicators</a>
             <a href="#dialogue">Dialogue</a>
         </nav>
     </header>
 
-    <!-- Section 1: Hero -->
+    <!-- Hero -->
     <section class="hero" id="top">
-        <span class="context-tag">Training Session</span>
+        <span class="context-tag">Workshop Session</span>
         <h1>The Art of<br>Noticing</h1>
-        <p class="intro-text">Empowering curiosity and understanding in merchant environments.</p>
+        <p class="intro-text">Empowering curiosity and investigation in merchant environments.</p>
     </section>
 
-    <!-- Section 2: Objectives -->
+    <!-- Objectives -->
     <section id="objectives">
         <span class="context-tag">Goals</span>
         <h2>Session Objectives</h2>
         <div class="tile-grid">
             <div class="tile">
                 <i class="fa-solid fa-eye"></i>
-                <h3>Identify Friction</h3>
+                <h4>Identify Friction</h4>
                 <p>Recognize visual and verbal cues of environmental hurdles in any merchant setup.</p>
             </div>
             <div class="tile">
                 <i class="fa-solid fa-comments"></i>
-                <h3>Engage Naturally</h3>
+                <h4>Engage Naturally</h4>
                 <p>Framework for low-stakes, curiosity-driven dialogue with business owners.</p>
             </div>
             <div class="tile">
                 <i class="fa-solid fa-handshake-angle"></i>
-                <h3>Bridge to Support</h3>
+                <h4>Bridge to Support</h4>
                 <p>Empowerment to offer help without the weight of technical expertise.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Mission -->
+    <!-- Mission Alignment -->
     <section id="mission">
         <div class="split-grid">
             <div>
                 <span class="context-tag">Alignment</span>
                 <h2>Mission Driven</h2>
-                <div style="margin-bottom: 48px;">
-                    <h4 style="text-transform: uppercase; font-size: 12px; color: var(--gravity-blue); margin-bottom: 12px; letter-spacing: 0.1em;">The Mission</h4>
-                    <p style="font-size: 28px; font-weight: 700; color: var(--gravity-navy); margin: 0;">Supporting the small business community.</p>
+                <div style="margin-bottom: 60px;">
+                    <h3 style="color: var(--gravity-blue);">The Mission</h3>
+                    <p style="font-size: 24px; color: var(--text-muted);">Supporting the small business community.</p>
                 </div>
                 <div>
-                    <h4 style="text-transform: uppercase; font-size: 12px; color: var(--gravity-green); margin-bottom: 12px; letter-spacing: 0.1em;">The Support</h4>
-                    <p style="font-size: 28px; font-weight: 700; color: var(--gravity-navy); margin: 0;">Turning curiosity into conversations that improve situations.</p>
+                    <h3 style="color: var(--gravity-green);">The Support</h3>
+                    <p style="font-size: 24px; color: var(--text-muted);">Turning curiosity into conversations that improve situations.</p>
                 </div>
             </div>
             <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=1200" alt="Small Business Owner">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=1200" alt="Small Business Merchant">
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Activity -->
-    <section id="barrier">
-        <div class="workshop-container">
-            <span class="workshop-tag">Chat Reflection</span>
+    <!-- Activity -->
+    <section id="activity">
+        <div class="box-container">
+            <span class="box-tag">Chat Reflection</span>
             <div class="split-grid">
                 <div>
-                    <h2 style="color: #fff;">The Expertise Barrier</h2>
-                    <p style="font-size: 24px; color: #CBD5E1;">What technical or industry knowledge do you feel you <span style="color: var(--gravity-lime); border-bottom: 2px solid var(--gravity-lime);">must have</span> before helping a customer?</p>
+                    <h2 style="color: #fff; margin-bottom: 24px;">The Expertise Barrier</h2>
+                    <p style="font-size: 28px; color: #CBD5E1; line-height: 1.3;">What technical or industry knowledge do you feel you <span style="color: var(--gravity-lime); border-bottom: 3px solid var(--gravity-lime);">must have</span> before helping a customer?</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1);">
-                    <p style="font-size: 18px; margin: 0;">In the chat, list the specific details (pricing, hardware, rates) you feel stop you from speaking up.</p>
+                <div style="background: rgba(255,255,255,0.06); padding: 50px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12);">
+                    <p style="font-size: 18px; margin: 0; color: #fff;">Take 30 seconds to type into the chat the specific details (pricing, hardware, industry rates) that currently hold you back from speaking up.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Quote Breakdown -->
-    <div class="quote-section">
-        <span class="context-tag" style="margin-bottom: 40px;">The Core Skill</span>
-        <blockquote>"It’s not about what you know,<br>it’s about what you notice."</blockquote>
-        <div style="display: flex; justify-content: center; gap: 80px; margin-top: 80px;">
-            <div style="text-align: left; max-width: 300px;">
-                <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gravity-blue); margin-bottom: 12px;">Observation</h4>
-                <p style="font-size: 18px; color: var(--gravity-navy); font-weight: 700; margin: 0;">Identifying visual friction.</p>
+    <!-- Natural Sharing Mindset -->
+    <section id="mindset">
+        <div class="split-grid">
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200" alt="Natural service">
             </div>
-            <div style="text-align: left; max-width: 300px;">
-                <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gravity-teal); margin-bottom: 12px;">Listening</h4>
-                <p style="font-size: 18px; color: var(--gravity-navy); font-weight: 700; margin: 0;">Hearing the emotional tone.</p>
+            <div>
+                <span class="context-tag">Mindset Shift</span>
+                <h2>Natural Sharing</h2>
+                <p style="font-size: 32px; font-weight: 500; color: var(--gravity-navy); line-height: 1.2; margin-bottom: 32px;">Sharing a solution that works is not a pitch—it is an <span style="color: var(--gravity-blue); font-weight: 800;">act of service</span>.</p>
+                <p style="font-size: 20px; color: var(--text-muted);">When you see someone struggling with a problem that you know how to solve, the instinct to help is natural. This is the root of the "Improvement Mindset."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Skill Quote -->
+    <div class="quote-wrap">
+        <span class="context-tag" style="margin-bottom: 40px;">The Foundation</span>
+        <blockquote class="merriweather">"It’s not about what you know,<br>it’s about what you notice."</blockquote>
+        <div style="display: flex; justify-content: center; gap: 100px; margin-top: 100px;">
+            <div style="text-align: left; max-width: 320px;">
+                <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gravity-blue); margin-bottom: 12px; font-weight: 800;">Observation</h4>
+                <p style="font-size: 18px; color: var(--gravity-navy); font-weight: 700; margin: 0;">Identifying visual friction in the environment.</p>
+            </div>
+            <div style="text-align: left; max-width: 320px;">
+                <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gravity-teal); margin-bottom: 12px; font-weight: 800;">Listening</h4>
+                <p style="font-size: 18px; color: var(--gravity-navy); font-weight: 700; margin: 0;">Hearing the emotional tone of the setup.</p>
             </div>
         </div>
     </div>
 
-    <!-- Section 6: Lessons -->
+    <!-- The Three Lessons -->
     <section id="lessons">
         <span class="context-tag">The Insight Series</span>
         <h2>Learning to Observe</h2>
         
         <!-- Lesson 1 -->
-        <div class="split-grid" style="margin-top: 80px; border-top: 1px solid var(--border); padding-top: 80px;">
+        <div class="split-grid" style="margin-top: 100px; border-top: 1px solid var(--border); padding-top: 100px;">
             <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200" alt="POS terminal">
+                <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200" alt="POS Technology">
             </div>
             <div>
                 <span class="context-tag" style="color: var(--gravity-blue); border-color: var(--gravity-blue);">Lesson 01</span>
                 <h3>Tone Reveals the Problem</h3>
-                <p>Hardware pride often hides cost anxiety. Listen for the "Stress Shift." Their tone will tell you they are <strong>oversold</strong> long before you see a data sheet.</p>
-                <p style="font-weight: 700; color: var(--gravity-blue);">Right-sizing begins with hearing the mismatch.</p>
+                <p style="font-size: 20px; font-weight: 700; color: var(--gravity-navy); margin-bottom: 12px;">Listen for the "Stress Shift."</p>
+                <p>Hardware pride often hides cost anxiety. Their tone will tell you they are <strong>oversold</strong> long before you see a single data sheet or bank statement.</p>
+                <p style="font-weight: 700; color: var(--gravity-blue); margin-top: 24px;">Right-sizing begins with hearing the mismatch.</p>
             </div>
         </div>
 
         <!-- Lesson 2 -->
-        <div class="split-grid" style="margin-top: 80px; border-top: 1px solid var(--border); padding-top: 80px;">
+        <div class="split-grid" style="margin-top: 100px; border-top: 1px solid var(--border); padding-top: 100px;">
             <div>
                 <span class="context-tag" style="color: var(--gravity-teal); border-color: var(--gravity-teal);">Lesson 02</span>
                 <h3>Empathy for Friction</h3>
-                <p>Expertise is not required to see a bottleneck. When a process stresses staff, it creates visible friction. If it looks like a pain in the neck, it <span style="color: var(--gravity-blue); font-weight: 700;">probably is.</span></p>
-                <p style="font-weight: 700; color: var(--gravity-teal);">Empathy for their reality is the bridge.</p>
+                <p style="font-size: 20px; font-weight: 700; color: var(--gravity-navy); margin-bottom: 12px;">Expertise is not required to see a bottleneck.</p>
+                <p>When a process stresses staff and slows down business, it creates visible friction. If it looks like a pain in the neck, it <span style="color: var(--gravity-blue); font-weight: 800;">probably is.</span></p>
+                <p style="font-weight: 700; color: var(--gravity-teal); margin-top: 24px;">Empathy for their reality is your bridge to a conversation.</p>
             </div>
             <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200" alt="Busy counter">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200" alt="Busy counter line">
+            </div>
+        </div>
+
+        <!-- Lesson 3 -->
+        <div class="split-grid" style="margin-top: 100px; border-top: 1px solid var(--border); padding-top: 100px;">
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" alt="Feedback session">
+            </div>
+            <div>
+                <span class="context-tag" style="color: var(--gravity-purple); border-color: var(--gravity-purple);">Lesson 03</span>
+                <h3>Feedback as a Symptom</h3>
+                <p style="font-size: 20px; font-weight: 700; color: var(--gravity-navy); margin-bottom: 12px;">Complaints indicate a desire for change.</p>
+                <p>Hearing a third-party complaint (like a citizen talking about utility fees) is a clear indicator that something is wrong. You don't need to do the math to recognize a service gap.</p>
+                <p style="font-weight: 700; color: var(--gravity-purple); margin-top: 24px;">Discovery starts by acknowledging the frustration.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 7: Indicators -->
+    <!-- Indicators -->
     <section id="indicators">
-        <span class="context-tag">Observation List</span>
+        <span class="context-tag">Observation Framework</span>
         <h2>Environmental Indicators</h2>
         <div class="indicator-grid">
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-keyboard"></i></div>
                 <div class="indicator-content">
                     <h4>Manual Entry</h4>
-                    <p>Hand-typing card numbers into terminals during check out.</p>
+                    <p>Hand-typing card numbers into terminals during checkout instead of swiping or tapping.</p>
                 </div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-layer-group"></i></div>
                 <div class="indicator-content">
                     <h4>Disjointed Systems</h4>
-                    <p>Multiple disconnected screens or tablets on the counter.</p>
+                    <p>Multiple disconnected screens or tablets on the counter that don't speak to one another.</p>
                 </div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-box-open"></i></div>
                 <div class="indicator-content">
                     <h4>Underutilized Tech</h4>
-                    <p>High-cost systems being used only for basic calculator functions.</p>
+                    <p>High-cost POS systems being used for only basic calculator or swipe functions.</p>
                 </div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
                 <div class="indicator-content">
                     <h4>Fee Signage</h4>
-                    <p>Notes about extra fees or card minimums taped to the counter.</p>
+                    <p>Handwritten notes about card minimums or extra fees taped to the register or counter.</p>
                 </div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
                 <div class="indicator-content">
                     <h4>Customer Feedback</h4>
-                    <p>Active complaints heard in the merchant's environment.</p>
+                    <p>Active dissatisfaction overheard from customers regarding the payment or checkout speed.</p>
                 </div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-plus"></i></div>
                 <div class="indicator-content">
                     <h4>Unique Setups</h4>
-                    <p>Opportunity to learn from niche operational flows.</p>
+                    <p>Operational flows you haven't seen before—opportunity to learn how that niche works.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 8: Dialogue -->
+    <!-- Dialogue -->
     <section id="dialogue">
-        <span class="context-tag">Curiosity Frame</span>
+        <span class="context-tag">The Investigation</span>
         <h2>Starting the Conversation</h2>
-        <div class="question-list">
-            <div class="question-card" style="border-color: var(--gravity-blue);">
+        <div class="question-grid">
+            <div class="question-card" style="border-left-color: var(--gravity-blue);">
                 <div>
-                    <h5>Curiosity</h5>
-                    <p>"How does a shop like yours typically handle payments?"</p>
+                    <span class="question-label">Curiosity</span>
+                    <p class="question-text">"How does a shop like yours typically handle payments?"</p>
                 </div>
-                <i class="fa-solid fa-magnifying-glass" style="color: var(--gravity-blue); opacity: 0.2; font-size: 32px;"></i>
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--gravity-blue); opacity: 0.1; font-size: 40px;"></i>
             </div>
-            <div class="question-card" style="border-color: var(--gravity-lime);">
+            <div class="question-card" style="border-left-color: var(--gravity-lime);">
                 <div>
-                    <h5>Empathy</h5>
-                    <p>"I noticed you're keying those in manually—does that normally happen?"</p>
+                    <span class="question-label">Empathy</span>
+                    <p class="question-text">"I noticed you're keying those in manually—does that normally happen?"</p>
                 </div>
-                <i class="fa-solid fa-heart" style="color: var(--gravity-lime); opacity: 0.2; font-size: 32px;"></i>
+                <i class="fa-solid fa-heart" style="color: var(--gravity-lime); opacity: 0.1; font-size: 40px;"></i>
             </div>
-            <div class="question-card" style="border-color: var(--gravity-teal);">
+            <div class="question-card" style="border-left-color: var(--gravity-teal);">
                 <div>
-                    <h5>Impact</h5>
-                    <p>"If you could change one thing about your checkout, what would it be?"</p>
+                    <span class="question-label">Impact</span>
+                    <p class="question-text">"If you could change one thing about your checkout, what would it be?"</p>
                 </div>
-                <i class="fa-solid fa-bolt" style="color: var(--gravity-teal); opacity: 0.2; font-size: 32px;"></i>
+                <i class="fa-solid fa-bolt" style="color: var(--gravity-teal); opacity: 0.1; font-size: 40px;"></i>
+            </div>
+            <div class="question-card" style="border-left-color: var(--gravity-purple);">
+                <div>
+                    <span class="question-label">Context</span>
+                    <p class="question-text">"Who do you use for processing? I'm curious what shops here prefer."</p>
+                </div>
+                <i class="fa-solid fa-earth-americas" style="color: var(--gravity-purple); opacity: 0.1; font-size: 40px;"></i>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Closing -->
-    <div class="footer">
+    <!-- Closing -->
+    <div class="connection-footer">
         <span class="context-tag">The Connection</span>
-        <div class="connection-quote">
+        <div class="bridge-statement">
             "I work for Gravity. We focus on improving payment environments. If you're open to it, I'd love to see if we can help improve your situation."
         </div>
-        <div class="divider"></div>
-        <div style="display: flex; justify-content: center; gap: 40px; color: var(--text-muted); font-size: 18px;">
+        <div class="bridge-divider"></div>
+        <div class="bridge-outcome">
             <span>If they say no, the relationship is still intact.</span>
             <span>|</span>
             <span>You offered help, and they are okay.</span>
