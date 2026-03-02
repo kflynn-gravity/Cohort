@@ -12,10 +12,10 @@
         :root {
             --gravity-lime: #91C73D;
             --gravity-navy: #253750;
-            --gravity-blue: #107AB0;
-            --gravity-teal: #29A59C;
-            --gravity-purple: #545DA9;
             --gravity-green: #519D18;
+            --gravity-teal: #29A59C;
+            --gravity-blue: #107AB0;
+            --gravity-purple: #545DA9;
             --text-main: #1E293B;
             --text-muted: #64748B;
             --bg-light: #F8FAFC;
@@ -74,7 +74,7 @@
         }
         nav a:hover { color: var(--gravity-blue); }
 
-        /* General Section Styling */
+        /* Section Layouts */
         section {
             padding: 140px 60px;
             max-width: 1300px;
@@ -91,7 +91,6 @@
             background-image: radial-gradient(circle at 100% 0%, rgba(145, 199, 61, 0.1) 0%, transparent 40%);
         }
 
-        /* Context Tags - The Objective Look */
         .context-tag {
             font-size: 12px;
             font-weight: 800;
@@ -124,9 +123,6 @@
 
         h3 { font-size: 32px; color: var(--gravity-navy); margin-bottom: 20px; }
 
-        .intro-text { font-size: 28px; color: var(--text-muted); max-width: 800px; margin: 0 auto; }
-
-        /* Grid Layouts */
         .split-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -142,13 +138,54 @@
         }
         .image-card img { width: 100%; height: auto; display: block; object-fit: cover; }
 
+        /* Five Imperatives Map */
+        .lifecycle-map {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .step {
+            padding: 20px;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            text-align: center;
+            opacity: 0.5;
+        }
+        .step.active {
+            opacity: 1;
+            border: 2px solid var(--gravity-lime);
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .step-num { font-weight: 800; font-size: 12px; color: var(--gravity-blue); display: block; margin-bottom: 10px; }
+        .step-title { font-size: 14px; font-weight: 700; color: var(--gravity-navy); }
+
+        /* Reveal Insight Button */
+        .insight-button {
+            background: var(--gravity-navy);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 24px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .insight-button:hover { background: var(--gravity-blue); }
+        .insight-content { display: none; margin-top: 24px; padding: 24px; background: var(--bg-light); border-left: 4px solid var(--gravity-lime); }
+
+        /* Tiles & Grids */
         .tile-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
             margin-top: 40px;
         }
-
         .tile {
             padding: 48px;
             background: var(--bg-light);
@@ -159,15 +196,25 @@
         .tile h4 { font-size: 22px; margin: 0 0 16px 0; color: var(--gravity-navy); }
         .tile p { font-size: 16px; color: var(--text-muted); margin: 0; }
 
-        /* Mindset/Workshop Container */
+        /* Quote Wrapping */
+        .quote-wrap { padding: 180px 60px; text-align: center; background-color: var(--bg-light); }
+        blockquote {
+            font-family: 'Merriweather', serif;
+            font-size: 56px;
+            font-style: italic;
+            color: var(--gravity-navy);
+            line-height: 1.3;
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+
         .box-container {
             background: var(--gravity-navy);
-            padding: 100px;
+            padding: 80px;
             border-radius: 4px;
             color: #fff;
             margin: 60px 0;
         }
-
         .box-tag {
             background: var(--gravity-lime);
             color: var(--gravity-navy);
@@ -180,50 +227,7 @@
             letter-spacing: 0.1em;
         }
 
-        /* Quote Section */
-        .quote-wrap {
-            padding: 180px 60px;
-            text-align: center;
-            background-color: var(--bg-light);
-        }
-
-        blockquote {
-            font-family: 'Merriweather', serif;
-            font-size: 56px;
-            font-style: italic;
-            color: var(--gravity-navy);
-            line-height: 1.3;
-            margin: 0 auto;
-            max-width: 1100px;
-        }
-
-        /* Indicator Items */
-        .indicator-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 48px;
-            margin-top: 80px;
-        }
-
-        .indicator-item { display: flex; gap: 24px; align-items: flex-start; }
-        .indicator-icon {
-            width: 64px;
-            height: 64px;
-            background: #fff;
-            border: 1px solid var(--border);
-            color: var(--gravity-lime);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-
-        .indicator-content h4 { margin: 0 0 10px 0; font-size: 20px; color: var(--gravity-navy); }
-        .indicator-content p { margin: 0; color: var(--text-muted); font-size: 16px; }
-
-        /* Dialogue Card Styling */
+        /* Dialogue */
         .question-grid { display: grid; gap: 24px; margin-top: 60px; }
         .question-card {
             padding: 40px;
@@ -233,38 +237,20 @@
             justify-content: space-between;
             align-items: center;
         }
-        .question-label {
-            font-size: 13px;
-            color: var(--gravity-blue);
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
-        }
         .question-text { font-size: 26px; font-weight: 500; color: var(--gravity-navy); margin: 0; }
 
-        /* Connection Footer */
-        .connection-footer {
-            padding: 160px 60px;
-            text-align: center;
-            border-top: 1px solid var(--border);
+        /* Step List */
+        .step-list { list-style: none; padding: 0; }
+        .step-list li { display: flex; gap: 20px; margin-bottom: 24px; align-items: flex-start; }
+        .step-circle { 
+            width: 32px; height: 32px; background: var(--gravity-lime); color: var(--gravity-navy);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; shrink: 0;
         }
-        .bridge-statement {
-            font-family: 'Merriweather', serif;
-            font-style: italic;
-            font-size: 42px;
-            color: var(--gravity-navy);
-            max-width: 1000px;
-            margin: 0 auto 60px;
-            line-height: 1.4;
-        }
-        .bridge-divider { height: 3px; width: 100px; background: var(--gravity-lime); margin: 0 auto 40px; }
-        .bridge-outcome { display: flex; justify-content: center; gap: 60px; color: var(--text-muted); font-size: 20px; font-weight: 500; }
 
         @media (max-width: 1000px) {
-            .split-grid, .tile-grid, .indicator-grid { grid-template-columns: 1fr; gap: 40px; }
+            .split-grid, .tile-grid, .lifecycle-map { grid-template-columns: 1fr; }
             h1 { font-size: 60px; }
-            blockquote { font-size: 36px; }
             section { padding: 100px 30px; }
         }
     </style>
@@ -277,259 +263,223 @@
             Gravity Payments
         </div>
         <nav>
-            <a href="#objectives">Objectives</a>
-            <a href="#activity">Barrier</a>
-            <a href="#lessons">Lessons</a>
+            <a href="#map">Your Role</a>
+            <a href="#lessons">The Stories</a>
+            <a href="#wins">Great Setups</a>
             <a href="#indicators">Indicators</a>
-            <a href="#dialogue">Dialogue</a>
+            <a href="#referral">How to Refer</a>
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- Section 1: Hero -->
     <section class="hero" id="top">
-        <span class="context-tag">Workshop Session</span>
+        <span class="context-tag">Recruiter-Led Session</span>
         <h1>The Art of<br>Noticing</h1>
-        <p class="intro-text">Empowering curiosity and investigation in merchant environments.</p>
+        <p style="font-size: 28px; color: var(--text-muted); max-width: 800px; margin: 0 auto;">An investigation training for the non-sales team.</p>
     </section>
 
-    <!-- Objectives -->
-    <section id="objectives">
-        <span class="context-tag">Goals</span>
-        <h2>Session Objectives</h2>
-        <div class="tile-grid">
-            <div class="tile">
-                <i class="fa-solid fa-eye"></i>
-                <h4>Identify Friction</h4>
-                <p>Recognize visual and verbal cues of environmental hurdles in any merchant setup.</p>
+    <!-- Section 2: Sales Lifecycle Map (Austin Feedback) -->
+    <section id="map">
+        <span class="context-tag">The Lifecycle</span>
+        <h2>Where You Fit</h2>
+        <p style="font-size: 22px; color: var(--text-muted); margin-bottom: 40px;">You are not being asked to be a "closer." Your role is purely the <strong>Prospecting</strong> phase: the eyes and ears of the mission.</p>
+        
+        <div class="lifecycle-map">
+            <div class="step active">
+                <span class="step-num">PHASE 0</span>
+                <span class="step-title">Prospecting & Noticing</span>
+                <p style="font-size: 11px; margin-top: 10px; color: var(--gravity-blue);">YOUR ZONE</p>
             </div>
-            <div class="tile">
-                <i class="fa-solid fa-comments"></i>
-                <h4>Engage Naturally</h4>
-                <p>Framework for low-stakes, curiosity-driven dialogue with business owners.</p>
+            <div class="step">
+                <span class="step-num">STEP 1</span>
+                <span class="step-title">OTC Improvements</span>
             </div>
-            <div class="tile">
-                <i class="fa-solid fa-handshake-angle"></i>
-                <h4>Bridge to Support</h4>
-                <p>Empowerment to offer help without the weight of technical expertise.</p>
+            <div class="step">
+                <span class="step-num">STEP 2</span>
+                <span class="step-title">Pricing & Expectations</span>
+            </div>
+            <div class="step">
+                <span class="step-num">STEP 3</span>
+                <span class="step-title">Reservations</span>
+            </div>
+            <div class="step">
+                <span class="step-num">STEP 4/5</span>
+                <span class="step-title">Decision Makers & Next Steps</span>
             </div>
         </div>
     </section>
 
-    <!-- Mission Alignment -->
-    <section id="mission">
-        <div class="split-grid">
-            <div>
-                <span class="context-tag">Alignment</span>
-                <h2>Mission Driven</h2>
-                <div style="margin-bottom: 60px;">
-                    <h3 style="color: var(--gravity-blue);">The Mission</h3>
-                    <p style="font-size: 24px; color: var(--text-muted);">Supporting the small business community.</p>
-                </div>
-                <div>
-                    <h3 style="color: var(--gravity-green);">The Support</h3>
-                    <p style="font-size: 24px; color: var(--text-muted);">Turning curiosity into conversations that improve situations.</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=1200" alt="Small Business Merchant">
-            </div>
-        </div>
-    </section>
-
-    <!-- Activity -->
+    <!-- Section 3: Expertise Activity -->
     <section id="activity">
         <div class="box-container">
-            <span class="box-tag">Chat Reflection</span>
+            <span class="box-tag">Interactive Activity</span>
             <div class="split-grid">
                 <div>
-                    <h2 style="color: #fff; margin-bottom: 24px;">The Expertise Barrier</h2>
-                    <p style="font-size: 28px; color: #CBD5E1; line-height: 1.3;">What technical or industry knowledge do you feel you <span style="color: var(--gravity-lime); border-bottom: 3px solid var(--gravity-lime);">must have</span> before helping a customer?</p>
+                    <h2 style="color: #fff; margin-bottom: 24px;">What stops you?</h2>
+                    <p style="font-size: 28px; color: #CBD5E1; line-height: 1.3;">What piece of industry knowledge do you feel you <span style="color: var(--gravity-lime); border-bottom: 3px solid var(--gravity-lime);">must have</span> before talking to a merchant?</p>
                 </div>
                 <div style="background: rgba(255,255,255,0.06); padding: 50px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.12);">
-                    <p style="font-size: 18px; margin: 0; color: #fff;">Take 30 seconds to type into the chat the specific details (pricing, hardware, industry rates) that currently hold you back from speaking up.</p>
+                    <p style="font-size: 18px; margin: 0; color: #fff;">Take 30 seconds to type into the chat the specific details (rates, hardware specs, etc.) that hold you back from speaking up.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Natural Sharing Mindset -->
-    <section id="mindset">
-        <div class="split-grid">
-            <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200" alt="Natural service">
-            </div>
-            <div>
-                <span class="context-tag">Mindset Shift</span>
-                <h2>Natural Sharing</h2>
-                <p style="font-size: 32px; font-weight: 500; color: var(--gravity-navy); line-height: 1.2; margin-bottom: 32px;">Sharing a solution that works is not a pitch—it is an <span style="color: var(--gravity-blue); font-weight: 800;">act of service</span>.</p>
-                <p style="font-size: 20px; color: var(--text-muted);">When you see someone struggling with a problem that you know how to solve, the instinct to help is natural. This is the root of the "Improvement Mindset."</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Skill Quote -->
+    <!-- Section 4: Foundation Quote -->
     <div class="quote-wrap">
-        <span class="context-tag" style="margin-bottom: 40px;">The Foundation</span>
+        <span class="context-tag" style="margin-bottom: 40px;">The Reveal</span>
         <blockquote class="merriweather">"It’s not about what you know,<br>it’s about what you notice."</blockquote>
-        <div style="display: flex; justify-content: center; gap: 100px; margin-top: 100px;">
-            <div style="text-align: left; max-width: 320px;">
-                <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gravity-blue); margin-bottom: 12px; font-weight: 800;">Observation</h4>
-                <p style="font-size: 18px; color: var(--gravity-navy); font-weight: 700; margin: 0;">Identifying visual friction in the environment.</p>
-            </div>
-            <div style="text-align: left; max-width: 320px;">
-                <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gravity-teal); margin-bottom: 12px; font-weight: 800;">Listening</h4>
-                <p style="font-size: 18px; color: var(--gravity-navy); font-weight: 700; margin: 0;">Hearing the emotional tone of the setup.</p>
-            </div>
-        </div>
     </div>
 
-    <!-- The Three Lessons -->
+    <!-- Section 5: Lessons (Hidden Insights to prevent spoilers) -->
     <section id="lessons">
-        <span class="context-tag">The Insight Series</span>
-        <h2>Learning to Observe</h2>
+        <span class="context-tag">The Investigation</span>
+        <h2>Three Stories</h2>
         
         <!-- Lesson 1 -->
         <div class="split-grid" style="margin-top: 100px; border-top: 1px solid var(--border); padding-top: 100px;">
             <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200" alt="POS Technology">
+                <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200" alt="POS System">
             </div>
             <div>
-                <span class="context-tag" style="color: var(--gravity-blue); border-color: var(--gravity-blue);">Lesson 01</span>
-                <h3>Tone Reveals the Problem</h3>
-                <p style="font-size: 20px; font-weight: 700; color: var(--gravity-navy); margin-bottom: 12px;">Listen for the "Stress Shift."</p>
-                <p>Hardware pride often hides cost anxiety. Their tone will tell you they are <strong>oversold</strong> long before you see a single data sheet or bank statement.</p>
-                <p style="font-weight: 700; color: var(--gravity-blue); margin-top: 24px;">Right-sizing begins with hearing the mismatch.</p>
+                <span class="context-tag" style="color: var(--gravity-blue); border-color: var(--gravity-blue);">Story 01</span>
+                <h3>The "Ferrari" Setup</h3>
+                <p>A small board game shop with a massive, high-tech system. The owner is proud, but his tone changes when talking about the cost.</p>
+                
+                <button class="insight-button" onclick="revealInsight('insight1')">Reveal Insight</button>
+                <div id="insight1" class="insight-content">
+                    <p><strong>The Stress Shift:</strong> You didn't need a data sheet to hear he was <strong>oversold</strong>. Right-sizing begins with hearing the mismatch.</p>
+                </div>
             </div>
         </div>
 
         <!-- Lesson 2 -->
         <div class="split-grid" style="margin-top: 100px; border-top: 1px solid var(--border); padding-top: 100px;">
             <div>
-                <span class="context-tag" style="color: var(--gravity-teal); border-color: var(--gravity-teal);">Lesson 02</span>
-                <h3>Empathy for Friction</h3>
-                <p style="font-size: 20px; font-weight: 700; color: var(--gravity-navy); margin-bottom: 12px;">Expertise is not required to see a bottleneck.</p>
-                <p>When a process stresses staff and slows down business, it creates visible friction. If it looks like a pain in the neck, it <span style="color: var(--gravity-blue); font-weight: 800;">probably is.</span></p>
-                <p style="font-weight: 700; color: var(--gravity-teal); margin-top: 24px;">Empathy for their reality is your bridge to a conversation.</p>
+                <span class="context-tag" style="color: var(--gravity-teal); border-color: var(--gravity-teal);">Story 02</span>
+                <h3>The Manual Bottleneck</h3>
+                <p>A busy coffee shop line. The barista is hand-typing 16-digit card numbers while customers wait. Does it look like a hassle?</p>
+                
+                <button class="insight-button" onclick="revealInsight('insight2')">Reveal Insight</button>
+                <div id="insight2" class="insight-content">
+                    <p><strong>The "Pain in the Neck" Rule:</strong> If it looks slow and annoying, <strong>it probably is.</strong> Expertise isn't required to see a bottleneck.</p>
+                </div>
             </div>
             <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200" alt="Busy counter line">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200" alt="Busy counter">
             </div>
         </div>
 
         <!-- Lesson 3 -->
         <div class="split-grid" style="margin-top: 100px; border-top: 1px solid var(--border); padding-top: 100px;">
             <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" alt="Feedback session">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" alt="Customer complaining">
             </div>
             <div>
-                <span class="context-tag" style="color: var(--gravity-purple); border-color: var(--gravity-purple);">Lesson 03</span>
-                <h3>Feedback as a Symptom</h3>
-                <p style="font-size: 20px; font-weight: 700; color: var(--gravity-navy); margin-bottom: 12px;">Complaints indicate a desire for change.</p>
-                <p>Hearing a third-party complaint (like a citizen talking about utility fees) is a clear indicator that something is wrong. You don't need to do the math to recognize a service gap.</p>
-                <p style="font-weight: 700; color: var(--gravity-purple); margin-top: 24px;">Discovery starts by acknowledging the frustration.</p>
+                <span class="context-tag" style="color: var(--gravity-purple); border-color: var(--gravity-purple);">Story 03</span>
+                <h3>The Fee Complaint</h3>
+                <p>Overhearing a citizen complain about a utility fee at City Hall. You don't know the rate, but you hear the dissatisfaction.</p>
+                
+                <button class="insight-button" onclick="revealInsight('insight3')">Reveal Insight</button>
+                <div id="insight3" class="insight-content">
+                    <p><strong>Symptoms Matter:</strong> A complaint is an indicator of a gap. You don't need to do the math to recognize a desire for change.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Indicators -->
+    <!-- Section 6: Celebrating Wins (New) -->
+    <section id="wins" style="background: var(--bg-light);">
+        <span class="context-tag">The Best Case Scenario</span>
+        <h2>What if they love it?</h2>
+        <div class="split-grid">
+            <div>
+                <p style="font-size: 24px; font-weight: 500; color: var(--gravity-navy);">If a merchant says their setup is perfect, <strong>Celebrate with them.</strong></p>
+                <p style="color: var(--text-muted);">We aren't looking to "snake" merchants away from good situations. If they are happy, learn from them.</p>
+                <div class="question-card" style="margin-top: 32px;">
+                    <p class="question-text">"That's awesome! I love hearing that. What's the name of that system? I'd love to learn what they're doing right."</p>
+                </div>
+            </div>
+            <div class="tile">
+                <h4 style="color: var(--gravity-green);">The Outcome</h4>
+                <p>You’ve built a relationship, learned about a competitor's strength, and kept the mission of support first.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Indicators Checklist -->
     <section id="indicators">
-        <span class="context-tag">Observation Framework</span>
-        <h2>Environmental Indicators</h2>
+        <span class="context-tag">Field Guide</span>
+        <h2>What to look for</h2>
         <div class="indicator-grid">
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-keyboard"></i></div>
-                <div class="indicator-content">
-                    <h4>Manual Entry</h4>
-                    <p>Hand-typing card numbers into terminals during checkout instead of swiping or tapping.</p>
-                </div>
+                <div class="indicator-content"><h4>Manual Entry</h4><p>Hand-typing numbers into terminals instead of tapping.</p></div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-layer-group"></i></div>
-                <div class="indicator-content">
-                    <h4>Disjointed Systems</h4>
-                    <p>Multiple disconnected screens or tablets on the counter that don't speak to one another.</p>
-                </div>
-            </div>
-            <div class="indicator-item">
-                <div class="indicator-icon"><i class="fa-solid fa-box-open"></i></div>
-                <div class="indicator-content">
-                    <h4>Underutilized Tech</h4>
-                    <p>High-cost POS systems being used for only basic calculator or swipe functions.</p>
-                </div>
+                <div class="indicator-content"><h4>Disjointed Systems</h4><p>Multiple disconnected tablets that don't talk to each other.</p></div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                <div class="indicator-content">
-                    <h4>Fee Signage</h4>
-                    <p>Handwritten notes about card minimums or extra fees taped to the register or counter.</p>
-                </div>
-            </div>
-            <div class="indicator-item">
-                <div class="indicator-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
-                <div class="indicator-content">
-                    <h4>Customer Feedback</h4>
-                    <p>Active dissatisfaction overheard from customers regarding the payment or checkout speed.</p>
-                </div>
+                <div class="indicator-content"><h4>Fee Signage</h4><p>Handwritten notes about card minimums or extra fees.</p></div>
             </div>
             <div class="indicator-item">
                 <div class="indicator-icon"><i class="fa-solid fa-plus"></i></div>
-                <div class="indicator-content">
-                    <h4>Unique Setups</h4>
-                    <p>Operational flows you haven't seen before—opportunity to learn how that niche works.</p>
-                </div>
+                <div class="indicator-content"><h4>Unique Setups</h4><p>Opportunities to learn about niche operational flows.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Dialogue -->
-    <section id="dialogue">
-        <span class="context-tag">The Investigation</span>
-        <h2>Starting the Conversation</h2>
-        <div class="question-grid">
-            <div class="question-card" style="border-left-color: var(--gravity-blue);">
-                <div>
-                    <span class="question-label">Curiosity</span>
-                    <p class="question-text">"How does a shop like yours typically handle payments?"</p>
-                </div>
-                <i class="fa-solid fa-magnifying-glass" style="color: var(--gravity-blue); opacity: 0.1; font-size: 40px;"></i>
-            </div>
-            <div class="question-card" style="border-left-color: var(--gravity-lime);">
-                <div>
-                    <span class="question-label">Empathy</span>
-                    <p class="question-text">"I noticed you're keying those in manually—does that normally happen?"</p>
-                </div>
-                <i class="fa-solid fa-heart" style="color: var(--gravity-lime); opacity: 0.1; font-size: 40px;"></i>
-            </div>
-            <div class="question-card" style="border-left-color: var(--gravity-teal);">
-                <div>
-                    <span class="question-label">Impact</span>
-                    <p class="question-text">"If you could change one thing about your checkout, what would it be?"</p>
-                </div>
-                <i class="fa-solid fa-bolt" style="color: var(--gravity-teal); opacity: 0.1; font-size: 40px;"></i>
-            </div>
-            <div class="question-card" style="border-left-color: var(--gravity-purple);">
-                <div>
-                    <span class="question-label">Context</span>
-                    <p class="question-text">"Who do you use for processing? I'm curious what shops here prefer."</p>
-                </div>
-                <i class="fa-solid fa-earth-americas" style="color: var(--gravity-purple); opacity: 0.1; font-size: 40px;"></i>
+    <!-- Section 8: Referral Walkthrough (New) -->
+    <section id="referral">
+        <span class="context-tag">The Process</span>
+        <h2>How to Refer</h2>
+        <div class="split-grid">
+            <ul class="step-list">
+                <li>
+                    <div class="step-circle">1</div>
+                    <div><strong>Basic Info:</strong> Just Name, Business Name, and Phone.</div>
+                </li>
+                <li>
+                    <div class="step-circle">2</div>
+                    <div><strong>Observations:</strong> Write what you noticed (e.g., "Busy shop, manual entry").</div>
+                </li>
+                <li>
+                    <div class="step-circle">3</div>
+                    <div><strong>The Hand-off:</strong> Hit submit. An expert takes it from there.</div>
+                </li>
+            </ul>
+            <div class="tile" style="background: var(--gravity-navy); color: #fff;">
+                <h4 style="color: var(--gravity-lime);">The Referral Tool</h4>
+                <p style="color: #CBD5E1;">A link will be provided in your digital toolkit to generate your unique referral connection.</p>
             </div>
         </div>
     </section>
 
-    <!-- Closing -->
-    <div class="connection-footer">
-        <span class="context-tag">The Connection</span>
-        <div class="bridge-statement">
+    <!-- Connection Footer -->
+    <div style="padding: 160px 60px; text-align: center; border-top: 1px solid var(--border);">
+        <span class="context-tag">The Bridge</span>
+        <p class="merriweather" style="font-size: 42px; color: var(--gravity-navy); max-width: 1000px; margin: 0 auto 60px;">
             "I work for Gravity. We focus on improving payment environments. If you're open to it, I'd love to see if we can help improve your situation."
-        </div>
-        <div class="bridge-divider"></div>
-        <div class="bridge-outcome">
-            <span>If they say no, the relationship is still intact.</span>
-            <span>|</span>
-            <span>You offered help, and they are okay.</span>
-        </div>
+        </p>
+        <div style="height: 3px; width: 100px; background: var(--gravity-lime); margin: 0 auto 40px;"></div>
+        <p style="color: var(--text-muted); font-size: 20px;">If they say no, the relationship is still intact. You offered help, and they are okay.</p>
     </div>
+
+    <script>
+        function revealInsight(id) {
+            const content = document.getElementById(id);
+            const btn = event.target;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                btn.innerText = 'Reveal Insight';
+            } else {
+                content.style.display = 'block';
+                btn.innerText = 'Hide Insight';
+            }
+        }
+    </script>
 
 </body>
 </html>
