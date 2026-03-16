@@ -37,10 +37,15 @@
         h1 { font-size: 80px; font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--gravity-navy); margin: 0; }
         h2 { font-size: 48px; font-weight: 700; color: var(--gravity-navy); margin-top: 0; }
         .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .box { background: var(--bg-light); padding: 40px; border-radius: 8px; border: 1px solid var(--border); }
+        .box { background: var(--bg-light); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
         .dark-card { background: var(--gravity-navy); color: #fff; padding: 50px; border-radius: 12px; }
         .reveal-box { display: none; margin-top: 20px; padding: 25px; background: #fff; border-left: 5px solid var(--gravity-lime); color: var(--text-main); }
         
+        /* IMPERATIVES VISUAL */
+        .imperatives-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 30px; }
+        .imp-step { padding: 15px 10px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 6px; text-align: center; font-size: 11px; font-weight: 700; color: var(--text-muted); line-height: 1.2; }
+        .imp-step.highlight { border: 3px solid var(--gravity-lime); background: #fff; color: var(--gravity-navy); opacity: 1; transform: scale(1.05); }
+
         /* TIMER */
         .timer-wrap { text-align: center; margin-top: 20px; }
         #timer-display { font-size: 80px; font-weight: 800; color: var(--gravity-lime); }
@@ -59,7 +64,7 @@
     <div id="deck">
         <section class="slide">
             <div class="slide-content" style="text-align: center;">
-                <span class="context-tag">Investigation Training</span>
+                <span class="context-tag">Training Session</span>
                 <h1>The Art of<br>Noticing</h1>
                 <p style="font-size: 28px; color: var(--gravity-blue); font-weight: 700; margin-top: 20px;">
                     "It’s not about what you know,<br>it’s about what you notice."
@@ -70,7 +75,7 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Roadmap</span>
-                <h2>Session Objectives</h2>
+                <h2>What we're covering</h2>
                 <div class="split">
                     <div class="box">
                         <h3 style="color: var(--gravity-blue);">Identify Inefficiencies</h3>
@@ -107,9 +112,9 @@
         <section class="slide">
             <div class="slide-content">
                 <div class="dark-card">
-                    <span class="context-tag" style="color: var(--gravity-lime); border-color: #fff;">Reflection</span>
+                    <span class="context-tag" style="color: var(--gravity-lime); border-color: #fff;">Activity</span>
                     <h2 style="color: #fff;">What stops YOU?</h2>
-                    <p style="font-size: 18px; color: #CBD5E1;">Take 60 seconds. Write down the specific things that stop you from speaking up to a merchant. Fear of being pushy? Industry jargon? Write it all down.</p>
+                    <p style="font-size: 18px; color: #CBD5E1;">Take 60 seconds. Write down the specific things that stop you from speaking up to a merchant. We'll draw parallels to these later.</p>
                     <div class="timer-wrap">
                         <div id="timer-display">01:00</div>
                         <button id="timer-btn" class="timer-btn" onclick="toggleTimer()">Start 1 Minute</button>
@@ -120,38 +125,57 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Process Alignment</span>
-                <h2>Phase 0: Noticing</h2>
-                <div style="display: flex; gap: 10px; margin-top: 30px;">
-                    <div class="box" style="flex:1; border: 3px solid var(--gravity-lime);">
-                        <h4 style="margin-top:0;">YOUR ZONE</h4>
-                        <strong>Phase 0: Noticing</strong><br>
-                        Identify the Inefficiency.
+                <span class="context-tag">Alignment</span>
+                <h2>The Sales Lifecycle</h2>
+                <p style="font-size: 18px;">To help a merchant effectively, we follow a specific process. <strong>Your unique power</strong> sits at the very beginning.</p>
+                
+                <div class="imperatives-grid">
+                    <div class="imp-step highlight">
+                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 0</div>
+                        NOTICING
                     </div>
-                    <div style="flex:1; opacity: 0.3;" class="box">
-                        <h4 style="margin-top:0;">EXPERT ZONE</h4>
-                        Phase 1-5: The Sales Team<br>
-                        OTC, Pricing, Reservations.
+                    <div class="imp-step">
+                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 1</div>
+                        OTC<br>IMPROVEMENTS
+                    </div>
+                    <div class="imp-step">
+                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 2</div>
+                        PRICING &<br>EXPECTATIONS
+                    </div>
+                    <div class="imp-step">
+                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 3</div>
+                        RESERVATIONS
+                    </div>
+                    <div class="imp-step">
+                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 4</div>
+                        DECISION<br>MAKERS
+                    </div>
+                    <div class="imp-step">
+                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 5</div>
+                        NEXT STEPS
                     </div>
                 </div>
-                <p style="margin-top:30px; font-size: 18px; text-align: center;">You don't need to be the expert. You just need to care enough to see the problem.</p>
+
+                <div class="box" style="margin-top: 30px; text-align: center; border-color: var(--gravity-lime);">
+                    <p style="font-size: 20px; margin: 0;">You don't need to master Phases 1-5. You just need to be world-class at <strong>Phase 0.</strong></p>
+                </div>
             </div>
         </section>
 
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Investigation</span>
-                <h2>Visible Pain Points</h2>
+                <h2>Spotting Pain Points</h2>
                 <div class="split">
                     <div class="box">
-                        <i class="fa-solid fa-clock-rotate-left" style="font-size: 32px; color: var(--gravity-blue); margin-bottom: 20px;"></i>
+                        <i class="fa-solid fa-clock" style="font-size: 32px; color: var(--gravity-blue); margin-bottom: 20px;"></i>
                         <h4>Inefficient Time</h4>
-                        <p>Manual entry, double-typing, or broken hardware. If it looks slow, it's a problem.</p>
+                        <p>Manual entry, double-typing, or broken hardware. If it's slow for them, it's slow for the customer.</p>
                     </div>
                     <div class="box">
-                        <i class="fa-solid fa-hand-holding-dollar" style="font-size: 32px; color: var(--gravity-green); margin-bottom: 20px;"></i>
+                        <i class="fa-solid fa-face-frown" style="font-size: 32px; color: var(--gravity-green); margin-bottom: 20px;"></i>
                         <h4>Visible Frustration</h4>
-                        <p>Handwritten signs about "Card Minimums" or "3% Fees" mean they hate their setup.</p>
+                        <p>Signs about "Fees" or "Card Minimums" are usually signs of a merchant who feels trapped by their current setup.</p>
                     </div>
                 </div>
             </div>
@@ -166,7 +190,7 @@
                         <p>A shop owner has a $5,000 system. He's proud of the hardware, but his tone changes when talking about the monthly costs.</p>
                         <button class="timer-btn" onclick="reveal(this)">Draw the Parallel</button>
                         <div class="reveal-box">
-                            <strong>The Pain Point:</strong> They are <strong>Oversold.</strong> They are paying for a Ferrari to drive a block. A neighbor shouldn't be overcharged for their dream.
+                            <strong>The Pain Point:</strong> They are <strong>Oversold.</strong> They have more tech than they need and it's draining their profit. We can help right-size them.
                         </div>
                     </div>
                     <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -204,15 +228,16 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Strategy</span>
+                <span class="context-tag">Strategic Shift</span>
                 <h2>The Happy Merchant</h2>
                 <div class="split">
                     <div class="box" style="background: var(--gravity-green); color: #fff;">
-                        <h3 style="color: #fff;">Opportunity Still Exists</h3>
-                        <p>If a merchant is happy, they are your best advocate. They likely have friends who own businesses and AREN'T happy.</p>
+                        <h3 style="color: #fff;">A Happy Merchant is an Advocate</h3>
+                        <p>If they love their setup, they are your best source for a referral. They likely know other business owners who are struggling.</p>
                     </div>
                     <div class="box">
-                        <p><strong>The Script:</strong> "I love to hear that! We see a lot of people struggling with [Inefficiency]. Since you're in a good spot, do you know any other business owners who are frustrated with their setup?"</p>
+                        <p><strong>The "Bridge" Question:</strong><br><br>
+                        "I love to hear that! We see a lot of people struggling with [Inefficiency]. Since you're in a good spot, do you know any other business owners who are frustrated with their setup?"</p>
                     </div>
                 </div>
             </div>
@@ -222,7 +247,7 @@
             <div class="slide-content">
                 <span class="context-tag">Mindset</span>
                 <h2>Natural Sharing</h2>
-                <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong> If you see a neighbor struggling with a flat tire, you offer a jack. This is no different.</p>
+                <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong> If you see a neighbor struggling with a heavy door, you hold it open. This is no different.</p>
                 <div class="box" style="background: var(--gravity-navy); color: #fff; margin-top: 30px;">
                     <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of inefficiencies. If you're open to it, I'd love to connect you with an expert to see if we can help."</p>
                 </div>
@@ -231,16 +256,16 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">The Hand-off</span>
-                <h2>The Bridge to Help</h2>
+                <span class="context-tag">Action</span>
+                <h2>The Hand-off</h2>
                 <div class="split">
                     <div class="box">
                         <h4>Referral Toolkit</h4>
-                        <p>Ethan has provided a link generator. When you've noticed a problem, use it to pass the baton to an expert.</p>
-                        <p><strong>What to include:</strong><br>• Merchant Contact<br>• The specific inefficiency you saw</p>
+                        <p>Use the link generator Ethan provided to bridge the gap between your observation and our solution experts.</p>
+                        <p><strong>Include:</strong><br>• Merchant Contact Info<br>• The "Notice" (What was the pain?)</p>
                     </div>
                     <div style="background: #eee; height: 300px; border-radius: 8px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-                        <span style="opacity: 0.5; font-weight: 800;">[PLACEHOLDER FOR ETHAN'S LINK GENERATOR SCREENSHOT]</span>
+                        <span style="opacity: 0.5; font-weight: 800;">[PLACEHOLDER FOR REFERRAL TOOL SCREENSHOT]</span>
                     </div>
                 </div>
             </div>
@@ -251,16 +276,13 @@
                 <span class="context-tag">Final Word</span>
                 <h2>Let's stand with our community.</h2>
                 <p style="font-size: 24px; color: var(--text-muted);">The Art of Noticing is about caring enough to look.</p>
-                <div style="margin-top: 50px;">
-                    <button class="timer-btn" onclick="goToSlide(0)">Restart Session</button>
-                </div>
             </div>
         </section>
     </div>
 
     <div id="controls">
         <button class="control-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
-        <span id="slide-indicator" style="font-weight: 800; font-size: 14px; min-width: 60px; text-align: center;">1 / 13</span>
+        <span id="slide-indicator">1 / 13</span>
         <button class="control-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
