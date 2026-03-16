@@ -39,11 +39,11 @@
         .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .box { background: var(--bg-light); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
         .dark-card { background: var(--gravity-navy); color: #fff; padding: 50px; border-radius: 12px; }
-        .reveal-box { display: none; margin-top: 20px; padding: 25px; background: #fff; border-left: 5px solid var(--gravity-lime); color: var(--text-main); }
+        .reveal-box { display: none; margin-top: 20px; padding: 25px; background: #fff; border-left: 5px solid var(--gravity-lime); color: var(--text-main); font-size: 18px; }
         
         /* IMPERATIVES VISUAL */
         .imperatives-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 30px; }
-        .imp-step { padding: 15px 10px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 6px; text-align: center; font-size: 11px; font-weight: 700; color: var(--text-muted); line-height: 1.2; }
+        .imp-step { padding: 15px 10px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 6px; text-align: center; font-size: 10px; font-weight: 700; color: var(--text-muted); line-height: 1.2; }
         .imp-step.highlight { border: 3px solid var(--gravity-lime); background: #fff; color: var(--gravity-navy); opacity: 1; transform: scale(1.05); }
 
         /* TIMER */
@@ -75,15 +75,15 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Roadmap</span>
-                <h2>What we're covering</h2>
+                <h2>What we're doing today</h2>
                 <div class="split">
                     <div class="box">
                         <h3 style="color: var(--gravity-blue);">Identify Inefficiencies</h3>
-                        <p>Recognize the physical and operational signs that a business is struggling.</p>
+                        <p>Learn to recognize the physical signs that a neighborhood business is struggling.</p>
                     </div>
                     <div class="box">
                         <h3 style="color: var(--gravity-green);">Simple Dialogue</h3>
-                        <p>Frameworks for starting conversations that feel natural and curiosity-driven.</p>
+                        <p>Frameworks for conversations that feel natural, not like a pitch.</p>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                         </ul>
                     </div>
                     <div class="box" style="border-left: 8px solid var(--gravity-lime);">
-                        <p>When these businesses face problems, it impacts the neighbors we care about. We notice because we want them to win.</p>
+                        <p>We notice because we want them to win. When they struggle, we feel it. When they succeed, we celebrate.</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                 <div class="dark-card">
                     <span class="context-tag" style="color: var(--gravity-lime); border-color: #fff;">Activity</span>
                     <h2 style="color: #fff;">What stops YOU?</h2>
-                    <p style="font-size: 18px; color: #CBD5E1;">Take 60 seconds. Write down the specific things that stop you from speaking up to a merchant. We'll draw parallels to these later.</p>
+                    <p style="font-size: 18px; color: #CBD5E1;">Take 60 seconds. Write down the specific things that keep you from speaking up. Is it fear of being "salsy"? Not being a tech expert? Get it all out.</p>
                     <div class="timer-wrap">
                         <div id="timer-display">01:00</div>
                         <button id="timer-btn" class="timer-btn" onclick="toggleTimer()">Start 1 Minute</button>
@@ -125,58 +125,39 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Alignment</span>
-                <h2>The Sales Lifecycle</h2>
-                <p style="font-size: 18px;">To help a merchant effectively, we follow a specific process. <strong>Your unique power</strong> sits at the very beginning.</p>
+                <span class="context-tag">The Big Picture</span>
+                <h2>Where You Fit</h2>
+                <p>To support a merchant, we follow the 5 Imperatives. You empower the whole chain by mastering <strong>Phase 0.</strong></p>
                 
                 <div class="imperatives-grid">
                     <div class="imp-step highlight">
-                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 0</div>
+                        <div style="font-size: 9px; margin-bottom: 5px;">PHASE 0</div>
                         NOTICING
                     </div>
                     <div class="imp-step">
-                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 1</div>
-                        OTC<br>IMPROVEMENTS
+                        <div style="font-size: 9px; margin-bottom: 5px;">PHASE 1</div>
+                        OTC IMPROVEMENTS
                     </div>
                     <div class="imp-step">
-                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 2</div>
-                        PRICING &<br>EXPECTATIONS
+                        <div style="font-size: 9px; margin-bottom: 5px;">PHASE 2</div>
+                        PRICING & EXPECTATIONS
                     </div>
                     <div class="imp-step">
-                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 3</div>
+                        <div style="font-size: 9px; margin-bottom: 5px;">PHASE 3</div>
                         RESERVATIONS
                     </div>
                     <div class="imp-step">
-                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 4</div>
-                        DECISION<br>MAKERS
+                        <div style="font-size: 9px; margin-bottom: 5px;">PHASE 4</div>
+                        DECISION MAKERS
                     </div>
                     <div class="imp-step">
-                        <div style="font-size: 10px; margin-bottom: 5px;">PHASE 5</div>
+                        <div style="font-size: 9px; margin-bottom: 5px;">PHASE 5</div>
                         NEXT STEPS
                     </div>
                 </div>
 
                 <div class="box" style="margin-top: 30px; text-align: center; border-color: var(--gravity-lime);">
-                    <p style="font-size: 20px; margin: 0;">You don't need to master Phases 1-5. You just need to be world-class at <strong>Phase 0.</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="slide-content">
-                <span class="context-tag">Investigation</span>
-                <h2>Spotting Pain Points</h2>
-                <div class="split">
-                    <div class="box">
-                        <i class="fa-solid fa-clock" style="font-size: 32px; color: var(--gravity-blue); margin-bottom: 20px;"></i>
-                        <h4>Inefficient Time</h4>
-                        <p>Manual entry, double-typing, or broken hardware. If it's slow for them, it's slow for the customer.</p>
-                    </div>
-                    <div class="box">
-                        <i class="fa-solid fa-face-frown" style="font-size: 32px; color: var(--gravity-green); margin-bottom: 20px;"></i>
-                        <h4>Visible Frustration</h4>
-                        <p>Signs about "Fees" or "Card Minimums" are usually signs of a merchant who feels trapped by their current setup.</p>
-                    </div>
+                    <p style="font-size: 20px; margin: 0;">You aren't responsible for the technical deep-dive. You are the one who cares enough to see the <strong>notice.</strong></p>
                 </div>
             </div>
         </section>
@@ -185,12 +166,12 @@
             <div class="slide-content">
                 <div class="split">
                     <div>
-                        <span class="context-tag">Case Study</span>
-                        <h2>The High-Cost Pride</h2>
-                        <p>A shop owner has a $5,000 system. He's proud of the hardware, but his tone changes when talking about the monthly costs.</p>
-                        <button class="timer-btn" onclick="reveal(this)">Draw the Parallel</button>
+                        <span class="context-tag">Scenario 1</span>
+                        <h2>High-Cost Pride</h2>
+                        <p>A board game shop owner has a $5,000 system. He's proud of the hardware, but he's visibly stressed when he talks about his monthly overhead.</p>
+                        <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                         <div class="reveal-box">
-                            <strong>The Pain Point:</strong> They are <strong>Oversold.</strong> They have more tech than they need and it's draining their profit. We can help right-size them.
+                            <strong>Oversold:</strong> They are paying for a "Ferrari" to drive a block. They've been sold more tech than their business actually needs.
                         </div>
                     </div>
                     <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -202,8 +183,46 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Simple Mode</span>
-                <h2>Low-Stakes Questions</h2>
+                <div class="split">
+                    <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-mug-hot" style="font-size: 100px; opacity: 0.1;"></i>
+                    </div>
+                    <div>
+                        <span class="context-tag">Scenario 2</span>
+                        <h2>The Manual Bottleneck</h2>
+                        <p>The shop is keying in every card number because the reader is broken. The staff is flustered and the line is long.</p>
+                        <button class="timer-btn" onclick="reveal(this)">The Observation</button>
+                        <div class="reveal-box">
+                            <strong>Inefficiency:</strong> Their equipment is working against them. This friction is costing them time and customer satisfaction.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-content">
+                <div class="split">
+                    <div>
+                        <span class="context-tag">Scenario 3</span>
+                        <h2>The Utility Trap</h2>
+                        <p>A City Utility office says they <i>have</i> to use their current processor because it's the only one that "talks" to their specialized government software.</p>
+                        <button class="timer-btn" onclick="reveal(this)">The Observation</button>
+                        <div class="reveal-box">
+                            <strong>Technical Trap:</strong> They feel locked in. We often find that "impossible" integrations are exactly where Gravity specializes in finding a better way.
+                        </div>
+                    </div>
+                    <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-building-columns" style="font-size: 100px; opacity: 0.1;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-content">
+                <span class="context-tag">Communication</span>
+                <h2>Lead with Curiosity</h2>
                 <div class="box" style="margin-bottom: 20px; border-left: 6px solid var(--gravity-blue);">
                     <h3 style="margin: 0;">"Is that easy to use?"</h3>
                 </div>
@@ -218,26 +237,17 @@
 
         <section class="slide">
             <div class="slide-content">
-                <div class="dark-card" style="text-align: center;">
-                    <span class="context-tag" style="color: #fff; border-color: #fff;">Open Discussion</span>
-                    <h2 style="color: #fff;">Your Turn</h2>
-                    <p style="font-size: 24px;">What is a question you would feel <strong>comfortable</strong> asking a merchant based on your personality?</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="slide-content">
-                <span class="context-tag">Strategic Shift</span>
-                <h2>The Happy Merchant</h2>
+                <span class="context-tag">Mindset</span>
+                <h2>"Actually, we're in a good spot!"</h2>
                 <div class="split">
                     <div class="box" style="background: var(--gravity-green); color: #fff;">
-                        <h3 style="color: #fff;">A Happy Merchant is an Advocate</h3>
-                        <p>If they love their setup, they are your best source for a referral. They likely know other business owners who are struggling.</p>
+                        <h3 style="color: #fff;">Celebrate the Win</h3>
+                        <p>If a merchant is happy and their system is working, that is amazing. Our goal is for small businesses to thrive—even if they aren't using us.</p>
                     </div>
                     <div class="box">
-                        <p><strong>The "Bridge" Question:</strong><br><br>
-                        "I love to hear that! We see a lot of people struggling with [Inefficiency]. Since you're in a good spot, do you know any other business owners who are frustrated with their setup?"</p>
+                        <p><strong>The Neighborly Response:</strong><br><br>
+                        "That is great to hear! I love seeing local shops that have their setup dialed in. Just out of curiosity, what are you guys using? I love to know what's working well for people."</p>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 20px; font-style: italic;">Then, be on your way. The relationship is intact.</p>
                     </div>
                 </div>
             </div>
@@ -247,9 +257,9 @@
             <div class="slide-content">
                 <span class="context-tag">Mindset</span>
                 <h2>Natural Sharing</h2>
-                <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong> If you see a neighbor struggling with a heavy door, you hold it open. This is no different.</p>
+                <p style="font-size: 26px; line-height: 1.4;">If you see a problem, sharing a solution is an <strong>act of service.</strong> If you see a neighbor with a flat tire, you offer a jack. You don't "pitch" them the jack.</p>
                 <div class="box" style="background: var(--gravity-navy); color: #fff; margin-top: 30px;">
-                    <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of inefficiencies. If you're open to it, I'd love to connect you with an expert to see if we can help."</p>
+                    <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of bottlenecks. If you're open to it, I'd love to connect you with someone here who can help."</p>
                 </div>
             </div>
         </section>
@@ -257,15 +267,15 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Action</span>
-                <h2>The Hand-off</h2>
+                <h2>The Bridge</h2>
                 <div class="split">
                     <div class="box">
                         <h4>Referral Toolkit</h4>
-                        <p>Use the link generator Ethan provided to bridge the gap between your observation and our solution experts.</p>
-                        <p><strong>Include:</strong><br>• Merchant Contact Info<br>• The "Notice" (What was the pain?)</p>
+                        <p>Use Ethan's link generator to bridge the gap. You've done the hard part—you noticed the pain.</p>
+                        <p><strong>Provide:</strong><br>• Merchant Contact<br>• Your "Notice" (What was the struggle?)</p>
                     </div>
                     <div style="background: #eee; height: 300px; border-radius: 8px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-                        <span style="opacity: 0.5; font-weight: 800;">[PLACEHOLDER FOR REFERRAL TOOL SCREENSHOT]</span>
+                        <span style="opacity: 0.5; font-weight: 800;">[REFERRAL TOOL SCREENSHOT]</span>
                     </div>
                 </div>
             </div>
@@ -274,8 +284,11 @@
         <section class="slide">
             <div class="slide-content" style="text-align: center;">
                 <span class="context-tag">Final Word</span>
-                <h2>Let's stand with our community.</h2>
-                <p style="font-size: 24px; color: var(--text-muted);">The Art of Noticing is about caring enough to look.</p>
+                <h2>Stand with your community.</h2>
+                <p style="font-size: 24px; color: var(--text-muted);">The Art of Noticing is simply caring enough to look.</p>
+                <div style="margin-top: 50px;">
+                    <button class="timer-btn" onclick="goToSlide(0)">Back to Start</button>
+                </div>
             </div>
         </section>
     </div>
