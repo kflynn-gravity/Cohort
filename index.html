@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Art of Noticing | Gravity Payments</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Merriweather:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;800&family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -26,7 +24,7 @@
 
         #top-nav { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: rgba(255,255,255,0.95); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; z-index: 1000; }
         #progress-bar { position: fixed; top: 0; left: 0; height: 4px; width: 0%; background: var(--gravity-lime); z-index: 1001; transition: width 0.3s ease; }
-        #controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--gravity-navy); color: #fff; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; }
+        #controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--gravity-navy); color: #fff; padding: 10px 25px; border-radius: 50px; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; }
         .control-btn { background: none; border: none; color: #fff; cursor: pointer; font-size: 20px; opacity: 0.7; }
         .control-btn:hover { opacity: 1; color: var(--gravity-lime); }
 
@@ -34,7 +32,8 @@
         h1 { font-size: 80px; font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--gravity-navy); margin: 0; }
         h2 { font-size: 48px; font-weight: 700; color: var(--gravity-navy); margin-top: 0; }
         .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .box { background: var(--bg-light); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
+        .triple { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin-top: 30px; }
+        .box { background: var(--bg-light); padding: 30px; border-radius: 8px; border: 1px solid var(--border); height: 100%; }
         .dark-card { background: var(--gravity-navy); color: #fff; padding: 50px; border-radius: 12px; }
         .reveal-box { display: none; margin-top: 20px; padding: 25px; background: #fff; border-left: 5px solid var(--gravity-lime); color: var(--text-main); font-size: 18px; }
         
@@ -89,8 +88,8 @@
         <section class="slide">
             <div class="slide-content">
                 <div class="dark-card">
-                    <span class="context-tag" style="color: var(--gravity-lime); border-color: #fff;">Reflection</span>
-                    <h2 style="color: #fff;">Observing the Gap</h2>
+                    <span class="context-tag" style="color: var(--gravity-lime); border-color: white;">Reflection</span>
+                    <h2 style="color: white;">What stops people?</h2>
                     <p style="font-size: 20px; color: #CBD5E1;">Take 60 seconds. Write down or brainstorm: <strong>What do you think keeps people from speaking up</strong> when they see a business struggling?</p>
                     <div style="text-align: center; margin-top: 20px;">
                         <div id="timer-display">01:00</div>
@@ -102,8 +101,8 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">The Gravity Way</span>
-                <h2>Where You Fit</h2>
+                <span class="context-tag">Process Alignment</span>
+                <h2>The Sales Lifecycle</h2>
                 <div class="imperatives-grid">
                     <div class="imp-step highlight">NOTICING</div>
                     <div class="imp-step">OTC IMPROVEMENTS</div>
@@ -113,7 +112,7 @@
                     <div class="imp-step">NEXT STEPS</div>
                 </div>
                 <div class="box" style="margin-top: 30px; text-align: center; border-color: var(--gravity-lime);">
-                    <p style="font-size: 20px; margin: 0;">You aren't responsible for the deep-dive technical solution. You just need to care enough to <strong>notice a challenge and ask about it.</strong></p>
+                    <p style="font-size: 20px; margin: 0;">You aren't responsible for the technical deep-dive. You are the one who cares enough to <strong>notice a challenge and ask about it.</strong></p>
                 </div>
             </div>
         </section>
@@ -122,14 +121,22 @@
             <div class="slide-content">
                 <span class="context-tag">Investigation</span>
                 <h2>Observing Inefficiencies</h2>
-                <div class="split">
+                <p style="font-size: 20px; margin-bottom: 10px;">If the process looks broken, it usually is. Look for these three faces of operational bottlenecks:</p>
+                <div class="triple">
                     <div class="box">
-                        <h4 style="color: var(--gravity-blue); text-transform: uppercase;">Operational Bottlenecks</h4>
-                        <p>Things that look slow, repetitive, or difficult for the staff to manage.</p>
+                        <i class="fa-solid fa-clock-rotate-left" style="font-size: 24px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0;">The Time-Sink</h4>
+                        <p style="font-size: 15px; margin: 0;">Manual entry, double-typing, or broken hardware. If it's slow for the staff, it's slow for the customer.</p>
                     </div>
                     <div class="box">
-                        <h4 style="color: var(--gravity-green); text-transform: uppercase;">Cost Inefficiency</h4>
-                        <p>Signs like "Cash Only" or "3% Fee" usually point to a merchant frustrated by their overhead.</p>
+                        <i class="fa-solid fa-face-frown" style="font-size: 24px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0;">The Human Toll</h4>
+                        <p style="font-size: 15px; margin: 0;">Staff frustration, visible stress, or "apologizing for the system." Look for the eye-roll or the deep sigh.</p>
+                    </div>
+                    <div class="box">
+                        <i class="fa-solid fa-diagram-predecessor" style="font-size: 24px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0;">Fragmented Flow</h4>
+                        <p style="font-size: 15px; margin: 0;">Systems that don't talk to each other. Paper trails, sticky notes on screens, or carrying hardware to different rooms.</p>
                     </div>
                 </div>
             </div>
@@ -140,10 +147,10 @@
                 <div>
                     <span class="context-tag">Scenario 1</span>
                     <h2>The "Ferrari" Setup</h2>
-                    <p>A small board game shop has a massive $5,000 system. He's proud of the hardware, but his tone shifts when talking about monthly overhead.</p>
+                    <p>A small board game shop has a massive $5,000 system. He's proud of the tech, but his tone changes when talking about monthly overhead.</p>
                     <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>The Challenge:</strong> They are <strong>Oversold.</strong> They are paying for complexity they don't need. It is a drain on their dream.
+                        <strong>The Challenge:</strong> They are <strong>Oversold.</strong> They have more tech than they need, creating financial stress for their dream.
                     </div>
                 </div>
                 <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -160,10 +167,10 @@
                 <div>
                     <span class="context-tag">Scenario 2</span>
                     <h2>The Manual Bottleneck</h2>
-                    <p>A coffee shop staff is manually keying in card numbers because the reader is broken. The line is out the door.</p>
+                    <p>A coffee shop staff is manually keying in card numbers because the reader is broken. The line is out the door and staff is flustered.</p>
                     <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>The Challenge:</strong> <strong>Friction.</strong> Their tools are fighting them. This bottleneck is a physical barrier to their success.
+                        <strong>The Challenge:</strong> <strong>Friction.</strong> Their tools are fighting them, creating a physical barrier to their success.
                     </div>
                 </div>
             </div>
@@ -174,10 +181,10 @@
                 <div>
                     <span class="context-tag">Scenario 3</span>
                     <h2>The Fee Friction</h2>
-                    <p>A City Utility office has high convenience fees for online payments. Because of this, customers choose to pay in person.</p>
+                    <p>A City Utility office has high convenience fees for online payments. Because of this, customers swarm the lobby to pay in person.</p>
                     <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>The Challenge:</strong> <strong>Operational Burden.</strong> High fees are driving manual work. The staff is overwhelmed by in-person traffic because the digital solution is too expensive for the neighbor.
+                        <strong>The Challenge:</strong> <strong>Operational Burden.</strong> High fees drive manual work. Staff is overwhelmed because the digital solution is too expensive for the neighbor.
                     </div>
                 </div>
                 <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -220,9 +227,9 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Reinforcement</span>
+                <span class="context-tag">Mindset</span>
                 <h2>Natural Sharing</h2>
-                <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong> If you <strong>notice</strong> a neighbor with a flat tire, you offer a jack. You don't "pitch" them a jack.</p>
+                <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong> If you see a neighbor with a flat tire, you offer a jack. You don't "pitch" them a jack.</p>
                 <div class="box" style="background: var(--gravity-navy); color: #fff; margin-top: 30px;">
                     <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of inefficiencies. If you're open to it, I'd love to connect you with someone here who can help."</p>
                 </div>
@@ -231,7 +238,7 @@
 
         <section class="slide">
             <div class="slide-content" style="text-align: center;">
-                <span class="context-tag">Next Steps</span>
+                <span class="context-tag">Action</span>
                 <h2>Referral Process</h2>
                 <div class="box" style="max-width: 600px; margin: 40px auto; border: 2px dashed #ccc; background: var(--bg-light);">
                     <p style="font-size: 20px; color: var(--text-muted);">[Referral Solution Pending]</p>
