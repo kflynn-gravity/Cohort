@@ -32,8 +32,12 @@
         h1 { font-size: 80px; font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--gravity-navy); margin: 0; }
         h2 { font-size: 48px; font-weight: 700; color: var(--gravity-navy); margin-top: 0; }
         .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .triple { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin-top: 30px; }
-        .box { background: var(--bg-light); padding: 30px; border-radius: 8px; border: 1px solid var(--border); height: 100%; }
+        
+        /* Fixed Grid for Slide 5 */
+        .bottleneck-container { display: flex; justify-content: space-between; gap: 20px; margin-top: 30px; align-items: stretch; }
+        .bottleneck-box { background: var(--bg-light); padding: 25px; border-radius: 8px; border: 1px solid var(--border); flex: 1; display: flex; flex-direction: column; }
+        
+        .box { background: var(--bg-light); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
         .dark-card { background: var(--gravity-navy); color: #fff; padding: 50px; border-radius: 12px; }
         .reveal-box { display: none; margin-top: 20px; padding: 25px; background: #fff; border-left: 5px solid var(--gravity-lime); color: var(--text-main); font-size: 18px; }
         
@@ -121,22 +125,22 @@
             <div class="slide-content">
                 <span class="context-tag">Investigation</span>
                 <h2>Observing Inefficiencies</h2>
-                <p style="font-size: 20px; margin-bottom: 10px;">If the process looks broken, it usually is. Look for these three faces of operational bottlenecks:</p>
-                <div class="triple">
-                    <div class="box">
-                        <i class="fa-solid fa-clock-rotate-left" style="font-size: 24px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
-                        <h4 style="margin: 0 0 10px 0;">The Time-Sink</h4>
-                        <p style="font-size: 15px; margin: 0;">Manual entry, double-typing, or broken hardware. If it's slow for the staff, it's slow for the customer.</p>
+                <p style="font-size: 18px; margin-bottom: 5px;">If the process looks broken, it usually is. Look for these three faces of operational bottlenecks:</p>
+                <div class="bottleneck-container">
+                    <div class="bottleneck-box">
+                        <i class="fa-solid fa-clock-rotate-left" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0; font-size: 18px;">The Time-Sink</h4>
+                        <p style="font-size: 14px; margin: 0; line-height: 1.4;">Manual entry, double-typing, or broken hardware. If it's slow for the staff, it's slow for the customer.</p>
                     </div>
-                    <div class="box">
-                        <i class="fa-solid fa-face-frown" style="font-size: 24px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
-                        <h4 style="margin: 0 0 10px 0;">The Human Toll</h4>
-                        <p style="font-size: 15px; margin: 0;">Staff frustration, visible stress, or "apologizing for the system." Look for the eye-roll or the deep sigh.</p>
+                    <div class="bottleneck-box">
+                        <i class="fa-solid fa-face-frown" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0; font-size: 18px;">The Human Toll</h4>
+                        <p style="font-size: 14px; margin: 0; line-height: 1.4;">Staff frustration, visible stress, or "apologizing for the system." Look for the eye-roll or the deep sigh.</p>
                     </div>
-                    <div class="box">
-                        <i class="fa-solid fa-diagram-predecessor" style="font-size: 24px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
-                        <h4 style="margin: 0 0 10px 0;">Fragmented Flow</h4>
-                        <p style="font-size: 15px; margin: 0;">Systems that don't talk to each other. Paper trails, sticky notes on screens, or carrying hardware to different rooms.</p>
+                    <div class="bottleneck-box">
+                        <i class="fa-solid fa-diagram-predecessor" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0; font-size: 18px;">Fragmented Flow</h4>
+                        <p style="font-size: 14px; margin: 0; line-height: 1.4;">Systems that don't talk to each other. Paper trails, sticky notes on screens, or carrying hardware to different rooms.</p>
                     </div>
                 </div>
             </div>
@@ -184,7 +188,7 @@
                     <p>A City Utility office has high convenience fees for online payments. Because of this, customers swarm the lobby to pay in person.</p>
                     <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>The Challenge:</strong> <strong>Operational Burden.</strong> High fees drive manual work. Staff is overwhelmed because the digital solution is too expensive for the neighbor.
+                        <strong>The Challenge:</strong> <strong>Operational Burden.</strong> High fees are driving manual work. Staff is overwhelmed because the digital solution is too expensive for the neighbor.
                     </div>
                 </div>
                 <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
