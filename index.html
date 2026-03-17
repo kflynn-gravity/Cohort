@@ -19,7 +19,7 @@
             --border: #E2E8F0;
         }
 
-        body { margin: 0; padding: 0; overflow: hidden; font-family: 'DM Sans', sans-serif; background-color: #fff; }
+        body { margin: 0; padding: 0; overflow: hidden; font-family: 'DM Sans', sans-serif; background-color: #fff; color: var(--text-main); }
         #deck { display: flex; width: 100vw; height: 100vh; overflow-x: hidden; scroll-behavior: smooth; }
         .slide { flex: 0 0 100vw; width: 100vw; height: 100vh; overflow-y: auto; display: flex; flex-direction: column; padding: 80px 60px; box-sizing: border-box; }
         .slide-content { margin: auto 0; max-width: 1100px; width: 100%; margin-left: auto; margin-right: auto; }
@@ -43,7 +43,7 @@
         .imp-step.highlight { border: 3px solid var(--gravity-lime); background: #fff; color: var(--gravity-navy); opacity: 1; transform: scale(1.05); }
 
         #timer-display { font-size: 80px; font-weight: 800; color: var(--gravity-lime); text-align: center; }
-        .timer-btn { background: var(--gravity-lime); border: none; padding: 12px 30px; font-weight: 800; cursor: pointer; border-radius: 4px; text-transform: uppercase; }
+        .timer-btn { background: var(--gravity-lime); border: none; padding: 12px 30px; font-weight: 800; cursor: pointer; border-radius: 4px; text-transform: uppercase; color: var(--gravity-navy); }
     </style>
 </head>
 <body>
@@ -52,7 +52,7 @@
 
     <header id="top-nav">
         <div style="font-weight: 800; color: var(--gravity-navy);">GRAVITY <span style="color: var(--gravity-lime);">PAYMENTS</span></div>
-        <div style="font-size: 10px; font-weight: 800; color: var(--text-muted);">THE ART OF NOTICING</div>
+        <div style="font-size: 10px; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">The Art of Noticing</div>
     </header>
 
     <div id="deck">
@@ -90,7 +90,7 @@
             <div class="slide-content">
                 <div class="dark-card">
                     <span class="context-tag" style="color: var(--gravity-lime); border-color: #fff;">Reflection</span>
-                    <h2 style="color: #fff;">What stops people?</h2>
+                    <h2 style="color: #fff;">Observing the Gap</h2>
                     <p style="font-size: 20px; color: #CBD5E1;">Take 60 seconds. Write down or brainstorm: <strong>What do you think keeps people from speaking up</strong> when they see a business struggling?</p>
                     <div style="text-align: center; margin-top: 20px;">
                         <div id="timer-display">01:00</div>
@@ -103,7 +103,7 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">The Gravity Way</span>
-                <h2>The Sales Lifecycle</h2>
+                <h2>Where You Fit</h2>
                 <div class="imperatives-grid">
                     <div class="imp-step highlight">NOTICING</div>
                     <div class="imp-step">OTC IMPROVEMENTS</div>
@@ -113,7 +113,7 @@
                     <div class="imp-step">NEXT STEPS</div>
                 </div>
                 <div class="box" style="margin-top: 30px; text-align: center; border-color: var(--gravity-lime);">
-                    <p style="font-size: 20px; margin: 0;">You aren't responsible for the deep-dive solution. Your unique power is simply caring enough to <strong>notice a challenge and ask about it.</strong></p>
+                    <p style="font-size: 20px; margin: 0;">You aren't responsible for the deep-dive technical solution. You just need to care enough to <strong>notice a challenge and ask about it.</strong></p>
                 </div>
             </div>
         </section>
@@ -128,7 +128,7 @@
                         <p>Things that look slow, repetitive, or difficult for the staff to manage.</p>
                     </div>
                     <div class="box">
-                        <h4 style="color: var(--gravity-green); text-transform: uppercase;">Cost Friction</h4>
+                        <h4 style="color: var(--gravity-green); text-transform: uppercase;">Cost Inefficiency</h4>
                         <p>Signs like "Cash Only" or "3% Fee" usually point to a merchant frustrated by their overhead.</p>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                     <p>A small board game shop has a massive $5,000 system. He's proud of the hardware, but his tone shifts when talking about monthly overhead.</p>
                     <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>Oversold:</strong> They are paying for complexity they don't need. It is a drain on their dream. We can help right-size them.
+                        <strong>The Challenge:</strong> They are <strong>Oversold.</strong> They are paying for complexity they don't need. It is a drain on their dream.
                     </div>
                 </div>
                 <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -163,7 +163,7 @@
                     <p>A coffee shop staff is manually keying in card numbers because the reader is broken. The line is out the door.</p>
                     <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>Inefficiency:</strong> Their tools are fighting them. This bottleneck is a physical barrier to their success.
+                        <strong>The Challenge:</strong> <strong>Friction.</strong> Their tools are fighting them. This bottleneck is a physical barrier to their success.
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@
                     <p>A City Utility office has high convenience fees for online payments. Because of this, customers choose to pay in person.</p>
                     <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>Operational Burden:</strong> High fees are driving manual work. The staff is overwhelmed by in-person traffic because the digital solution is too expensive for the neighbor.
+                        <strong>The Challenge:</strong> <strong>Operational Burden.</strong> High fees are driving manual work. The staff is overwhelmed by in-person traffic because the digital solution is too expensive for the neighbor.
                     </div>
                 </div>
                 <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -224,24 +224,18 @@
                 <h2>Natural Sharing</h2>
                 <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong> If you see a neighbor with a flat tire, you offer a jack. You don't "pitch" them a jack.</p>
                 <div class="box" style="background: var(--gravity-navy); color: #fff; margin-top: 30px;">
-                    <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of bottlenecks. If you're open to it, I'd love to connect you with someone here who can help."</p>
+                    <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of inefficiencies. If you're open to it, I'd love to connect you with someone here who can help."</p>
                 </div>
             </div>
         </section>
 
         <section class="slide">
-            <div class="slide-content">
-                <span class="context-tag">The Bridge</span>
-                <h2>How to Refer</h2>
-                <div class="split">
-                    <div class="box">
-                        <h4>Referral Toolkit</h4>
-                        <p>Use the generator Ethan provided. You've done the hard part—you noticed a challenge and asked about it.</p>
-                        <p><strong>What to include:</strong><br>• Merchant Contact Info<br>• What was the challenge?</p>
-                    </div>
-                    <div class="box" style="background: #eee; text-align: center; border: 2px dashed #ccc;">
-                        <span style="opacity: 0.5; font-weight: 800;">[REFERRAL TOOL SCREENSHOT]</span>
-                    </div>
+            <div class="slide-content" style="text-align: center;">
+                <span class="context-tag">Next Steps</span>
+                <h2>Referral Process</h2>
+                <div class="box" style="max-width: 600px; margin: 40px auto; border: 2px dashed #ccc; background: var(--bg-light);">
+                    <p style="font-size: 20px; color: var(--text-muted);">[Referral Solution Pending]</p>
+                    <p>Details on the specific tool and hand-off method will be updated here once finalized.</p>
                 </div>
             </div>
         </section>
