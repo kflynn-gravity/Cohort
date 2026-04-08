@@ -40,15 +40,17 @@
         .dark-card { background: var(--gravity-navy); color: #fff; padding: 50px; border-radius: 12px; }
         .reveal-box { display: none; margin-top: 20px; padding: 25px; background: #fff; border-left: 5px solid var(--gravity-lime); color: var(--text-main); font-size: 18px; }
         
-        .imperatives-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 30px; }
-        .imp-step { padding: 15px 10px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 6px; text-align: center; font-size: 10px; font-weight: 700; color: var(--text-muted); line-height: 1.2; }
-        .imp-step.highlight { border: 3px solid var(--gravity-lime); background: #fff; color: var(--gravity-navy); opacity: 1; transform: scale(1.05); }
+        /* Workshop Inputs */
+        .workshop-field { margin-top: 15px; }
+        .workshop-input { width: 100%; padding: 12px; border: 2px solid var(--border); border-radius: 6px; font-size: 18px; font-family: 'DM Sans', sans-serif; }
+        .workshop-input:focus { border-color: var(--gravity-lime); outline: none; }
+        .clear-btn { background: var(--gravity-blue); color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: 700; margin-top: 10px; }
+
+        .reservation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .res-item { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 4px; font-size: 16px; border-left: 4px solid var(--gravity-lime); }
 
         #timer-display { font-size: 80px; font-weight: 800; color: var(--gravity-lime); text-align: center; }
         .timer-btn { background: var(--gravity-lime); border: none; padding: 12px 30px; font-weight: 800; cursor: pointer; border-radius: 4px; text-transform: uppercase; color: var(--gravity-navy); }
-        
-        .reservation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-        .res-item { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 4px; font-size: 16px; border-left: 4px solid var(--gravity-lime); }
     </style>
 </head>
 <body>
@@ -73,20 +75,30 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Alignment</span>
-                <h2 style="font-family: 'Merriweather', serif; font-style: italic; font-size: 42px;">"We exist to stand with those who believe in the American dream and are willing to work to achieve it"</h2>
-                <div class="split" style="margin-top: 40px;">
-                    <div>
-                        <p style="font-size: 20px;">This is about <strong>Your Community.</strong></p>
-                        <ul style="font-size: 18px; color: var(--text-muted); line-height: 1.8;">
-                            <li>Your Town & State</li>
-                            <li>Your Favorite Coffee Spot</li>
-                            <li>Your Friends' Businesses</li>
+                <span class="context-tag">Engagement</span>
+                <h2>Defining "Community"</h2>
+                <p style="font-size: 20px;">Before we dive in, let's identify who we're talking about. When we say "Your Community," who comes to mind for you?</p>
+                <div class="split" style="margin-top: 30px;">
+                    <div class="box">
+                        <ul style="font-size: 22px; line-height: 2;">
+                            <li>The local gym?</li>
+                            <li>Your favorite lunch spot?</li>
+                            <li>A neighbor's side-hustle?</li>
                         </ul>
                     </div>
-                    <div class="box" style="border-left: 8px solid var(--gravity-lime);">
-                        <p>We notice because we care. If you see a neighbor with a flat tire, you offer a jack. This training is about offering the "jack" for business challenges.</p>
+                    <div style="font-style: italic; color: var(--text-muted); font-size: 18px;">
+                        "Standing with those who believe in the American dream starts with the people right outside your front door."
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-content">
+                <span class="context-tag">Alignment</span>
+                <h2 style="font-family: 'Merriweather', serif; font-style: italic; font-size: 42px;">"We exist to stand with those who believe in the American dream..."</h2>
+                <div class="box" style="margin-top: 40px; border-left: 8px solid var(--gravity-lime);">
+                    <p style="font-size: 22px;">If you see a neighbor with a flat tire, you offer a jack. You don't "pitch" them a jack. This is an act of service.</p>
                 </div>
             </div>
         </section>
@@ -108,51 +120,34 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Breaking Barriers</span>
-                <h2>We Hear You</h2>
-                <p>These are the common reasons we hesitate to speak up:</p>
+                <h2>Addressing the Reservations</h2>
+                <p>We all feel these. Let's look at why they don't have to stop you:</p>
                 <div class="reservation-grid">
-                    <div class="res-item"><strong>"I don't want to be salesy."</strong><br><small>We aren't selling; we're expressing curiosity.</small></div>
-                    <div class="res-item"><strong>"I don't have the answers."</strong><br><small>You don't need them. You just need the question.</small></div>
-                    <div class="res-item"><strong>"I don't want to offend."</strong><br><small>Observing a struggle isn't a judgment; it's empathy.</small></div>
-                    <div class="res-item"><strong>"They seem too busy."</strong><br><small>Curiosity takes 10 seconds. We'll find the right moment.</small></div>
+                    <div class="res-item"><strong>"I don't want to be salesy."</strong><br><small>Curiosity isn't a pitch. It's a neighborly question.</small></div>
+                    <div class="res-item"><strong>"I don't have technical answers."</strong><br><small>You aren't the expert; you're the bridge to the experts.</small></div>
+                    <div class="res-item"><strong>"I don't want to offend."</strong><br><small>Observing a struggle is empathy, not judgment.</small></div>
+                    <div class="res-item"><strong>"They seem too busy."</strong><br><small>Curiosity takes 10 seconds. Find the right window.</small></div>
                 </div>
             </div>
         </section>
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Process Alignment</span>
-                <h2>The Sales Lifecycle</h2>
-                <div class="imperatives-grid">
-                    <div class="imp-step highlight">NOTICING</div>
-                    <div class="imp-step">OTC IMPROVEMENTS</div>
-                    <div class="imp-step">PRICING & EXPECTATIONS</div>
-                    <div class="imp-step">RESERVATIONS</div>
-                    <div class="imp-step">DECISION MAKERS</div>
-                    <div class="imp-step">NEXT STEPS</div>
-                </div>
-                <div class="box" style="margin-top: 30px; text-align: center; border-color: var(--gravity-lime);">
-                    <p style="font-size: 20px; margin: 0;"><strong>This is your lane.</strong> You aren't responsible for the technical deep-dive. You are the one who cares enough to notice and ask.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="slide-content">
-                <span class="context-tag">The Toolkit</span>
-                <h2>The Pattern of Curiosity</h2>
-                <p>Keep these in your back pocket for the next few scenarios:</p>
-                <div class="box" style="margin-bottom: 20px; border-left: 6px solid var(--gravity-blue);">
-                    <p style="font-size: 11px; font-weight: 800; color: var(--gravity-blue);">THE OBSERVER'S OPENER</p>
-                    <h3 style="margin: 0;">"I noticed [Challenge], does that happen a lot?"</h3>
-                </div>
-                <div class="box" style="border-left: 6px solid var(--gravity-green);">
-                    <p style="font-size: 11px; font-weight: 800; color: var(--gravity-green);">THE UNIVERSAL FALLBACK</p>
-                    <h3 style="margin: 0;">"Is that easy to use?"</h3>
-                </div>
-                <div class="box" style="border-left: 6px solid var(--gravity-navy);">
-                    <p style="font-size: 11px; font-weight: 800; color: var(--gravity-navy);">THE COMPLIMENT</p>
-                    <h3 style="margin: 0;">"That looks fancy! How do you like it?"</h3>
+                <span class="context-tag">Framework</span>
+                <h2>The Three Phases of Engagement</h2>
+                <div class="bottleneck-container" style="margin-top: 40px;">
+                    <div class="bottleneck-box" style="border-top: 6px solid var(--gravity-blue);">
+                        <h3>Phase 1: Identify</h3>
+                        <p>Determine where you want to sit. Who in your community do you want to help?</p>
+                    </div>
+                    <div class="bottleneck-box" style="border-top: 6px solid var(--gravity-lime);">
+                        <h3>Phase 2: Engage</h3>
+                        <p>Have the easy, simple, comfortable conversation. Just curiosity.</p>
+                    </div>
+                    <div class="bottleneck-box" style="border-top: 6px solid var(--gravity-navy);">
+                        <h3>Phase 3: Refer</h3>
+                        <p>If they're open to it, build the bridge to the experts at Gravity.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -164,19 +159,38 @@
                 <div class="bottleneck-container">
                     <div class="bottleneck-box">
                         <i class="fa-solid fa-clock-rotate-left" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
-                        <h4 style="margin: 0 0 10px 0; font-size: 18px;">The Time-Sink</h4>
-                        <p style="font-size: 14px; margin: 0; line-height: 1.4;">Manual entry or broken hardware. If it's slow for them, it's slow for you.</p>
+                        <h4>The Time-Sink</h4>
+                        <p>Manual entry or broken hardware. If it's slow for them, it's slow for you.</p>
                     </div>
                     <div class="bottleneck-box">
                         <i class="fa-solid fa-face-frown" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
-                        <h4 style="margin: 0 0 10px 0; font-size: 18px;">The Human Toll</h4>
-                        <p style="font-size: 14px; margin: 0; line-height: 1.4;">Staff frustration or "apologizing for the system." Look for the eye-roll or sigh.</p>
+                        <h4>The Human Toll</h4>
+                        <p>Staff frustration or "apologizing for the system." Look for the eye-roll.</p>
                     </div>
                     <div class="bottleneck-box">
                         <i class="fa-solid fa-diagram-predecessor" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
-                        <h4 style="margin: 0 0 10px 0; font-size: 18px;">Fragmented Flow</h4>
-                        <p style="font-size: 14px; margin: 0; line-height: 1.4;">Systems that don't talk to each other. Paper trails or sticky notes on screens.</p>
+                        <h4>Fragmented Flow</h4>
+                        <p>Systems that don't talk. Paper trails or sticky notes on screens.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-content">
+                <span class="context-tag">Workshop</span>
+                <h2>Live Practice: The Curiosity Pattern</h2>
+                <p>Let's take a real scenario from the group. What have you noticed lately?</p>
+                <div class="box" style="margin-top: 20px;">
+                    <div class="workshop-field">
+                        <label><strong>1. The Observation:</strong> (What's the challenge?)</label>
+                        <textarea id="ws-obs" class="workshop-input" placeholder="e.g., 'The card reader is taped together and keeps failing...'"></textarea>
+                    </div>
+                    <div class="workshop-field">
+                        <label><strong>2. The One-Liner:</strong> (Ask the question)</label>
+                        <input id="ws-line" class="workshop-input" placeholder="e.g., 'I noticed that reader is struggling—is that a constant headache for you guys?'">
+                    </div>
+                    <button class="clear-btn" onclick="document.getElementById('ws-obs').value='';document.getElementById('ws-line').value='';">Clear & Try Another</button>
                 </div>
             </div>
         </section>
@@ -184,13 +198,12 @@
         <section class="slide">
             <div class="split slide-content">
                 <div>
-                    <span class="context-tag">Scenario Workshop 1</span>
+                    <span class="context-tag">Scenario 1</span>
                     <h2>The "Ferrari" Setup</h2>
-                    <p>A small board game shop has a massive $5,000 system. The owner is proud of the tech, but mentions the monthly overhead is "tough."</p>
-                    <p><strong>What would you say using the Curiosity Pattern?</strong></p>
-                    <button class="timer-btn" onclick="reveal(this)">See the Observation</button>
+                    <p>A small board game shop has a massive $5,000 system. He's proud of the tech, but mentions the monthly overhead is "rough."</p>
+                    <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>The Observation:</strong> "Whoa, that looks fancy! Does it actually make your life easier for the cost?"
+                        <strong>The Challenge:</strong> They are <strong>Oversold.</strong> "Whoa, that looks fancy! Does it actually make your life easier for what it costs?"
                     </div>
                 </div>
                 <div class="box" style="height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -205,13 +218,12 @@
                     <i class="fa-solid fa-mug-hot" style="font-size: 100px; opacity: 0.1;"></i>
                 </div>
                 <div>
-                    <span class="context-tag">Scenario Workshop 2</span>
-                    <h2>The Manual Key-In</h2>
-                    <p>The barista is manually typing in card numbers because the swiper is "acting up." The line is growing and she looks stressed.</p>
-                    <p><strong>How do you open this conversation?</strong></p>
-                    <button class="timer-btn" onclick="reveal(this)">See the Observation</button>
+                    <span class="context-tag">Scenario 2</span>
+                    <h2>The Manual Bottleneck</h2>
+                    <p>Barista manually keys in numbers because the reader is broken. The line is out the door.</p>
+                    <button class="timer-btn" onclick="reveal(this)">The Observation</button>
                     <div class="reveal-box">
-                        <strong>The Observation:</strong> "I noticed you're having to type those in—that looks like a huge hassle. Does that happen a lot?"
+                        <strong>The Challenge:</strong> <strong>Friction.</strong> "I noticed you're having to type those in—that looks like a hassle. Does that happen a lot?"
                     </div>
                 </div>
             </div>
@@ -228,7 +240,7 @@
                     </div>
                     <div class="box">
                         <p><strong>The Curious Neighbor:</strong><br><br>
-                        "That is great to hear! I love seeing local shops that have their setup dialed in. I work for a payment company, so I'm always curious—what are you using that works so well?"</p>
+                        "That is great to hear! I love seeing local shops dialed in. I work for a payment company, so I'm always curious—what are you using that works so well?"</p>
                     </div>
                 </div>
             </div>
@@ -236,11 +248,11 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">The Hand-off</span>
-                <h2>Natural Sharing</h2>
-                <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong> You aren't "pitching" a jack to the person with a flat tire; you're just offering it.</p>
+                <span class="context-tag">Natural Sharing</span>
+                <h2>The Hand-Off</h2>
+                <p style="font-size: 26px; line-height: 1.4;">Sharing a solution is an <strong>act of service.</strong></p>
                 <div class="box" style="background: var(--gravity-navy); color: #fff; margin-top: 30px;">
-                    <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing these kinds of challenges. If you're open to it, I'd love to connect you with someone here who can actually help."</p>
+                    <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of inefficiencies. If you're open to it, I'd love to connect you with someone here who can help."</p>
                 </div>
             </div>
         </section>
@@ -251,7 +263,7 @@
                 <h2>Referral Process</h2>
                 <div class="box" style="max-width: 600px; margin: 40px auto; border: 2px dashed #ccc; background: var(--bg-light);">
                     <p style="font-size: 20px; color: var(--text-muted);">[Referral Solution Pending]</p>
-                    <p>Finalizing the simplest way for you to hand off a conversation to the experts.</p>
+                    <p>Finalizing the simplest way to connect your community to Gravity's support.</p>
                 </div>
             </div>
         </section>
@@ -267,7 +279,7 @@
 
     <div id="controls">
         <button class="control-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
-        <span id="slide-indicator" style="font-weight: 800; font-size: 14px; min-width: 60px; text-align: center;">1 / 13</span>
+        <span id="slide-indicator" style="font-weight: 800; font-size: 14px; min-width: 60px; text-align: center;">1 / 14</span>
         <button class="control-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
