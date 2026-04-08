@@ -31,15 +31,18 @@
         .context-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gravity-blue); margin-bottom: 15px; display: inline-block; border-bottom: 2px solid var(--gravity-lime); padding-bottom: 4px; }
         h1 { font-size: 80px; font-weight: 800; line-height: 0.9; letter-spacing: -3px; color: var(--gravity-navy); margin: 0; }
         h2 { font-size: 48px; font-weight: 700; color: var(--gravity-navy); margin-top: 0; }
-        .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         
         .box { background: var(--bg-light); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
         .dark-card { background: var(--gravity-navy); color: #fff; padding: 50px; border-radius: 12px; }
         .reveal-box { display: none; margin-top: 20px; padding: 25px; background: #fff; border-left: 5px solid var(--gravity-lime); color: var(--text-main); font-size: 18px; }
-        
-        .imperatives-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 30px; }
-        .imp-step { padding: 15px 10px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 6px; text-align: center; font-size: 10px; font-weight: 700; color: var(--text-muted); line-height: 1.2; }
-        .imp-step.highlight { border: 3px solid var(--gravity-lime); background: #fff; color: var(--gravity-navy); opacity: 1; transform: scale(1.05); }
+
+        /* Russian Doll Circles */
+        .circle-container { position: relative; width: 400px; height: 400px; margin: 0 auto; }
+        .circle { border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid var(--gravity-navy); display: flex; align-items: flex-start; justify-content: center; padding-top: 15px; font-weight: 800; font-size: 12px; transition: all 0.3s ease; }
+        .circle-1 { width: 100%; height: 100%; background: #E2E8F0; opacity: 0.3; }
+        .circle-2 { width: 75%; height: 75%; background: #CBD5E1; opacity: 0.5; }
+        .circle-3 { width: 50%; height: 50%; background: #94A3B8; opacity: 0.7; }
+        .circle-4 { width: 25%; height: 25%; background: var(--gravity-lime); color: var(--gravity-navy); z-index: 5; }
 
         .workshop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
         .workshop-input { width: 100%; padding: 10px; border: 2px solid var(--border); border-radius: 6px; font-size: 16px; font-family: 'DM Sans', sans-serif; margin-top: 5px; }
@@ -70,20 +73,23 @@
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Engagement</span>
-                <h2>Who is your Community?</h2>
-                <div class="split" style="margin-top: 40px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px;">
                     <div>
-                        <p style="font-size: 20px;">Think about the businesses you visit every week:</p>
-                        <ul style="font-size: 22px; line-height: 2; color: var(--text-main);">
-                            <li>Your Favorite Coffee Spot</li>
-                            <li>Your Gym or Workout Space</li>
-                            <li>A Local Shop in Your Town</li>
-                            <li>A Friend's Small Business</li>
+                        <span class="context-tag">Perspective</span>
+                        <h2>Layers of Community</h2>
+                        <p style="font-size: 18px;">We use the word "Community" a lot. But community isn't a single flat line; it's a set of relationships.</p>
+                        <ul style="font-size: 16px; line-height: 1.8;">
+                            <li><strong>Outer Circle:</strong> Businesses you walk past but haven't entered yet.</li>
+                            <li><strong>Middle Circle:</strong> The local lunch spot or gym you visit monthly.</li>
+                            <li><strong>Inner Circle:</strong> Places you've visited for 10+ years.</li>
+                            <li><strong>Center:</strong> Your best friends and family who own businesses.</li>
                         </ul>
                     </div>
-                    <div class="box" style="border-left: 8px solid var(--gravity-lime);">
-                        <p style="font-style: italic; font-size: 20px;">"We exist to stand with those who believe in the American dream and are willing to work to achieve it."</p>
+                    <div class="circle-container">
+                        <div class="circle circle-1">OUTER: REGION</div>
+                        <div class="circle circle-2">MIDDLE: NEIGHBORHOOD</div>
+                        <div class="circle circle-3">INNER: REGULARS</div>
+                        <div class="circle circle-4">CENTER: FRIENDS</div>
                     </div>
                 </div>
             </div>
@@ -92,9 +98,26 @@
         <section class="slide">
             <div class="slide-content">
                 <div class="dark-card">
+                    <span class="context-tag" style="color: var(--gravity-lime); border-color: white;">Rating Your Comfort</span>
+                    <h2 style="color: white;">The "Say Something" Scale</h2>
+                    <p style="font-size: 20px; color: #CBD5E1;">If you saw a broken system at these levels, how likely are you (out of 10) to say something today?</p>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 30px; text-align: center;">
+                        <div class="box" style="color: var(--text-main);"><strong>Center</strong><br>Friends/Family<br><span style="font-size: 24px; color: var(--gravity-green);">?/10</span></div>
+                        <div class="box" style="color: var(--text-main);"><strong>Inner</strong><br>10+ Year Regular<br><span style="font-size: 24px; color: var(--gravity-green);">?/10</span></div>
+                        <div class="box" style="color: var(--text-main);"><strong>Middle</strong><br>Monthly Visit<br><span style="font-size: 24px; color: var(--gravity-green);">?/10</span></div>
+                        <div class="box" style="color: var(--text-main);"><strong>Outer</strong><br>A New Shop<br><span style="font-size: 24px; color: var(--gravity-green);">?/10</span></div>
+                    </div>
+                    <p style="margin-top: 30px; font-style: italic; color: #CBD5E1;">"Why is one a 9 and one a 2? The hang-up is where the training lives."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-content">
+                <div class="dark-card">
                     <span class="context-tag" style="color: var(--gravity-lime); border-color: white;">Reflection</span>
-                    <h2 style="color: white;">What stops us?</h2>
-                    <p style="font-size: 20px; color: #CBD5E1;">Take 60 seconds. <strong>What keeps you from speaking up</strong> when you see a challenge?</p>
+                    <h2 style="color: white;">Defining the Gap</h2>
+                    <p style="font-size: 20px; color: #CBD5E1;">Take 60 seconds. What specifically keeps you from being a 10/10 at every level? Is it fear of being pushy? Not having the math? Write it down.</p>
                     <div style="text-align: center; margin-top: 20px;">
                         <div id="timer-display">01:00</div>
                         <button id="timer-btn" class="timer-btn" onclick="toggleTimer()">Start Timer</button>
@@ -106,31 +129,13 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Mindset</span>
-                <h2>Addressing the Reservations</h2>
-                <p style="font-size: 18px; color: var(--text-muted);">Common hurdles we all face when speaking to neighbors:</p>
+                <h2>Breaking the Barrier</h2>
+                <p style="font-size: 18px; color: var(--text-muted);">We want to get you from a 2 to a 6, or a 6 to a 10. Let's address what holds the scale back:</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-                    <div class="box"><strong>"I don't want to be salesy."</strong><br><small>Curiosity isn't a pitch. It's a question from a neighbor.</small></div>
-                    <div class="box"><strong>"I don't have the answers."</strong><br><small>You aren't the expert; you're the bridge to our experts.</small></div>
-                    <div class="box"><strong>"I don't want to offend."</strong><br><small>Observing a struggle is empathy, not a judgment.</small></div>
-                    <div class="box"><strong>"They seem too busy."</strong><br><small>Curiosity takes 10 seconds. Find the right window.</small></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="slide-content">
-                <span class="context-tag">Process Alignment</span>
-                <h2>The Sales Lifecycle</h2>
-                <div class="imperatives-grid">
-                    <div class="imp-step highlight">NOTICING</div>
-                    <div class="imp-step">OTC IMPROVEMENTS</div>
-                    <div class="imp-step">PRICING & EXPECTATIONS</div>
-                    <div class="imp-step">RESERVATIONS</div>
-                    <div class="imp-step">DECISION MAKERS</div>
-                    <div class="imp-step">NEXT STEPS</div>
-                </div>
-                <div class="box" style="margin-top: 30px; text-align: center; border-color: var(--gravity-lime);">
-                    <p style="font-size: 20px; margin: 0;">You aren't responsible for the technical deep-dive. You are the one who cares enough to <strong>notice a challenge.</strong></p>
+                    <div class="box"><strong>"I don't want to be salesy."</strong><br><small>Curiosity isn't a pitch. It's a neighborly question.</small></div>
+                    <div class="box"><strong>"I don't have technical answers."</strong><br><small>You don't need them. You are the bridge to our experts.</small></div>
+                    <div class="box"><strong>"I don't want to offend."</strong><br><small>Observing a struggle is empathy, not judgment.</small></div>
+                    <div class="box"><strong>"They seem too busy."</strong><br><small>A 10-second observation is fast and respectful.</small></div>
                 </div>
             </div>
         </section>
@@ -138,7 +143,7 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Investigation</span>
-                <h2>Observing Inefficiencies</h2>
+                <h2>What to Notice</h2>
                 <div style="display: flex; gap: 20px; margin-top: 30px;">
                     <div class="box" style="flex:1;">
                         <i class="fa-solid fa-clock-rotate-left" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
@@ -148,12 +153,12 @@
                     <div class="box" style="flex:1;">
                         <i class="fa-solid fa-face-frown" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
                         <h4>The Human Toll</h4>
-                        <p>Staff frustration, stress, or "apologizing for the system." Look for the eye-roll.</p>
+                        <p>Staff frustration or "apologizing for the system." Look for the eye-roll.</p>
                     </div>
                     <div class="box" style="flex:1;">
                         <i class="fa-solid fa-diagram-predecessor" style="font-size: 22px; color: var(--gravity-blue); margin-bottom: 15px;"></i>
                         <h4>Fragmented Flow</h4>
-                        <p>Systems that don't talk. Paper trails, sticky notes, or broken hand-offs.</p>
+                        <p>Systems that don't talk. Sticky notes, paper trails, or broken hand-offs.</p>
                     </div>
                 </div>
             </div>
@@ -162,118 +167,64 @@
         <section class="slide">
             <div class="slide-content">
                 <span class="context-tag">Workshop</span>
-                <h2>Live Practice: The Curiosity Pattern</h2>
-                <p>Let's take a real scenario from the group. Where have you noticed these things?</p>
+                <h2>Practice: The Curiosity Pattern</h2>
+                <p>Let's take a real scenario. Which "Circle" does this business belong to?</p>
                 <div class="workshop-grid">
                     <div class="box" style="background: white;">
-                        <strong>Audience Example 1</strong>
+                        <strong>Scenario Practice</strong>
+                        <div class="workshop-field" style="margin-top:10px;">
+                            <label><small>The Circle/Relationship</small></label>
+                            <input class="workshop-input" placeholder="e.g. Regular lunch spot (Middle Circle)">
+                        </div>
                         <div class="workshop-field">
                             <label><small>The Observation</small></label>
-                            <textarea id="obs-1" class="workshop-input" placeholder="e.g. Card reader taped together..."></textarea>
+                            <textarea id="obs-1" class="workshop-input" placeholder="e.g. Barista manually keying numbers..."></textarea>
                         </div>
                         <div class="workshop-field">
                             <label><small>The Curiosity Question</small></label>
-                            <input id="q-1" class="workshop-input" placeholder="e.g. 'Is that easy to use?'">
+                            <input id="q-1" class="workshop-input" placeholder="e.g. 'Is that annoying to have to type in?'">
                         </div>
-                        <button class="timer-btn" style="padding:5px 10px; font-size:10px; margin-top:10px;" onclick="document.getElementById('obs-1').value='';document.getElementById('q-1').value='';">Clear</button>
                     </div>
-                    <div class="box" style="background: white;">
-                        <strong>Audience Example 2</strong>
-                        <div class="workshop-field">
-                            <label><small>The Observation</small></label>
-                            <textarea id="obs-2" class="workshop-input" placeholder="e.g. Staff stressing over keys..."></textarea>
-                        </div>
-                        <div class="workshop-field">
-                            <label><small>The Curiosity Question</small></label>
-                            <input id="q-2" class="workshop-input" placeholder="e.g. 'Does that happen a lot?'">
-                        </div>
-                        <button class="timer-btn" style="padding:5px 10px; font-size:10px; margin-top:10px;" onclick="document.getElementById('obs-2').value='';document.getElementById('q-2').value='';">Clear</button>
+                    <div class="box" style="background: var(--gravity-navy); color: white;">
+                        <h4 style="color: var(--gravity-lime);">Workshop Goal:</h4>
+                        <p style="font-size: 14px;">The goal is to simplify. If you are a 3/10 today because you don't know what to say, building a <strong>10-second curiosity question</strong> moves you to an 8/10.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="split slide-content">
-                <div>
-                    <span class="context-tag">Scenario 1</span>
-                    <h2>The "Ferrari" Setup</h2>
-                    <p>A small board game shop has a massive $5,000 system. He's proud of the tech, but his tone changes when talking about monthly overhead.</p>
-                    <button class="timer-btn" onclick="reveal(this)">The Practice</button>
-                    <div class="reveal-box">
-                        <p><strong>The Observation:</strong> A fancy POS system</p>
-                        <p><strong>The Curiosity Question:</strong> "Wow, that looks fancy!"</p>
-                    </div>
-                </div>
-                <div class="box" style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <i class="fa-solid fa-chess-knight" style="font-size: 80px; color: var(--gravity-navy); margin-bottom: 20px;"></i>
-                    <p style="font-weight: 800; color: var(--text-muted);">The Board Game Shop</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="split slide-content">
-                <div class="box" style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <i class="fa-solid fa-mug-hot" style="font-size: 80px; color: var(--gravity-navy); margin-bottom: 20px;"></i>
-                    <p style="font-weight: 800; color: var(--text-muted);">The Coffee Shop</p>
-                </div>
-                <div>
-                    <span class="context-tag">Scenario 2</span>
-                    <h2>The Manual Bottleneck</h2>
-                    <p>A coffee shop staff is manually keying in card numbers because the reader is broken. The line is out the door and staff is flustered.</p>
-                    <button class="timer-btn" onclick="reveal(this)">The Practice</button>
-                    <div class="reveal-box">
-                        <p><strong>The Observation:</strong> Manually keying cards even with a card reader</p>
-                        <p><strong>The Curiosity Question:</strong> "Is that annoying to have to type it in?"</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="split slide-content">
-                <div>
-                    <span class="context-tag">Scenario 3</span>
-                    <h2>The Fee Friction</h2>
-                    <p>A City Utility office has high convenience fees for online payments. Because of this, customers swarm the lobby to pay in person.</p>
-                    <button class="timer-btn" onclick="reveal(this)">The Practice</button>
-                    <div class="reveal-box">
-                        <p><strong>The Observation:</strong> A customer complaint</p>
-                        <p><strong>The Curiosity Question:</strong> "Are you getting a lot of complaints?"</p>
-                    </div>
-                </div>
-                <div class="box" style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <i class="fa-solid fa-building-columns" style="font-size: 80px; color: var(--gravity-navy); margin-bottom: 20px;"></i>
-                    <p style="font-weight: 800; color: var(--text-muted);">The Utility Office</p>
                 </div>
             </div>
         </section>
 
         <section class="slide">
             <div class="slide-content">
-                <span class="context-tag">Mindset</span>
-                <h2>"Actually, we're in a good spot!"</h2>
-                <div class="split">
-                    <div class="box" style="background: var(--gravity-green); color: #fff;">
-                        <h3 style="color: #fff;">Celebrate the Success</h3>
-                        <p>If a merchant is happy and their system works, that is a win for the community. We are happy for them.</p>
+                <span class="context-tag">Cases</span>
+                <h2>Real World Patterns</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
+                    <div class="box">
+                        <i class="fa-solid fa-chess-knight" style="font-size: 30px; margin-bottom: 10px;"></i>
+                        <h4>The Ferrari</h4>
+                        <p><small><strong>Observation:</strong> Fancy POS System<br><strong>Question:</strong> "Wow, that looks fancy!"</small></p>
                     </div>
                     <div class="box">
-                        <p><strong>The Curious Neighbor:</strong><br><br>
-                        "That is great to hear! I love seeing shops dialed in. I work for a payment company, so I'm always curious—what are you using that works so well?"</p>
+                        <i class="fa-solid fa-mug-hot" style="font-size: 30px; margin-bottom: 10px;"></i>
+                        <h4>The Manual Key</h4>
+                        <p><small><strong>Observation:</strong> Manual key-in<br><strong>Question:</strong> "Is that annoying to type in?"</small></p>
+                    </div>
+                    <div class="box">
+                        <i class="fa-solid fa-building-columns" style="font-size: 30px; margin-bottom: 10px;"></i>
+                        <h4>The Fee Complaint</h4>
+                        <p><small><strong>Observation:</strong> Online Fee Complaint<br><strong>Question:</strong> "Are you getting many complaints?"</small></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="slide">
-            <div class="slide-content">
-                <span class="context-tag">Natural Sharing</span>
-                <h2>The Act of Service</h2>
-                <p style="font-size: 26px; line-height: 1.4;">If you see a neighbor with a flat tire, you offer a jack. You don't "pitch" them a jack.</p>
-                <div class="box" style="background: var(--gravity-navy); color: #fff; margin-top: 30px;">
-                    <p style="font-size: 22px; font-style: italic;">"I work for Gravity. We focus on fixing those kinds of inefficiencies. If you're open to it, I'd love to connect you with someone here who can help."</p>
+            <div class="slide-content" style="text-align: center;">
+                <span class="context-tag">The Conclusion</span>
+                <h2>The Point of Today</h2>
+                <div class="box" style="max-width: 800px; margin: 30px auto; border: 4px solid var(--gravity-lime);">
+                    <img src="https://i.imgur.com/your-graph-placeholder.png" style="width: 100%; border-radius: 4px;" alt="Graph showing Likelihood vs Relationship">
+                    <p style="font-size: 22px; font-weight: 800; margin-top: 20px;">Moving the "You Tomorrow" Line.</p>
+                    <p style="color: var(--text-muted);">We want to increase the likelihood you'll speak up, regardless of how well you know the owner. Because noticing is an act of service.</p>
                 </div>
             </div>
         </section>
@@ -289,7 +240,7 @@
 
     <div id="controls">
         <button class="control-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
-        <span id="slide-indicator" style="font-weight: 800; font-size: 14px; min-width: 60px; text-align: center;">1 / 13</span>
+        <span id="slide-indicator" style="font-weight: 800; font-size: 14px; min-width: 60px; text-align: center;">1 / 10</span>
         <button class="control-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
@@ -319,11 +270,6 @@
             if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
             if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
         });
-
-        function reveal(btn) {
-            btn.nextElementSibling.style.display = 'block';
-            btn.style.display = 'none';
-        }
 
         let timerInterval;
         let timeLeft = 60;
